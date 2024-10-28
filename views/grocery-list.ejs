@@ -84,7 +84,7 @@
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
                     <form action="/addGrocery" method="POST">
-                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemName">
+                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemNameProduce">
                         <input type="hidden" name="category" value="produce">
                         <input type="hidden" name="numItem" value="1">
                         <input type="hidden" name="complete" value="false">
@@ -98,10 +98,10 @@
                           <li class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name complete"><%= groceryListItems[i].itemNameProduce %></span>
 
                             <% } else { %>
-                              <span class="item-name incomplete"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name incomplete"><%= groceryListItems[i].itemNameProduce %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
