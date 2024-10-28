@@ -242,11 +242,11 @@ const incompleteGroceryList = document.querySelectorAll('#grocery-list .item spa
 const completeGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.complete')
 
 // console.log(Array.from(incompleteGroceryList))
-const testIncGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.incomplete')
-const testComGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.complete')
+// const testIncGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.incomplete')
+// const testComGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.complete')
 
-console.log('testIncGroceryList', Array.from(testIncGroceryList))
-console.log('testComGroceryList', Array.from(testComGroceryList))
+// console.log('testIncGroceryList', Array.from(testIncGroceryList))
+// console.log('testComGroceryList', Array.from(testComGroceryList))
 
 
 
@@ -258,8 +258,8 @@ Array.from(completeGroceryList).forEach((element)=>{
     element.addEventListener('click', markIncompleteGroceryList)
 })
 
-console.log('incomplete: ', Array.from(incompleteGroceryList))
-console.log('complete: ', Array.from(completeGroceryList))
+// console.log('incomplete: ', Array.from(incompleteGroceryList))
+// console.log('complete: ', Array.from(completeGroceryList))
 
 
 
