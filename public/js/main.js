@@ -1,8 +1,3 @@
-const increase = document.querySelectorAll('#add-num-button')
-const decrease = document.querySelectorAll('#sub-num-button')
-const completeGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.incomplete')
-const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.complete')
-
 const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
 const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
 const itemsMealPlan = document.querySelectorAll('#meal-plan .item span.item-name')
@@ -70,13 +65,13 @@ Array.from(completeMealPlan).forEach((element)=>{
     element.addEventListener('click', markCompleteMealPlan)
 })
 
-console.log('complete: ', Array.from(completeMealPlan))
+// console.log('complete: ', Array.from(completeMealPlan))
 
 Array.from(incompleteMealPlan).forEach((element)=>{
     element.addEventListener('click', markIncompleteMealPlan)
 })
 
-console.log('incomplete: ', Array.from(incompleteMealPlan))
+// console.log('incomplete: ', Array.from(incompleteMealPlan))
 
 
 async function markCompleteMealPlan(){
@@ -224,17 +219,49 @@ async function editNote(){
 // ~~~~~~~~~
 
 
-Array.from(completeGroceryList).forEach((element)=>{
-    element.addEventListener('click', markCompleteGroceryList)
-})
 
-// console.log('complete: ', Array.from(completeGroceryList))
+
+
+
+
+
+
+
+
+
+
+
+
+// ~~~~~~~~~
+// Grocery List Start
+// ~~~~~~~~~
+
+const increase = document.querySelectorAll('#add-num-button')
+const decrease = document.querySelectorAll('#sub-num-button')
+const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.incomplete')
+const completeGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.complete')
+
+// console.log(Array.from(incompleteGroceryList))
+const testIncGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.incomplete')
+const testComGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.complete')
+
+console.log('testIncGroceryList', Array.from(testIncGroceryList))
+console.log('testComGroceryList', Array.from(testComGroceryList))
+
+
+
 
 Array.from(incompleteGroceryList).forEach((element)=>{
+    element.addEventListener('click', markCompleteGroceryList)
+})
+Array.from(completeGroceryList).forEach((element)=>{
     element.addEventListener('click', markIncompleteGroceryList)
 })
 
-// console.log('incomplete: ', Array.from(incompleteGroceryList))
+console.log('incomplete: ', Array.from(incompleteGroceryList))
+console.log('complete: ', Array.from(completeGroceryList))
+
+
 
 // Array.from(itemCompleted).forEach((element)=>{
 //     element.addEventListener('click', markUnComplete)
@@ -293,8 +320,11 @@ async function subNumOfItem(){
 }
 
 async function markCompleteGroceryList(){
+    // console.log('incomplete: ', Array.from(incompleteGroceryList))
+    console.log('incomplete: ', Array.from(testComGroceryList))
+
     const itemText = this.parentNode.childNodes[1].innerText
-    console.log(itemText)
+    console.log('itemText:', itemText)
     console.log(this.parentNode.childNodes)
     try{
         const response = await fetch('markCompleteGroceryList', {
@@ -306,7 +336,7 @@ async function markCompleteGroceryList(){
           })
         const data = await response.json()
         console.log(data)
-        location.reload()
+        // location.reload()
 
     }catch(err){
         console.log(err)
@@ -314,8 +344,11 @@ async function markCompleteGroceryList(){
 }
 
 async function markIncompleteGroceryList(){
+    // console.log('complete: ', Array.from(completeGroceryList))
+    console.log('complete: ', Array.from(testIncGroceryList))
+
     const itemText = this.parentNode.childNodes[1].innerText
-    console.log(itemText)
+    console.log('itemText', itemText)
     try{
         const response = await fetch('markIncompleteGroceryList', {
             method: 'put',
