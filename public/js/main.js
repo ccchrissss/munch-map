@@ -321,13 +321,13 @@ async function subNumOfItem(){
 
 async function markCompleteGroceryList(){
     // console.log('incomplete: ', Array.from(incompleteGroceryList))
-    console.log('incomplete: ', Array.from(testComGroceryList))
+    // console.log('incomplete: ', Array.from(testComGroceryList))
 
     const itemText = this.parentNode.childNodes[1].innerText
-    console.log('itemText:', itemText)
-    console.log(this.parentNode.childNodes)
+    // console.log('itemText:', itemText)
+    // console.log(this.parentNode.childNodes)
     try{
-        const response = await fetch('markCompleteGroceryList', {
+        const response = await fetch('markCompleteGroceryListProduce', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -336,7 +336,7 @@ async function markCompleteGroceryList(){
           })
         const data = await response.json()
         console.log(data)
-        // location.reload()
+        location.reload()
 
     }catch(err){
         console.log(err)
@@ -345,12 +345,12 @@ async function markCompleteGroceryList(){
 
 async function markIncompleteGroceryList(){
     // console.log('complete: ', Array.from(completeGroceryList))
-    console.log('complete: ', Array.from(testIncGroceryList))
+    // console.log('complete: ', Array.from(testIncGroceryList))
 
     const itemText = this.parentNode.childNodes[1].innerText
-    console.log('itemText', itemText)
+    // console.log('itemText', itemText)
     try{
-        const response = await fetch('markIncompleteGroceryList', {
+        const response = await fetch('markIncompleteGroceryListProduce', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

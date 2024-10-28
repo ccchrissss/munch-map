@@ -557,10 +557,10 @@ MongoClient.connect(dbConnectionStr)
     });
 
     //Mark item complete
-    app.put("/markCompleteGroceryList", (request, response) => {
+    app.put("/markCompleteGroceryListProduce", (request, response) => {
       groceryListCollection
         .updateOne(
-          { itemName: request.body.itemFromJS },
+          { itemNameProduce: request.body.itemFromJS },
           { $set: { complete: true } }
         )
         .then((result) => {
@@ -571,10 +571,10 @@ MongoClient.connect(dbConnectionStr)
     });
 
     //Mark item incomplete
-    app.put("/markIncompleteGroceryList", (request, response) => {
+    app.put("/markIncompleteGroceryListProduce", (request, response) => {
       groceryListCollection
         .updateOne(
-          { itemName: request.body.itemFromJS },
+          { itemNameProduce: request.body.itemFromJS },
           { $set: { complete: false } }
         )
         .then((result) => {
