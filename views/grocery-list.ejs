@@ -101,7 +101,7 @@
                               <span class="item-name complete"><%= groceryListItems[i].itemName %></span>
 
                             <% } else { %>
-                              <span class="item-name"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name incomplete"><%= groceryListItems[i].itemName %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -116,6 +116,7 @@
                               
                             <% } %>
 
+                            <span class='fa fa-trash grocery-list-trash'></span><br />
                           </li>
                         <% } %>
                       <% } %>

@@ -1,7 +1,7 @@
 const increase = document.querySelectorAll('#add-num-button')
 const decrease = document.querySelectorAll('#sub-num-button')
-const completeGroceryList = document.querySelectorAll('#grocery-list .item span')
-const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.complete')
+const completeGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.incomplete')
+const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.complete')
 
 const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
 const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
@@ -294,6 +294,8 @@ async function subNumOfItem(){
 
 async function markCompleteGroceryList(){
     const itemText = this.parentNode.childNodes[1].innerText
+    console.log(itemText)
+    console.log(this.parentNode.childNodes)
     try{
         const response = await fetch('markCompleteGroceryList', {
             method: 'put',
@@ -313,6 +315,7 @@ async function markCompleteGroceryList(){
 
 async function markIncompleteGroceryList(){
     const itemText = this.parentNode.childNodes[1].innerText
+    console.log(itemText)
     try{
         const response = await fetch('markIncompleteGroceryList', {
             method: 'put',
@@ -329,3 +332,36 @@ async function markIncompleteGroceryList(){
         console.log(err)
     }
 }
+
+
+
+// ~~~~~~~~~
+// Grocery List Delete Functionality Start
+// ~~~~~~~~~
+const deleteBtnGroceryList = document.querySelectorAll('.grocery-list-trash')
+
+Array.from(deleteBtnGroceryList).forEach((element)=>{
+    element.addEventListener('click', deleteItemGroceryList)
+})
+
+async function deleteItemGroceryList(){
+    const itemText = this.parentNode.childNodes[1].innerText
+    try{
+        const response = await fetch('/deleteItemGroceryList', {
+            method: 'delete',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              'itemFromJS': itemText
+            })
+        })
+      const data = await response.json()
+      console.log(data)
+      location.reload()
+
+  }catch(err){
+      console.log(err)
+  }
+}
+// ~~~~~~~~~
+// Grocery List Delete Functionality End
+// ~~~~~~~~~

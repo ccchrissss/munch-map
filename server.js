@@ -583,9 +583,33 @@ MongoClient.connect(dbConnectionStr)
         })
         .catch((error) => console.error(error));
     });
-    // ~~~~~~~~~
-    // GROCERY LIST Start
-    // ~~~~~~~~~
+
+    // Delete item
+    app.delete("/deleteItemGroceryList", (request, response) => {
+      // mondaymeal: this is the property that you would like to delete
+      // the below line of code works for the trash cans on Monday
+      // mealPlanCollection.deleteOne({mondaymeal: request.body.itemFromJS})
+      groceryListCollection
+        .deleteOne({ produce: request.body.itemFromJS })
+        .then((result) => {
+          console.log("Grocery Item Deleted");
+          response.json("Grocery Item Deleted");
+        })
+        .catch((error) => console.error(error));
+
+      groceryListCollection
+      .deleteOne({ protein: request.body.itemFromJS })
+      .then((result) => {
+        console.log("Grocery Item Deleted");
+        response.json("Grocery Item Deleted");
+      })
+      .catch((error) => console.error(error));
+
+    })
+
+
+
+
 
     // SERVER CONNECT
     app.listen(process.env.PORT || 3000, () => {
