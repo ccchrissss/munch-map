@@ -557,10 +557,10 @@ MongoClient.connect(dbConnectionStr)
     });
 
     //Mark item complete
-    app.put("/markCompleteGroceryList", (request, response) => {
+    app.put("/markCompleteGroceryListProduce", (request, response) => {
       groceryListCollection
         .updateOne(
-          { itemName: request.body.itemFromJS },
+          { itemNameProduce: request.body.itemFromJS },
           { $set: { complete: true } }
         )
         .then((result) => {
@@ -571,10 +571,10 @@ MongoClient.connect(dbConnectionStr)
     });
 
     //Mark item incomplete
-    app.put("/markIncompleteGroceryList", (request, response) => {
+    app.put("/markIncompleteGroceryListProduce", (request, response) => {
       groceryListCollection
         .updateOne(
-          { itemName: request.body.itemFromJS },
+          { itemNameProduce: request.body.itemFromJS },
           { $set: { complete: false } }
         )
         .then((result) => {
@@ -583,9 +583,63 @@ MongoClient.connect(dbConnectionStr)
         })
         .catch((error) => console.error(error));
     });
-    // ~~~~~~~~~
-    // GROCERY LIST Start
-    // ~~~~~~~~~
+
+    // Delete item
+    app.delete("/deleteItemGroceryList", (request, response) => {
+      // mondaymeal: this is the property that you would like to delete
+      // the below line of code works for the trash cans on Monday
+      // mealPlanCollection.deleteOne({mondaymeal: request.body.itemFromJS})
+
+      //Produce
+      groceryListCollection
+        .deleteOne({ itemNameProduce: request.body.itemFromJS })
+        .then((result) => {
+          console.log("Grocery Item Deleted");
+          response.json("Grocery Item Deleted");
+        })
+        .catch((error) => console.error(error));
+      
+      // Proteins
+      groceryListCollection
+      .deleteOne({ itemNameProteins: request.body.itemFromJS })
+      .then((result) => {
+        console.log("Grocery Item Deleted");
+        response.json("Grocery Item Deleted");
+      })
+      .catch((error) => console.error(error));
+
+      // Grains / Legumes / Nuts / Seeds
+      groceryListCollection
+      .deleteOne({ itemNamePantry: request.body.itemFromJS })
+      .then((result) => {
+        console.log("Grocery Item Deleted");
+        response.json("Grocery Item Deleted");
+      })
+      .catch((error) => console.error(error));
+
+      // Fat / Spices / Condiments
+      groceryListCollection
+      .deleteOne({ itemNameCondiments: request.body.itemFromJS })
+      .then((result) => {
+        console.log("Grocery Item Deleted");
+        response.json("Grocery Item Deleted");
+      })
+      .catch((error) => console.error(error));
+
+      // Other
+      groceryListCollection
+      .deleteOne({ itemNameOther: request.body.itemFromJS })
+      .then((result) => {
+        console.log("Grocery Item Deleted");
+        response.json("Grocery Item Deleted");
+      })
+      .catch((error) => console.error(error));
+
+    })
+
+
+
+
 
     // SERVER CONNECT
     app.listen(process.env.PORT || 3000, () => {

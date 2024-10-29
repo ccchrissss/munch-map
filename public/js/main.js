@@ -1,8 +1,3 @@
-const increase = document.querySelectorAll('#add-num-button')
-const decrease = document.querySelectorAll('#sub-num-button')
-const completeGroceryList = document.querySelectorAll('#grocery-list .item span')
-const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.complete')
-
 const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
 const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
 const itemsMealPlan = document.querySelectorAll('#meal-plan .item span.item-name')
@@ -35,7 +30,8 @@ const itemsMealPlan = document.querySelectorAll('#meal-plan .item span.item-name
 // ~~~~~~~~~
 // Meal Plan Delete Functionality Start
 // ~~~~~~~~~
-const deleteBtn = document.querySelectorAll('.fa-trash')
+// const deleteBtn = document.querySelectorAll('.fa-trash')
+const deleteBtn = document.querySelectorAll('.meal-plan-trash')
 
 Array.from(deleteBtn).forEach((element)=>{
     element.addEventListener('click', deleteItem)
@@ -70,13 +66,13 @@ Array.from(completeMealPlan).forEach((element)=>{
     element.addEventListener('click', markCompleteMealPlan)
 })
 
-console.log('complete: ', Array.from(completeMealPlan))
+// console.log('complete: ', Array.from(completeMealPlan))
 
 Array.from(incompleteMealPlan).forEach((element)=>{
     element.addEventListener('click', markIncompleteMealPlan)
 })
 
-console.log('incomplete: ', Array.from(incompleteMealPlan))
+// console.log('incomplete: ', Array.from(incompleteMealPlan))
 
 
 async function markCompleteMealPlan(){
@@ -224,17 +220,48 @@ async function editNote(){
 // ~~~~~~~~~
 
 
-Array.from(completeGroceryList).forEach((element)=>{
-    element.addEventListener('click', markCompleteGroceryList)
-})
 
-// console.log('complete: ', Array.from(completeGroceryList))
+
+
+
+
+
+
+
+
+
+
+
+
+// ~~~~~~~~~
+// Grocery List Start
+// ~~~~~~~~~
+
+const increase = document.querySelectorAll('#add-num-button')
+const decrease = document.querySelectorAll('#sub-num-button')
+const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.incomplete')
+const completeGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.complete')
+
+// console.log(Array.from(incompleteGroceryList))
+// const testIncGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.incomplete')
+// const testComGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.complete')
+
+// console.log('testIncGroceryList', Array.from(testIncGroceryList))
+// console.log('testComGroceryList', Array.from(testComGroceryList))
+
+
 
 Array.from(incompleteGroceryList).forEach((element)=>{
+    element.addEventListener('click', markCompleteGroceryList)
+})
+Array.from(completeGroceryList).forEach((element)=>{
     element.addEventListener('click', markIncompleteGroceryList)
 })
 
 // console.log('incomplete: ', Array.from(incompleteGroceryList))
+// console.log('complete: ', Array.from(completeGroceryList))
+
+
 
 // Array.from(itemCompleted).forEach((element)=>{
 //     element.addEventListener('click', markUnComplete)
@@ -293,9 +320,14 @@ async function subNumOfItem(){
 }
 
 async function markCompleteGroceryList(){
+    // console.log('incomplete: ', Array.from(incompleteGroceryList))
+    // console.log('incomplete: ', Array.from(testComGroceryList))
+
     const itemText = this.parentNode.childNodes[1].innerText
+    // console.log('itemText:', itemText)
+    // console.log(this.parentNode.childNodes)
     try{
-        const response = await fetch('markCompleteGroceryList', {
+        const response = await fetch('markCompleteGroceryListProduce', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -312,9 +344,13 @@ async function markCompleteGroceryList(){
 }
 
 async function markIncompleteGroceryList(){
+    // console.log('complete: ', Array.from(completeGroceryList))
+    // console.log('complete: ', Array.from(testIncGroceryList))
+
     const itemText = this.parentNode.childNodes[1].innerText
+    // console.log('itemText', itemText)
     try{
-        const response = await fetch('markIncompleteGroceryList', {
+        const response = await fetch('markIncompleteGroceryListProduce', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -329,3 +365,38 @@ async function markIncompleteGroceryList(){
         console.log(err)
     }
 }
+
+
+
+// ~~~~~~~~~
+// Grocery List Delete Functionality Start
+// ~~~~~~~~~
+const deleteBtnGroceryList = document.querySelectorAll('.grocery-list-trash')
+
+Array.from(deleteBtnGroceryList).forEach((element)=>{
+    element.addEventListener('click', deleteItemGroceryList)
+})
+
+async function deleteItemGroceryList(){
+    const itemText = this.parentNode.childNodes[1].innerText
+    // console.log(itemText)
+
+    try{
+        const response = await fetch('/deleteItemGroceryList', {
+            method: 'delete',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              'itemFromJS': itemText
+            })
+        })
+      const data = await response.json()
+    //   console.log(data)
+      location.reload()
+
+  }catch(err){
+      console.log(err)
+  }
+}
+// ~~~~~~~~~
+// Grocery List Delete Functionality End
+// ~~~~~~~~~

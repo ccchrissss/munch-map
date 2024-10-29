@@ -84,7 +84,7 @@
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
                     <form action="/addGrocery" method="POST">
-                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemName">
+                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemNameProduce">
                         <input type="hidden" name="category" value="produce">
                         <input type="hidden" name="numItem" value="1">
                         <input type="hidden" name="complete" value="false">
@@ -98,10 +98,10 @@
                           <li class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name complete"><%= groceryListItems[i].itemNameProduce %></span>
 
                             <% } else { %>
-                              <span class="item-name"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name incomplete"><%= groceryListItems[i].itemNameProduce %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -116,6 +116,7 @@
                               
                             <% } %>
 
+                            <span class='fa fa-trash grocery-list-trash'></span><br />
                           </li>
                         <% } %>
                       <% } %>
@@ -138,8 +139,8 @@
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
                     <form action="/addGrocery" method="POST">
-                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemName">
-                        <input type="hidden" name="category" value="protein">
+                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemNameProteins">
+                        <input type="hidden" name="category" value="proteins">
                         <input type="hidden" name="numItem" value="1">
                         <button type="submit">Add</button>
                     </form>
@@ -147,14 +148,14 @@
                     <ul class="items">
                       <% for(let i = 0; i < groceryListItems.length; i++) { %>
 
-                        <% if(groceryListItems[i].category === 'protein') { %>
+                        <% if(groceryListItems[i].category === 'proteins') { %>
                           <li class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name complete"><%= groceryListItems[i].itemNameProteins %></span>
 
                             <% } else { %>
-                              <span class="item-name"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name"><%= groceryListItems[i].itemNameProteins %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -169,6 +170,7 @@
                               
                             <% } %>
 
+                            <span class='fa fa-trash grocery-list-trash'></span><br />
                           </li>
                         <% } %>
                       <% } %>
@@ -191,7 +193,7 @@
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
                     <form action="/addGrocery" method="POST">
-                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemName">
+                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemNamePantry">
                         <input type="hidden" name="category" value="pantry">
                         <input type="hidden" name="numItem" value="1">
                         <button type="submit">Add</button>
@@ -204,10 +206,10 @@
                           <li class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name complete"><%= groceryListItems[i].itemNamePantry %></span>
 
                             <% } else { %>
-                              <span class="item-name"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name"><%= groceryListItems[i].itemNamePantry %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -222,6 +224,7 @@
                               
                             <% } %>
 
+                            <span class='fa fa-trash grocery-list-trash'></span><br />
                           </li>
                         <% } %>
                       <% } %>
@@ -244,7 +247,7 @@
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
                     <form action="/addGrocery" method="POST">
-                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemName">
+                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemNameCondiments">
                         <input type="hidden" name="category" value="condiments">
                         <input type="hidden" name="numItem" value="1">
                         <button type="submit">Add</button>
@@ -257,10 +260,10 @@
                           <li class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name complete"><%= groceryListItems[i].itemNameCondiments %></span>
 
                             <% } else { %>
-                              <span class="item-name"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name"><%= groceryListItems[i].itemNameCondiments %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -275,6 +278,7 @@
                               
                             <% } %>
 
+                            <span class='fa fa-trash grocery-list-trash'></span><br />
                           </li>
                         <% } %>
                       <% } %>
@@ -297,7 +301,7 @@
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
                     <form action="/addGrocery" method="POST">
-                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemName">
+                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemNameOther">
                         <input type="hidden" name="category" value="other">
                         <input type="hidden" name="numItem" value="1">
                         <button type="submit">Add</button>
@@ -310,10 +314,10 @@
                           <li class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name complete"><%= groceryListItems[i].itemNameOther %></span>
 
                             <% } else { %>
-                              <span class="item-name"><%= groceryListItems[i].itemName %></span>
+                              <span class="item-name"><%= groceryListItems[i].itemNameOther %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -328,6 +332,7 @@
                               
                             <% } %>
 
+                            <span class='fa fa-trash grocery-list-trash'></span><br />
                           </li>
                         <% } %>
                       <% } %>
