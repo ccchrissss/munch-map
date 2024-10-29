@@ -590,7 +590,7 @@ MongoClient.connect(dbConnectionStr)
       // the below line of code works for the trash cans on Monday
       // mealPlanCollection.deleteOne({mondaymeal: request.body.itemFromJS})
       groceryListCollection
-        .deleteOne({ produce: request.body.itemFromJS })
+        .deleteOne({ itemNameProduce: request.body.itemFromJS })
         .then((result) => {
           console.log("Grocery Item Deleted");
           response.json("Grocery Item Deleted");
@@ -598,7 +598,7 @@ MongoClient.connect(dbConnectionStr)
         .catch((error) => console.error(error));
 
       groceryListCollection
-      .deleteOne({ protein: request.body.itemFromJS })
+      .deleteOne({ itemNameProtein: request.body.itemFromJS })
       .then((result) => {
         console.log("Grocery Item Deleted");
         response.json("Grocery Item Deleted");
