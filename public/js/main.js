@@ -250,7 +250,6 @@ const completeGroceryList = document.querySelectorAll('#grocery-list .item span.
 
 
 
-
 Array.from(incompleteGroceryList).forEach((element)=>{
     element.addEventListener('click', markCompleteGroceryList)
 })
@@ -379,6 +378,8 @@ Array.from(deleteBtnGroceryList).forEach((element)=>{
 
 async function deleteItemGroceryList(){
     const itemText = this.parentNode.childNodes[1].innerText
+    // console.log(itemText)
+    
     try{
         const response = await fetch('/deleteItemGroceryList', {
             method: 'delete',
@@ -388,8 +389,8 @@ async function deleteItemGroceryList(){
             })
         })
       const data = await response.json()
-      console.log(data)
-      location.reload()
+    //   console.log(data)
+    //   location.reload()
 
   }catch(err){
       console.log(err)
