@@ -30,7 +30,8 @@ const itemsMealPlan = document.querySelectorAll('#meal-plan .item span.item-name
 // ~~~~~~~~~
 // Meal Plan Delete Functionality Start
 // ~~~~~~~~~
-const deleteBtn = document.querySelectorAll('.fa-trash')
+// const deleteBtn = document.querySelectorAll('.fa-trash')
+const deleteBtn = document.querySelectorAll('.meal-plan-trash')
 
 Array.from(deleteBtn).forEach((element)=>{
     element.addEventListener('click', deleteItem)
@@ -379,7 +380,7 @@ Array.from(deleteBtnGroceryList).forEach((element)=>{
 async function deleteItemGroceryList(){
     const itemText = this.parentNode.childNodes[1].innerText
     // console.log(itemText)
-    
+
     try{
         const response = await fetch('/deleteItemGroceryList', {
             method: 'delete',
