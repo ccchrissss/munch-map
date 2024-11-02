@@ -12,6 +12,12 @@
     text-indent: 10px;
     /* margin-bottom: 0.5rem; */
 }
+/* placeholder code for item note */
+[contentEditable=true]:empty:before {
+    content: attr(placeholder);
+    opacity: 0.6;
+}
+
 .save-button {
     display: none;
     border: none;
