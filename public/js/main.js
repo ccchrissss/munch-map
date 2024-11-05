@@ -319,52 +319,106 @@ async function subNumOfItem(){
     }
 }
 
+
 async function markCompleteGroceryList(){
-    // console.log('incomplete: ', Array.from(incompleteGroceryList))
-    // console.log('incomplete: ', Array.from(testComGroceryList))
-
     const itemText = this.parentNode.childNodes[1].innerText
-    // console.log('itemText:', itemText)
-    // console.log(this.parentNode.childNodes)
-    try{
-        const response = await fetch('markCompleteGroceryListProduce', {
-            method: 'put',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                'itemFromJS': itemText
-            })
-          })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
+    console.log('itemText: ', itemText)
+    let id = this.parentNode.id
 
-    }catch(err){
-        console.log(err)
-    }
+    id = id.charAt(0).toUpperCase() + id.slice(1)
+    console.log('id: ', id)
+
+    console.log('markComplete this.parentNode.id: ', this.parentNode.id)
+
+    // try{
+    //     const response = await fetch(`markCompleteGroceryList${id}`, {
+    //         method: 'put',
+    //         headers: {'Content-Type': 'application/json'},
+    //         body: JSON.stringify({
+    //             'itemFromJS': itemText
+    //         })
+    //       })
+    //     const data = await response.json()
+    //     console.log(data)
+    //     location.reload()
+    // }catch(err){
+    //     console.log(err)
+    // }
 }
 
-async function markIncompleteGroceryList(){
-    // console.log('complete: ', Array.from(completeGroceryList))
-    // console.log('complete: ', Array.from(testIncGroceryList))
+// async function markIncompleteMealPlan(){
+//     const itemText = this.parentNode.childNodes[1].innerText
+//     let id = this.parentNode.id
 
-    const itemText = this.parentNode.childNodes[1].innerText
-    // console.log('itemText', itemText)
-    try{
-        const response = await fetch('markIncompleteGroceryListProduce', {
-            method: 'put',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                'itemFromJS': itemText
-            })
-          })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
+//     id = id.charAt(0).toUpperCase() + id.slice(1)
+//     // console.log('id: ', id)
 
-    }catch(err){
-        console.log(err)
-    }
-}
+//     console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
+
+//     try{
+//         const response = await fetch(`markIncompleteMealPlan${id}`, {
+//             method: 'put',
+//             headers: {'Content-Type': 'application/json'},
+//             body: JSON.stringify({
+//                 'itemFromJS': itemText
+//             })
+//           })
+//         const data = await response.json()
+//         console.log(data)
+//         location.reload()
+//     }catch(err){
+//         console.log(err)
+//     }
+// }
+
+// this only works for Mondays
+// async function markCompleteGroceryList(){
+//     // console.log('incomplete: ', Array.from(incompleteGroceryList))
+//     // console.log('incomplete: ', Array.from(testComGroceryList))
+
+//     const itemText = this.parentNode.childNodes[1].innerText
+//     // console.log('itemText:', itemText)
+//     // console.log(this.parentNode.childNodes)
+//     try{
+//         const response = await fetch('markCompleteGroceryListProduce', {
+//             method: 'put',
+//             headers: {'Content-Type': 'application/json'},
+//             body: JSON.stringify({
+//                 'itemFromJS': itemText
+//             })
+//           })
+//         const data = await response.json()
+//         console.log(data)
+//         location.reload()
+
+//     }catch(err){
+//         console.log(err)
+//     }
+// }
+
+// this only works for Mondays
+// async function markIncompleteGroceryList(){
+//     // console.log('complete: ', Array.from(completeGroceryList))
+//     // console.log('complete: ', Array.from(testIncGroceryList))
+
+//     const itemText = this.parentNode.childNodes[1].innerText
+//     // console.log('itemText', itemText)
+//     try{
+//         const response = await fetch('markIncompleteGroceryListProduce', {
+//             method: 'put',
+//             headers: {'Content-Type': 'application/json'},
+//             body: JSON.stringify({
+//                 'itemFromJS': itemText
+//             })
+//           })
+//         const data = await response.json()
+//         console.log(data)
+//         location.reload()
+
+//     }catch(err){
+//         console.log(err)
+//     }
+// }
 
 
 
