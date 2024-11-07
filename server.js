@@ -576,9 +576,12 @@ MongoClient.connect(dbConnectionStr)
 
     //Mark item incomplete Produce
     app.put("/markIncompleteGroceryListProduce", (request, response) => {
+
+      console.log(request.body.idFromJS)
+
       groceryListCollection
         .updateOne(
-          { itemNameProduce: request.body.itemFromJS },
+          { "_id": new ObjectId("672ab5de80a94eeea4d2834a") },
           { $set: { complete: false } }
         )
         .then((result) => {
