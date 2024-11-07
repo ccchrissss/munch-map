@@ -95,7 +95,7 @@
                       <% for(let i = 0; i < groceryListItems.length; i++) { %>
 
                         <% if(groceryListItems[i].category === 'produce') { %>
-                          <li class="item">
+                          <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
                               <span class="item-name complete"><%= groceryListItems[i].itemNameProduce %></span>
@@ -149,13 +149,13 @@
                       <% for(let i = 0; i < groceryListItems.length; i++) { %>
 
                         <% if(groceryListItems[i].category === 'proteins') { %>
-                          <li class="item">
+                          <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
                               <span class="item-name complete"><%= groceryListItems[i].itemNameProteins %></span>
 
                             <% } else { %>
-                              <span class="item-name"><%= groceryListItems[i].itemNameProteins %></span>
+                              <span class="item-name incomplete"><%= groceryListItems[i].itemNameProteins %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -203,13 +203,13 @@
                       <% for(let i = 0; i < groceryListItems.length; i++) { %>
 
                         <% if(groceryListItems[i].category === 'pantry') { %>
-                          <li class="item">
+                          <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
                               <span class="item-name complete"><%= groceryListItems[i].itemNamePantry %></span>
 
                             <% } else { %>
-                              <span class="item-name"><%= groceryListItems[i].itemNamePantry %></span>
+                              <span class="item-name incomplete"><%= groceryListItems[i].itemNamePantry %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -257,13 +257,13 @@
                       <% for(let i = 0; i < groceryListItems.length; i++) { %>
 
                         <% if(groceryListItems[i].category === 'condiments') { %>
-                          <li class="item">
+                          <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
                               <span class="item-name complete"><%= groceryListItems[i].itemNameCondiments %></span>
 
                             <% } else { %>
-                              <span class="item-name"><%= groceryListItems[i].itemNameCondiments %></span>
+                              <span class="item-name incomplete"><%= groceryListItems[i].itemNameCondiments %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -311,13 +311,13 @@
                       <% for(let i = 0; i < groceryListItems.length; i++) { %>
 
                         <% if(groceryListItems[i].category === 'other') { %>
-                          <li class="item">
+                          <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
                               <span class="item-name complete"><%= groceryListItems[i].itemNameOther %></span>
 
                             <% } else { %>
-                              <span class="item-name"><%= groceryListItems[i].itemNameOther %></span>
+                              <span class="item-name incomplete"><%= groceryListItems[i].itemNameOther %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>

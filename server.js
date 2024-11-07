@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
+const ObjectId = require("mongodb").ObjectId
 require("dotenv").config({ path: "./config/.env" });
 
 app.set("view engine", "ejs");
@@ -250,7 +251,7 @@ MongoClient.connect(dbConnectionStr)
         .updateOne(
           { saturdaymeal: request.body.itemFromJS },
           { $set: { complete: false } },
-          {
+          { 
             sort: { _id: -1 },
             upsert: false,
           }
@@ -556,11 +557,18 @@ MongoClient.connect(dbConnectionStr)
         .catch((error) => console.error(error));
     });
 
+
+
+
+
     //Mark item complete
-    app.put("/markCompleteGroceryListProduce", (request, response) => {
+    app.put("/markCompleteGroceryList", (request, response) => {
+
+      // console.log(request.body.idFromJS)
+
       groceryListCollection
         .updateOne(
-          { itemNameProduce: request.body.itemFromJS },
+          { _id: new ObjectId(request.body.idFromJS) },
           { $set: { complete: true } }
         )
         .then((result) => {
@@ -571,10 +579,13 @@ MongoClient.connect(dbConnectionStr)
     });
 
     //Mark item incomplete
-    app.put("/markIncompleteGroceryListProduce", (request, response) => {
+    app.put("/markIncompleteGroceryList", (request, response) => {
+
+      // console.log(request.body.idFromJS)
+
       groceryListCollection
         .updateOne(
-          { itemNameProduce: request.body.itemFromJS },
+          { _id: new ObjectId(request.body.idFromJS) },
           { $set: { complete: false } }
         )
         .then((result) => {
@@ -583,6 +594,10 @@ MongoClient.connect(dbConnectionStr)
         })
         .catch((error) => console.error(error));
     });
+
+
+
+
 
     // Delete item
     app.delete("/deleteItemGroceryList", (request, response) => {
