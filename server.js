@@ -561,10 +561,11 @@ MongoClient.connect(dbConnectionStr)
     app.put("/markCompleteGroceryListProduce", (request, response) => {
 
       console.log(request.body.idFromJS)
+      // "672ab5de80a94eeea4d2834a"
 
       groceryListCollection
         .updateOne(
-          { "_id": new ObjectId("672ab5de80a94eeea4d2834a") },
+          { _id: new ObjectId(request.body.idFromJS) },
           { $set: { complete: true } }
         )
         .then((result) => {
@@ -581,7 +582,7 @@ MongoClient.connect(dbConnectionStr)
 
       groceryListCollection
         .updateOne(
-          { "_id": new ObjectId("672ab5de80a94eeea4d2834a") },
+          { _id: new ObjectId(request.body.idFromJS) },
           { $set: { complete: false } }
         )
         .then((result) => {
