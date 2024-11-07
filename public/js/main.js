@@ -323,30 +323,34 @@ async function subNumOfItem(){
 
 
 async function markCompleteGroceryList(){
-    const itemText = this.parentNode.childNodes[1].innerText
-    console.log('itemText: ', itemText)
+    // const itemText = this.parentNode.childNodes[1].innerText
+    // console.log('itemText: ', itemText)
     console.log(this.parentNode)
     let id = this.parentNode.id
 
-    id = id.charAt(0).toUpperCase() + id.slice(1)
+
+    // {"_id":{"$oid":"672ab5de80a94eeea4d2834a"},"itemNameProduce":"bananas","category":"produce","numItem":"1","complete":"false"}
+
+    // id = id.charAt(0).toUpperCase() + id.slice(1)
     console.log('id: ', id)
 
     console.log('markComplete this.parentNode.id: ', this.parentNode.id)
 
-    // try{
-    //     const response = await fetch(`markCompleteGroceryList${id}`, {
-    //         method: 'put',
-    //         headers: {'Content-Type': 'application/json'},
-    //         body: JSON.stringify({
-    //             'itemFromJS': itemText
-    //         })
-    //       })
-    //     const data = await response.json()
-    //     console.log(data)
-    //     location.reload()
-    // }catch(err){
-    //     console.log(err)
-    // }
+    try{
+        // const response = await fetch(`markCompleteGroceryList${id}`, {
+        const response = await fetch(`markCompleteGroceryListProduce`, {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'idFromJS': id
+            })
+          })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
+    }
 }
 
 // async function markIncompleteMealPlan(){

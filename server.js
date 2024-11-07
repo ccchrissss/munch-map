@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
+const ObjectId = require("mongodb").ObjectId
 require("dotenv").config({ path: "./config/.env" });
 
 app.set("view engine", "ejs");
@@ -558,9 +559,12 @@ MongoClient.connect(dbConnectionStr)
 
     //Mark item complete Produce
     app.put("/markCompleteGroceryListProduce", (request, response) => {
+
+      console.log(request.body.idFromJS)
+
       groceryListCollection
         .updateOne(
-          { itemNameProduce: request.body.itemFromJS },
+          { "_id": new ObjectId("672ab5de80a94eeea4d2834a") },
           { $set: { complete: true } }
         )
         .then((result) => {
