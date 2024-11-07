@@ -557,11 +557,14 @@ MongoClient.connect(dbConnectionStr)
         .catch((error) => console.error(error));
     });
 
-    //Mark item complete Produce
+
+
+
+
+    //Mark item complete
     app.put("/markCompleteGroceryList", (request, response) => {
 
-      console.log(request.body.idFromJS)
-      // "672ab5de80a94eeea4d2834a"
+      // console.log(request.body.idFromJS)
 
       groceryListCollection
         .updateOne(
@@ -575,10 +578,10 @@ MongoClient.connect(dbConnectionStr)
         .catch((error) => console.error(error));
     });
 
-    //Mark item incomplete Produce
+    //Mark item incomplete
     app.put("/markIncompleteGroceryList", (request, response) => {
 
-      console.log(request.body.idFromJS)
+      // console.log(request.body.idFromJS)
 
       groceryListCollection
         .updateOne(
@@ -594,123 +597,7 @@ MongoClient.connect(dbConnectionStr)
 
 
 
-       //Mark item complete Proteins
-       app.put("/markCompleteGroceryListProteins", (request, response) => {
-        groceryListCollection
-          .updateOne(
-            { itemNameProteins: request.body.itemFromJS },
-            { $set: { complete: true } }
-          )
-          .then((result) => {
-            console.log("Marked Complete");
-            response.json("Marked Complete");
-          })
-          .catch((error) => console.error(error));
-      });
-  
-      //Mark item incomplete Proteins
-      app.put("/markIncompleteGroceryListProteins", (request, response) => {
-        groceryListCollection
-          .updateOne(
-            { itemNameProteins: request.body.itemFromJS },
-            { $set: { complete: false } }
-          )
-          .then((result) => {
-            console.log("Marked Incomplete");
-            response.json("Marked Incomplete");
-          })
-          .catch((error) => console.error(error));
-      });
 
-
-
-         //Mark item complete Pantry
-    app.put("/markCompleteGroceryListPantry", (request, response) => {
-      groceryListCollection
-        .updateOne(
-          { itemNamePantry: request.body.itemFromJS },
-          { $set: { complete: true } }
-        )
-        .then((result) => {
-          console.log("Marked Complete");
-          response.json("Marked Complete");
-        })
-        .catch((error) => console.error(error));
-    });
-
-    //Mark item incomplete Pantry
-    app.put("/markIncompleteGroceryListPantry", (request, response) => {
-      groceryListCollection
-        .updateOne(
-          { itemNamePantry: request.body.itemFromJS },
-          { $set: { complete: false } }
-        )
-        .then((result) => {
-          console.log("Marked Incomplete");
-          response.json("Marked Incomplete");
-        })
-        .catch((error) => console.error(error));
-    });
-
-
-
-       //Mark item complete Condiments
-       app.put("/markCompleteGroceryListCondiments", (request, response) => {
-        groceryListCollection
-          .updateOne(
-            { itemNameCondiments: request.body.itemFromJS },
-            { $set: { complete: true } }
-          )
-          .then((result) => {
-            console.log("Marked Complete");
-            response.json("Marked Complete");
-          })
-          .catch((error) => console.error(error));
-      });
-  
-      //Mark item incomplete Condiments
-      app.put("/markIncompleteGroceryListCondiments", (request, response) => {
-        groceryListCollection
-          .updateOne(
-            { itemNameCondiments: request.body.itemFromJS },
-            { $set: { complete: false } }
-          )
-          .then((result) => {
-            console.log("Marked Incomplete");
-            response.json("Marked Incomplete");
-          })
-          .catch((error) => console.error(error));
-      });
-
-
-
-         //Mark item complete Other
-    app.put("/markCompleteGroceryListOther", (request, response) => {
-      groceryListCollection
-        .updateOne(
-          { itemNameOther: request.body.itemFromJS },
-          { $set: { complete: true } }
-        )
-        .then((result) => {
-          console.log("Marked Complete");
-          response.json("Marked Complete");
-        })
-        .catch((error) => console.error(error));
-    });
-
-    //Mark item incomplete Other
-    app.put("/markIncompleteGroceryListOther", (request, response) => {
-      groceryListCollection
-        .updateOne(
-          { itemNameOther: request.body.itemFromJS },
-          { $set: { complete: false } }
-        )
-        .then((result) => {
-          console.log("Marked Incomplete");
-          response.json("Marked Incomplete");
-        })
-        .catch((error) => console.error(error));
-    });
 
     // Delete item
     app.delete("/deleteItemGroceryList", (request, response) => {
