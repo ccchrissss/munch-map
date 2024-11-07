@@ -558,7 +558,7 @@ MongoClient.connect(dbConnectionStr)
     });
 
     //Mark item complete Produce
-    app.put("/markCompleteGroceryListProduce", (request, response) => {
+    app.put("/markCompleteGroceryList", (request, response) => {
 
       console.log(request.body.idFromJS)
       // "672ab5de80a94eeea4d2834a"
@@ -576,7 +576,7 @@ MongoClient.connect(dbConnectionStr)
     });
 
     //Mark item incomplete Produce
-    app.put("/markIncompleteGroceryListProduce", (request, response) => {
+    app.put("/markIncompleteGroceryList", (request, response) => {
 
       console.log(request.body.idFromJS)
 

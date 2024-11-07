@@ -338,7 +338,7 @@ async function markCompleteGroceryList(){
 
     try{
         // const response = await fetch(`markCompleteGroceryList${id}`, {
-        const response = await fetch(`markCompleteGroceryListProduce`, {
+        const response = await fetch(`markCompleteGroceryList`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -369,7 +369,7 @@ async function markIncompleteGroceryList(){
 
     try{
         // const response = await fetch(`markCompleteGroceryList${id}`, {
-        const response = await fetch(`markIncompleteGroceryListProduce`, {
+        const response = await fetch(`markIncompleteGroceryList`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

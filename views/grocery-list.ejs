@@ -149,7 +149,7 @@
                       <% for(let i = 0; i < groceryListItems.length; i++) { %>
 
                         <% if(groceryListItems[i].category === 'proteins') { %>
-                          <li class="item">
+                          <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
                               <span class="item-name complete"><%= groceryListItems[i].itemNameProteins %></span>
@@ -203,7 +203,7 @@
                       <% for(let i = 0; i < groceryListItems.length; i++) { %>
 
                         <% if(groceryListItems[i].category === 'pantry') { %>
-                          <li class="item">
+                          <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
                               <span class="item-name complete"><%= groceryListItems[i].itemNamePantry %></span>
@@ -257,7 +257,7 @@
                       <% for(let i = 0; i < groceryListItems.length; i++) { %>
 
                         <% if(groceryListItems[i].category === 'condiments') { %>
-                          <li class="item">
+                          <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
                               <span class="item-name complete"><%= groceryListItems[i].itemNameCondiments %></span>
@@ -311,7 +311,7 @@
                       <% for(let i = 0; i < groceryListItems.length; i++) { %>
 
                         <% if(groceryListItems[i].category === 'other') { %>
-                          <li class="item">
+                          <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
                               <span class="item-name complete"><%= groceryListItems[i].itemNameOther %></span>
