@@ -323,21 +323,13 @@ async function subNumOfItem(){
 
 
 async function markCompleteGroceryList(){
-    // const itemText = this.parentNode.childNodes[1].innerText
-    // console.log('itemText: ', itemText)
-    console.log(this.parentNode)
+
     let id = this.parentNode.id
 
-
-    // {"_id":{"$oid":"672ab5de80a94eeea4d2834a"},"itemNameProduce":"bananas","category":"produce","numItem":"1","complete":"false"}
-
-    // id = id.charAt(0).toUpperCase() + id.slice(1)
-    console.log('id: ', id)
-
-    console.log('markComplete this.parentNode.id: ', this.parentNode.id)
+    // console.log('id: ', id)
+    // console.log('markComplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-        // const response = await fetch(`markCompleteGroceryList${id}`, {
         const response = await fetch(`markCompleteGroceryList`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
@@ -354,21 +346,13 @@ async function markCompleteGroceryList(){
 }
 
 async function markIncompleteGroceryList(){
-    // const itemText = this.parentNode.childNodes[1].innerText
-    // console.log('itemText: ', itemText)
-    console.log(this.parentNode)
+
     let id = this.parentNode.id
 
-
-    // {"_id":{"$oid":"672ab5de80a94eeea4d2834a"},"itemNameProduce":"bananas","category":"produce","numItem":"1","complete":"false"}
-
-    // id = id.charAt(0).toUpperCase() + id.slice(1)
-    console.log('id: ', id)
-
-    console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
+    // console.log('id: ', id)
+    // console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-        // const response = await fetch(`markCompleteGroceryList${id}`, {
         const response = await fetch(`markIncompleteGroceryList`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
@@ -383,55 +367,6 @@ async function markIncompleteGroceryList(){
         console.log(err)
     }
 }
-
-// this only works for Mondays
-// async function markCompleteGroceryList(){
-//     // console.log('incomplete: ', Array.from(incompleteGroceryList))
-//     // console.log('incomplete: ', Array.from(testComGroceryList))
-
-//     const itemText = this.parentNode.childNodes[1].innerText
-//     // console.log('itemText:', itemText)
-//     // console.log(this.parentNode.childNodes)
-//     try{
-//         const response = await fetch('markCompleteGroceryListProduce', {
-//             method: 'put',
-//             headers: {'Content-Type': 'application/json'},
-//             body: JSON.stringify({
-//                 'itemFromJS': itemText
-//             })
-//           })
-//         const data = await response.json()
-//         console.log(data)
-//         location.reload()
-
-//     }catch(err){
-//         console.log(err)
-//     }
-// }
-
-// this only works for Mondays
-// async function markIncompleteGroceryList(){
-//     // console.log('complete: ', Array.from(completeGroceryList))
-//     // console.log('complete: ', Array.from(testIncGroceryList))
-
-//     const itemText = this.parentNode.childNodes[1].innerText
-//     // console.log('itemText', itemText)
-//     try{
-//         const response = await fetch('markIncompleteGroceryListProduce', {
-//             method: 'put',
-//             headers: {'Content-Type': 'application/json'},
-//             body: JSON.stringify({
-//                 'itemFromJS': itemText
-//             })
-//           })
-//         const data = await response.json()
-//         console.log(data)
-//         location.reload()
-
-//     }catch(err){
-//         console.log(err)
-//     }
-// }
 
 
 
