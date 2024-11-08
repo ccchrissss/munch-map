@@ -498,14 +498,19 @@ MongoClient.connect(dbConnectionStr)
         })
         .catch((error) => console.error(error));
     });
-    // Delete! End
+
     // ~~~~~~~~~
     // MEAL PLAN End
     // ~~~~~~~~~
 
+
+
+
+
     // ~~~~~~~~~
     // GROCERY LIST Start
     // ~~~~~~~~~
+    
     app.get("/grocery-list", (req, res) => {
       groceryListCollection
         .find()
@@ -517,6 +522,10 @@ MongoClient.connect(dbConnectionStr)
         .catch((error) => console.error(error));
     });
 
+
+
+
+
     //Add item to list
     app.post("/addGrocery", (req, res) => {
       groceryListCollection
@@ -526,6 +535,10 @@ MongoClient.connect(dbConnectionStr)
         })
         .catch((error) => console.error(error));
     });
+
+
+
+
 
     //Increase number of items
     app.put("/addNum", (req, res) => {
@@ -601,55 +614,14 @@ MongoClient.connect(dbConnectionStr)
 
     // Delete item
     app.delete("/deleteItemGroceryList", (request, response) => {
-      // mondaymeal: this is the property that you would like to delete
-      // the below line of code works for the trash cans on Monday
-      // mealPlanCollection.deleteOne({mondaymeal: request.body.itemFromJS})
 
-      //Produce
       groceryListCollection
-        .deleteOne({ itemNameProduce: request.body.itemFromJS })
+        .deleteOne({ _id: new ObjectId(request.body.idFromJS) })
         .then((result) => {
           console.log("Grocery Item Deleted");
           response.json("Grocery Item Deleted");
         })
         .catch((error) => console.error(error));
-      
-      // Proteins
-      groceryListCollection
-      .deleteOne({ itemNameProteins: request.body.itemFromJS })
-      .then((result) => {
-        console.log("Grocery Item Deleted");
-        response.json("Grocery Item Deleted");
-      })
-      .catch((error) => console.error(error));
-
-      // Grains / Legumes / Nuts / Seeds
-      groceryListCollection
-      .deleteOne({ itemNamePantry: request.body.itemFromJS })
-      .then((result) => {
-        console.log("Grocery Item Deleted");
-        response.json("Grocery Item Deleted");
-      })
-      .catch((error) => console.error(error));
-
-      // Fat / Spices / Condiments
-      groceryListCollection
-      .deleteOne({ itemNameCondiments: request.body.itemFromJS })
-      .then((result) => {
-        console.log("Grocery Item Deleted");
-        response.json("Grocery Item Deleted");
-      })
-      .catch((error) => console.error(error));
-
-      // Other
-      groceryListCollection
-      .deleteOne({ itemNameOther: request.body.itemFromJS })
-      .then((result) => {
-        console.log("Grocery Item Deleted");
-        response.json("Grocery Item Deleted");
-      })
-      .catch((error) => console.error(error));
-
     })
 
 
