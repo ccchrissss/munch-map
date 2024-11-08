@@ -435,6 +435,8 @@ async function markIncompleteGroceryList(){
 
 
 
+
+
 // ~~~~~~~~~
 // Grocery List Delete Functionality Start
 // ~~~~~~~~~
@@ -445,15 +447,18 @@ Array.from(deleteBtnGroceryList).forEach((element)=>{
 })
 
 async function deleteItemGroceryList(){
-    const itemText = this.parentNode.childNodes[1].innerText
+    // const itemText = this.parentNode.childNodes[1].innerText
     // console.log(itemText)
+
+    const id = this.parentNode.id
+    console.log(id)
 
     try{
         const response = await fetch('/deleteItemGroceryList', {
             method: 'delete',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              'itemFromJS': itemText
+              'idFromJS': id
             })
         })
       const data = await response.json()
