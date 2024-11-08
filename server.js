@@ -498,14 +498,19 @@ MongoClient.connect(dbConnectionStr)
         })
         .catch((error) => console.error(error));
     });
-    // Delete! End
+
     // ~~~~~~~~~
     // MEAL PLAN End
     // ~~~~~~~~~
 
+
+
+
+
     // ~~~~~~~~~
     // GROCERY LIST Start
     // ~~~~~~~~~
+    
     app.get("/grocery-list", (req, res) => {
       groceryListCollection
         .find()
@@ -517,6 +522,10 @@ MongoClient.connect(dbConnectionStr)
         .catch((error) => console.error(error));
     });
 
+
+
+
+
     //Add item to list
     app.post("/addGrocery", (req, res) => {
       groceryListCollection
@@ -526,6 +535,10 @@ MongoClient.connect(dbConnectionStr)
         })
         .catch((error) => console.error(error));
     });
+
+
+
+
 
     //Increase number of items
     app.put("/addNum", (req, res) => {
@@ -601,7 +614,7 @@ MongoClient.connect(dbConnectionStr)
 
     // Delete item
     app.delete("/deleteItemGroceryList", (request, response) => {
-      
+
       groceryListCollection
         .deleteOne({ _id: new ObjectId(request.body.idFromJS) })
         .then((result) => {
