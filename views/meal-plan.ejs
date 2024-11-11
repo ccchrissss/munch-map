@@ -106,7 +106,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].mondaymealtime == 'breakfast') { %>
                       <% if (mealPlanStuff[i].mondaymeal) {%>
-                        <li id="monday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -134,7 +134,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].mondaymealtime == 'lunch') { %>
                       <% if (mealPlanStuff[i].mondaymeal) {%>
-                        <li id="monday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -162,7 +162,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].mondaymealtime == 'dinner') { %>
                       <% if (mealPlanStuff[i].mondaymeal) {%>
-                        <li id="monday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -190,7 +190,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].mondaymealtime == 'snack') { %>
                       <% if (mealPlanStuff[i].mondaymeal) {%>
-                        <li id="monday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
