@@ -79,7 +79,7 @@ async function markCompleteMealPlan(){
 
     let id = this.parentNode.id
 
-    // console.log('id: ', id)
+    /// console.log('id: ', id)
     // console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
 
     try{

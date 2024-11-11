@@ -278,7 +278,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].tuesdaymealtime == 'breakfast') { %>
                       <% if (mealPlanStuff[i].tuesdaymeal) {%>
-                        <li id="tuesday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"tuesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -306,7 +306,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].tuesdaymealtime == 'lunch') { %>
                       <% if (mealPlanStuff[i].tuesdaymeal) {%>
-                        <li id="tuesday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"tuesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -334,7 +334,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].tuesdaymealtime == 'dinner') { %>
                       <% if (mealPlanStuff[i].tuesdaymeal) {%>
-                        <li id="tuesday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"tuesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -362,7 +362,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].tuesdaymealtime == 'snack') { %>
                       <% if (mealPlanStuff[i].tuesdaymeal) {%>
-                        <li id="tuesday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"tuesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -422,7 +422,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].wednesdaymealtime == 'breakfast') { %>
                       <% if (mealPlanStuff[i].wednesdaymeal) {%>
-                        <li id="wednesday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"wednesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -450,7 +450,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].wednesdaymealtime == 'lunch') { %>
                       <% if (mealPlanStuff[i].wednesdaymeal) {%>
-                        <li id="wednesday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"wednesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -478,7 +478,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].wednesdaymealtime == 'dinner') { %>
                       <% if (mealPlanStuff[i].wednesdaymeal) {%>
-                        <li id="wednesday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"wednesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -505,7 +505,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].wednesdaymealtime == 'snack') { %>
                       <% if (mealPlanStuff[i].wednesdaymeal) {%>
-                        <li id="wednesday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"wednesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -566,7 +566,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].thursdaymealtime == 'breakfast') { %>
                       <% if (mealPlanStuff[i].thursdaymeal) {%>
-                        <li id="thursday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"thursday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -594,7 +594,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].thursdaymealtime == 'lunch') { %>
                       <% if (mealPlanStuff[i].thursdaymeal) {%>
-                        <li id="thursday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"thursday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -622,7 +622,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].thursdaymealtime == 'dinner') { %>
                       <% if (mealPlanStuff[i].thursdaymeal) {%>
-                        <li id="thursday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"thursday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -650,7 +650,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].thursdaymealtime == 'snack') { %>
                       <% if (mealPlanStuff[i].thursdaymeal) {%>
-                        <li id="thursday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"thursday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -712,7 +712,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].fridaymealtime == 'breakfast') { %>
                       <% if (mealPlanStuff[i].fridaymeal) {%>
-                        <li id="friday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"friday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -740,7 +740,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].fridaymealtime == 'lunch') { %>
                       <% if (mealPlanStuff[i].fridaymeal) {%>
-                        <li id="friday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"friday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -768,7 +768,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].fridaymealtime == 'dinner') { %>
                       <% if (mealPlanStuff[i].fridaymeal) {%>
-                        <li id="friday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"friday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -796,7 +796,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].fridaymealtime == 'snack') { %>
                       <% if (mealPlanStuff[i].fridaymeal) {%>
-                        <li id="friday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"friday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -858,7 +858,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].saturdaymealtime == 'breakfast') { %>
                       <% if (mealPlanStuff[i].saturdaymeal) {%>
-                        <li id="saturday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"saturday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -886,7 +886,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].saturdaymealtime == 'lunch') { %>
                       <% if (mealPlanStuff[i].saturdaymeal) {%>
-                        <li id="saturday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"saturday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -914,7 +914,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].saturdaymealtime == 'dinner') { %>
                       <% if (mealPlanStuff[i].saturdaymeal) {%>
-                        <li id="saturday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"saturday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -942,7 +942,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].saturdaymealtime == 'snack') { %>
                       <% if (mealPlanStuff[i].saturdaymeal) {%>
-                        <li id="saturday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"saturday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -1004,7 +1004,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].sundaymealtime == 'breakfast') { %>
                       <% if (mealPlanStuff[i].sundaymeal) {%>
-                        <li id="sunday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"sunday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -1032,7 +1032,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].sundaymealtime == 'lunch') { %>
                       <% if (mealPlanStuff[i].sundaymeal) {%>
-                        <li id="sunday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"sunday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -1060,7 +1060,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].sundaymealtime == 'dinner') { %>
                       <% if (mealPlanStuff[i].sundaymeal) {%>
-                        <li id="sunday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"sunday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
@@ -1088,7 +1088,7 @@
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
                     <% if (mealPlanStuff[i].sundaymealtime == 'snack') { %>
                       <% if (mealPlanStuff[i].sundaymeal) {%>
-                        <li id="sunday" class="item ml-3">
+                        <li id="<%= mealPlanStuff[i]._id %>"sunday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
                             <span class="item-name complete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
