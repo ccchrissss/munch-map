@@ -76,48 +76,41 @@ Array.from(incompleteMealPlan).forEach((element)=>{
 
 
 async function markCompleteMealPlan(){
-    const itemText = this.parentNode.childNodes[1].innerText
-    console.log('itemText: ', itemText)
+
     let id = this.parentNode.id
-    
-    console.log(this.parentNode)
 
-    id = id.charAt(0).toUpperCase() + id.slice(1)
-    // console.log('id: ', id)
-
-    console.log('markComplete this.parentNode.id: ', this.parentNode.id)
+    /// console.log('id: ', id)
+    // console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-        const response = await fetch(`markCompleteMealPlan${id}`, {
+        const response = await fetch(`markCompleteMealPlan`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                'itemFromJS': itemText
+                'idFromJS': id
             })
           })
         const data = await response.json()
         console.log(data)
-        // location.reload()
+        location.reload()
     }catch(err){
         console.log(err)
     }
 }
 
 async function markIncompleteMealPlan(){
-    const itemText = this.parentNode.childNodes[1].innerText
+
     let id = this.parentNode.id
 
-    id = id.charAt(0).toUpperCase() + id.slice(1)
     // console.log('id: ', id)
-
-    console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
+    // console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-        const response = await fetch(`markIncompleteMealPlan${id}`, {
+        const response = await fetch(`markIncompleteMealPlan`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                'itemFromJS': itemText
+                'idFromJS': id
             })
           })
         const data = await response.json()
