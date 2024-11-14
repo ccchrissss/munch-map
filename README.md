@@ -4,7 +4,7 @@ Build by: Phil Mach & Chris Nelson ([Phil](https://github.com/philmach2) | [Chri
 
 Live Link: https://munch-map.onrender.com/
 
-<img width="1440" alt="Screenshot 2024-01-25 at 3 12 21 PM" src="https://github.com/philmach2/mealplan-grocerylist/assets/110493891/12789d7d-127d-4d3e-916a-00b0cd70888a">
+<img width="720" alt="munch-map-landing-page" src="https://github.com/user-attachments/assets/7517bc34-c61d-4199-bb61-2f1193864793">
 
 ## How It's Made:
 
@@ -24,6 +24,8 @@ We plan to add more features to each page, including a delete function for the G
 
 We would also like to introduce user accounts and authentication, allowing individuals to have personalized plans and collaborate with others on shared plans. Furthermore, we envision facilitating real-time communication between collaborators, enabling notifications for users to stay informed about any changes made by others through the integration of the Web Socket API. These optimizations are part of our plans to enhance Munch Map.
 
-![gl](https://github.com/philmach2/mealplan-grocerylist/assets/110493891/3a2ca73d-9f0c-4ef8-b123-e011e3bfe10d) 
 
-![mp](https://github.com/philmach2/mealplan-grocerylist/assets/110493891/110dcbb1-bbb0-4fa1-8a64-b7631a90d0d1)
+
+<img width="720" alt="meal-plan-page-video-demo" src="https://github.com/philmach2/mealplan-grocerylist/assets/110493891/110dcbb1-bbb0-4fa1-8a64-b7631a90d0d1"><br />
+
+<img width="720" alt="grocery-list-page-video-demo" src="https://github.com/philmach2/mealplan-grocerylist/assets/110493891/3a2ca73d-9f0c-4ef8-b123-e011e3bfe10d">
