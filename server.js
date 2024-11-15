@@ -100,10 +100,10 @@ MongoClient.connect(dbConnectionStr)
 
     // Note Update! Start
     // Monday Begin
-    app.put("/edit-note-monday", (request, response) => {
+    app.put("/edit-note", (request, response) => {
       mealPlanCollection
         .updateOne(
-          { mondaymeal: request.body.itemFromJS },
+          { _id: new ObjectId(request.body.idFromJS)},
           { $set: { note: request.body.noteFromJS } },
           {
             sort: { _id: -1 },
@@ -111,8 +111,8 @@ MongoClient.connect(dbConnectionStr)
           }
         )
         .then((result) => {
-          console.log("Updated note meal plan Monday");
-          response.json("Updated note meal plan Monday");
+          console.log("Updated note meal plan");
+          response.json("Updated note meal plan");
         })
         .catch((error) => console.error(error));
     });
