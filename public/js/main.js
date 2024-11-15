@@ -151,35 +151,20 @@ function addNoteToItem() {
     console.log('Note button has been clicked')
 }
 
-// if (document.querySelector('#meal-plan-heading')) {
-//     notesSaveBtn.addEventListener('click', editNote)
-// }
-
 
 Array.from(notesSaveBtn).forEach( element => {
     // console.log('Array.from(showNoteBtn): ', showNoteBtn)
     element.addEventListener('click', editNote)
 })
-// notesSaveBtn.addEventListener('click', editNote)
-    
-
-// Array.from(notesSaveBtn).forEach( element => {
-//     console.log('Array.from(notesSaveBtn): ', notesSaveBtn)
-//     element.addEventListener('click', editNoteTestTestTest)
-
-//     // when you click the save button, send the text from the contenteditable div to the server. Update mealPlanStuff[i].note with that text. Then refresh the page.
-    
-// })
 
 
 async function editNote(){
-    const itemText = this.parentNode.childNodes[1].innerText
     const noteText = this.parentNode.childNodes[10].innerText
     const id = this.parentNode.id
     const checkmark = this.parentNode.childNodes[13]
 
-    
-    // console.log(this.parentNode.childNodes)
+    console.log('id', id)
+    // console.log(this.parentNode.childNodes
 
     // id = id.charAt(0).toUpperCase() + id.slice(1)
     // console.log('editNote id: ', id)
@@ -187,11 +172,11 @@ async function editNote(){
     // console.log(noteText)
 
     try{
-        const response = await fetch(`edit-note-${id}`, {
+        const response = await fetch(`edit-note`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                'itemFromJS': itemText,
+                'idFromJS': id,
                 'noteFromJS': noteText
             })
           })
