@@ -255,10 +255,16 @@ Array.from(decrease).forEach(element => {
     element.addEventListener('click', subNumOfItem)
 })
 
+console.log('increase: ', Array.from(increase))
+console.log('decrease: ', Array.from(decrease))
+
 async function addNumOfItem(){
     const itemNameS = this.parentNode.querySelector('.item-name').innerText
     const numItemS = this.parentNode.querySelector('.num-of-item').innerText
-    console.log('numItemS:', numItemS);
+
+    console.log('itemNameS', itemNameS)
+    console.log('numItemS:', numItemS)
+
     try{
         const response = await fetch('addNum', {
             method: 'put',
@@ -270,7 +276,8 @@ async function addNumOfItem(){
           })
         const data = await response.json()
         console.log(data)
-        location.reload()
+
+        // location.reload()
 
     }catch(err){
         console.log(err)
@@ -280,7 +287,10 @@ async function addNumOfItem(){
 async function subNumOfItem(){
     const itemNameS = this.parentNode.querySelector('.item-name').innerText
     const numItemS = this.parentNode.querySelector('.num-of-item').innerText
-    console.log('numItemS:', numItemS);
+    
+    console.log('itemNameS', itemNameS)
+    console.log('numItemS:', numItemS)
+
     try{
         const response = await fetch('subNum', {
             method: 'put',
@@ -292,7 +302,8 @@ async function subNumOfItem(){
           })
         const data = await response.json()
         console.log(data)
-        location.reload()
+
+        // location.reload()
 
     }catch(err){
         console.log(err)
