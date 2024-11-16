@@ -233,7 +233,7 @@ MongoClient.connect(dbConnectionStr)
       console.log("Received PUT request:", req.body);
       groceryListCollection
         .updateOne(
-          { itemNameProduce: req.body.itemName },
+          { _id: new ObjectId(req.body.idFromJS) },
           { $set: { numItem: Number(req.body.numItem) + 1 } }
         )
         .then((result) => {
@@ -248,7 +248,7 @@ MongoClient.connect(dbConnectionStr)
       console.log("Received PUT request:", req.body);
       groceryListCollection
         .updateOne(
-          { itemNameProduce: req.body.itemName },
+          { _id: new ObjectId(req.body.idFromJS) },
           { $set: { numItem: Number(req.body.numItem) - 1 } }
         )
         .then((result) => {

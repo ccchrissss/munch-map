@@ -259,25 +259,28 @@ console.log('increase: ', Array.from(increase))
 console.log('decrease: ', Array.from(decrease))
 
 async function addNumOfItem(){
-    const itemNameS = this.parentNode.querySelector('.item-name').innerText
-    const numItemS = this.parentNode.querySelector('.num-of-item').innerText
+    // const itemName = this.parentNode.querySelector('.item-name').innerText
+    const numItem = this.parentNode.querySelector('.num-of-item').innerText
 
-    console.log('itemNameS', itemNameS)
-    console.log('numItemS:', numItemS)
+    const id = this.parentNode.id
+    // console.log('id ', id)
+
+    // console.log('itemNameS', itemNameS)
+    // console.log('numItemS:', numItemS)
 
     try{
         const response = await fetch('addNum', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              'itemName': itemNameS,
-              'numItem': numItemS
+              'idFromJS': id,
+              'numItem': numItem
             })
           })
         const data = await response.json()
         console.log(data)
 
-        // location.reload()
+        location.reload()
 
     }catch(err){
         console.log(err)
@@ -285,25 +288,28 @@ async function addNumOfItem(){
 }
 
 async function subNumOfItem(){
-    const itemNameS = this.parentNode.querySelector('.item-name').innerText
-    const numItemS = this.parentNode.querySelector('.num-of-item').innerText
-    
-    console.log('itemNameS', itemNameS)
-    console.log('numItemS:', numItemS)
+    // const itemName = this.parentNode.querySelector('.item-name').innerText
+    const numItem = this.parentNode.querySelector('.num-of-item').innerText
+
+    const id = this.parentNode.id
+    // console.log('id ', id)
+
+    // console.log('itemNameS', itemNameS)
+    // console.log('numItemS:', numItemS)
 
     try{
         const response = await fetch('subNum', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              'itemName': itemNameS,
-              'numItem': numItemS
+              'idFromJS': id,
+              'numItem': numItem
             })
           })
         const data = await response.json()
         console.log(data)
 
-        // location.reload()
+        location.reload()
 
     }catch(err){
         console.log(err)
