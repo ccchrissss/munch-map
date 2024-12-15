@@ -20,9 +20,9 @@ Reflecting on our work, we realize organizing our code with an MVC structure wou
 
 ## Future Optimizations:
 
-We plan to add more features to each page, including a delete function for the Grocery List and a drag-and-drop feature to rearrange meals, as well as their assigned days, in the Meal Plan. Our vision includes creating a dashboard with the Canvas API that illustrates the mapped connection between meals and their corresponding grocery items and recipes.
+We plan to add more features to the app, including a drag-and-drop feature to rearrange meals, as well as their assigned days, in the Meal Plan. Our vision also includes creating a dashboard with the Canvas API that illustrates the mapped connection between meals and their corresponding grocery items and recipes.
 
-We would also like to introduce user accounts and authentication, allowing individuals to have personalized plans and collaborate with others on shared plans. Furthermore, we envision facilitating real-time communication between collaborators, enabling notifications for users to stay informed about any changes made by others through the integration of the Web Socket API. These optimizations are part of our plans to enhance Munch Map.
+We would also like to introduce user authentication, allowing individuals to have personalized plans and collaborate with others on shared plans. Furthermore, we envision facilitating real-time communication between collaborators, enabling notifications for users to stay informed about any changes made by others through the integration of the Web Socket API. These optimizations are part of our plans to enhance Munch Map.
 
 
 
