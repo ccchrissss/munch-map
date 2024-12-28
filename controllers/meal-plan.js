@@ -11,9 +11,13 @@ module.exports = {
       
       try {
         const mealPlanDocs = await MealPlan.find()
-        console.log('meal plan count documents: ', mealPlanDocs)
+        // console.log('meal plan count documents: ', mealPlanDocs)
 
-        res.render('meal-plan.ejs', { mealPlanStuff: res})
+        let mealPlanArr = Array.from(mealPlanDocs)
+        // console.log('meal plan docs type of: ', typeof mealPlanDocs)
+        console.log('meal plan Arr: ', mealPlanArr)
+
+        res.render('meal-plan.ejs', { mealPlanStuff: mealPlanArr})
       } catch(err) {
         console.log(err)
       }
