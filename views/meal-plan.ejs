@@ -83,10 +83,10 @@
                 Monday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Monday meal" name="mondaymeal" required />
+                <form action="/meal-plan/createMealPlanItem" method="POST">
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Monday meal" name="item" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg" name="mondaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="mealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>

@@ -1,13 +1,28 @@
 const mongoose = require('mongoose')
 
+// item: req.body.item,
+// mealtime: req.body.mealtime,
+// weekday: req.body.weekday, 
+// complete: false, 
+// note: '',
+// userId: '',
+
 const MealPlanSchema = new mongoose.Schema({
+  item: {
+    type: String,
+    required: true,
+  },
+  mealtime: {
+    type: String,
+    required: true
+  },
   weekday: {
     type: String,
     required: true,
   },
   complete: {
     type: Boolean,
-    required: true,
+    required: false,
   },
   note: {
     type: String,
@@ -15,9 +30,9 @@ const MealPlanSchema = new mongoose.Schema({
   },
   userId: {
     type: String,
-    required: true
+    required: false
   }
 })
 
 
-module.exports = mongoose.model('meal-plan-collection', MealPlanSchema)
+module.exports = mongoose.model('meal-plan', MealPlanSchema)
