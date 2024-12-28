@@ -20,4 +20,4 @@ const MealPlanSchema = new mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('Meal-Plan', MealPlanSchema)
+module.exports = mongoose.model('meal-plan-collection', MealPlanSchema)

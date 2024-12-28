@@ -7,9 +7,10 @@ module.exports = {
     getMealPlan: async (req, res) => {
         
       console.log(req.user)
+      console.log(res)
       
       try {
-        res.render('meal-plan.ejs')
+        res.render('meal-plan.ejs', { mealPlanStuff: res})
       } catch(err) {
         console.log(err)
       }
