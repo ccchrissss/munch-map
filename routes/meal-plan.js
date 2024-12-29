@@ -20,4 +20,6 @@ router.put('/markIncompleteMealPlan', mealPlanController.markIncomplete)
 router.delete('/deleteMealPlanItem', mealPlanController.deleteMealPlanItem)
 // router.delete('/deleteTodo', todosController.deleteTodo)
 
+router.put('/editNoteMealPlan', mealPlanController.editNoteMealPlan)
+
 module.exports = router

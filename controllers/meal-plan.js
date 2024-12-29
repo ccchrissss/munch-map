@@ -99,6 +99,28 @@ module.exports = {
         console.log(err)
       }
 
+    },
+
+    editNoteMealPlan: async (req, res) => {
+
+      try {
+
+        await MealPlan.updateOne(
+          { _id: req.body.idFromJS },
+          { $set: { note: req.body.noteFromJS } },
+          {
+            sort: { _id: -1 },
+            upsert: false,
+          }
+        )
+
+        console.log('Updated note meal plan');
+        res.json('Updated note meal plan');
+        
+      } catch(err) {
+        console.log(err)
+      }
     }
+
 
 }

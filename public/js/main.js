@@ -166,15 +166,15 @@ async function editNote(){
     const checkmark = this.parentNode.childNodes[13]
 
     console.log('id', id)
-    // console.log(this.parentNode.childNodes
+    // console.log(this.parentNode.childNodes)
 
     // id = id.charAt(0).toUpperCase() + id.slice(1)
-    // console.log('editNote id: ', id)
+    console.log('editNote id: ', id)
     // console.log(itemText)
     // console.log(noteText)
 
     try{
-        const response = await fetch(`edit-note`, {
+        const response = await fetch(`meal-plan/editNoteMealPlan`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
