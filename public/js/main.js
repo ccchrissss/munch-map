@@ -38,17 +38,19 @@ Array.from(deleteBtn).forEach((element)=>{
 })
 
 async function deleteItem(){
-    const itemText = this.parentNode.childNodes[1].innerText
+    // const itemText = this.parentNode.childNodes[1].innerText
+    let id = this.parentNode.id
+
     try{
-        const response = await fetch('/deleteItem', {
+        const response = await fetch('meal-plan/deleteMealPlanItem', {
             method: 'delete',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              'itemFromJS': itemText
+              'idFromJS': id
             })
         })
       const data = await response.json()
-      console.log(data)
+    //   console.log(data)
       location.reload()
 
   }catch(err){

@@ -3,7 +3,6 @@ const MealPlan = require('../models/meal-plan')
 
 module.exports = {
 
-    // Read from collection
     getMealPlan: async (req, res) => {
         
       // console.log('req ', req)
@@ -27,7 +26,7 @@ module.exports = {
     createMealPlanItem: async (req, res) => {
 
       try{
-        console.log('req.body: ', req.body)
+        // console.log('req.body: ', req.body)
 
         await MealPlan.create({
           item: req.body.item,
@@ -45,10 +44,12 @@ module.exports = {
       } catch(err) {
         console.log(err)
       }
+
     },
 
     markComplete: async (req, res) => {
-      console.log(req.body)
+      // console.log(req.body)
+
       try {
         // console.log(req.body)
         await MealPlan.findOneAndUpdate({ _id: req.body.idFromJS}, {
@@ -66,7 +67,8 @@ module.exports = {
     },
 
     markIncomplete: async (req, res) => {
-      console.log(req.body)
+      // console.log(req.body)
+
       try {
         // console.log(req.body)
         await MealPlan.findOneAndUpdate({ _id: req.body.idFromJS}, {
@@ -81,27 +83,22 @@ module.exports = {
         console.log(err)
       }
 
+    },
+
+    deleteMealPlanItem: async (req, res) => {
+
+      try {
+
+        await MealPlan.findOneAndDelete({ _id: req.body.idFromJS })
+        
+        // console.log('Deleted meal plan item')
+        res.json('Deleted meal plan item')
+
+        res.redirect('meal-plan')
+      } catch(err) {
+        console.log(err)
+      }
+
     }
 
-    // markIncomplete: async (req, res)=>{
-    //     try{
-    //         await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-    //             completed: false
-    //         })
-    //         console.log('Marked Incomplete')
-    //         res.json('Marked Incomplete')
-    //     }catch(err){
-    //         console.log(err)
-    //     }
-    // },
-    // deleteTodo: async (req, res)=>{
-    //     console.log(req.body.todoIdFromJSFile)
-    //     try{
-    //         await Todo.findOneAndDelete({_id:req.body.todoIdFromJSFile})
-    //         console.log('Deleted Todo')
-    //         res.json('Deleted It')
-    //     }catch(err){
-    //         console.log(err)
-    //     }
-    // }
 }
