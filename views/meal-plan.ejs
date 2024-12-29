@@ -104,8 +104,7 @@
                 <h4 class="font-semibold">Breakfast</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% console.log('mealPlanStuff in ejs views: ', mealPlanStuff) 
-                    if (mealPlanStuff[i].weekday === 'monday' && mealPlanStuff[i].mealtime === 'breakfast') { %>
+                    <% if (mealPlanStuff[i].weekday === 'monday' && mealPlanStuff[i].mealtime === 'breakfast') { %>
                       <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
@@ -133,11 +132,11 @@
                 <h4 class="font-semibold">Lunch</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].mondaymealtime == 'lunch') { %>
-                      <% if (mealPlanStuff[i].mondaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'monday' && mealPlanStuff[i].mealtime === 'lunch') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -145,7 +144,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -161,11 +160,11 @@
                 <h4 class="font-semibold">Dinner</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].mondaymealtime == 'dinner') { %>
-                      <% if (mealPlanStuff[i].mondaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'monday' && mealPlanStuff[i].mealtime === 'dinner') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -173,7 +172,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -189,11 +188,11 @@
                 <h4 class="font-semibold">Snack</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].mondaymealtime == 'snack') { %>
-                      <% if (mealPlanStuff[i].mondaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'monday' && mealPlanStuff[i].mealtime === 'snack') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -201,7 +200,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].mondaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -256,10 +255,10 @@
                 Tuesday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Tuesday meal" name="tuesdaymeal" required />
+                <form action="/meal-plan/createMealPlanItem" method="POST">
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Tuesday meal" name="item" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg" name="tuesdaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="mealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -277,11 +276,11 @@
                 <h4 class="font-semibold">Breakfast</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].tuesdaymealtime == 'breakfast') { %>
-                      <% if (mealPlanStuff[i].tuesdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'tuesday' && mealPlanStuff[i].mealtime === 'breakfast') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"tuesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -289,7 +288,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -305,11 +304,11 @@
                 <h4 class="font-semibold">Lunch</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].tuesdaymealtime == 'lunch') { %>
-                      <% if (mealPlanStuff[i].tuesdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'tuesday' && mealPlanStuff[i].mealtime === 'lunch') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"tuesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -317,7 +316,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -333,11 +332,11 @@
                 <h4 class="font-semibold">Dinner</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].tuesdaymealtime == 'dinner') { %>
-                      <% if (mealPlanStuff[i].tuesdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'tuesday' && mealPlanStuff[i].mealtime === 'dinner') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"tuesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -345,7 +344,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -361,11 +360,11 @@
                 <h4 class="font-semibold">Snack</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].tuesdaymealtime == 'snack') { %>
-                      <% if (mealPlanStuff[i].tuesdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'tuesday' && mealPlanStuff[i].mealtime === 'snack') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"tuesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -373,7 +372,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].tuesdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -400,10 +399,10 @@
                 Wednesday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Wednesday meal" name="wednesdaymeal" required />
+                <form action="/meal-plan/createMealPlanItem" method="POST">
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Wednesday meal" name="item" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg" name="wednesdaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="mealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -421,11 +420,11 @@
                 <h4 class="font-semibold">Breakfast</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].wednesdaymealtime == 'breakfast') { %>
-                      <% if (mealPlanStuff[i].wednesdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'wednesday' && mealPlanStuff[i].mealtime === 'breakfast') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"wednesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -433,7 +432,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -449,11 +448,11 @@
                 <h4 class="font-semibold">Lunch</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].wednesdaymealtime == 'lunch') { %>
-                      <% if (mealPlanStuff[i].wednesdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'wednesday' && mealPlanStuff[i].mealtime === 'lunch') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"wednesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -461,7 +460,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -477,11 +476,11 @@
                 <h4 class="font-semibold">Dinner</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].wednesdaymealtime == 'dinner') { %>
-                      <% if (mealPlanStuff[i].wednesdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'wednesday' && mealPlanStuff[i].mealtime === 'dinner') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"wednesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -489,7 +488,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -504,11 +503,11 @@
                 <h4 class="font-semibold">Snack</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].wednesdaymealtime == 'snack') { %>
-                      <% if (mealPlanStuff[i].wednesdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'wednesday' && mealPlanStuff[i].mealtime === 'snack') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"wednesday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -516,7 +515,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].wednesdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -544,10 +543,10 @@
                 Thursday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Thursday meal" name="thursdaymeal" required />
+                <form action="/meal-plan/createMealPlanItem" method="POST">
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Thursday meal" name="item" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg" name="thursdaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="mealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -565,11 +564,11 @@
                 <h4 class="font-semibold">Breakfast</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].thursdaymealtime == 'breakfast') { %>
-                      <% if (mealPlanStuff[i].thursdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'thursday' && mealPlanStuff[i].mealtime === 'breakfast') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"thursday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -577,7 +576,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -593,11 +592,11 @@
                 <h4 class="font-semibold">Lunch</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].thursdaymealtime == 'lunch') { %>
-                      <% if (mealPlanStuff[i].thursdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'thursday' && mealPlanStuff[i].mealtime === 'lunch') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"thursday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -605,7 +604,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -621,11 +620,11 @@
                 <h4 class="font-semibold">Dinner</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].thursdaymealtime == 'dinner') { %>
-                      <% if (mealPlanStuff[i].thursdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'thursday' && mealPlanStuff[i].mealtime === 'dinner') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"thursday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -633,7 +632,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -649,11 +648,11 @@
                 <h4 class="font-semibold">Snack</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].thursdaymealtime == 'snack') { %>
-                      <% if (mealPlanStuff[i].thursdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'thursday' && mealPlanStuff[i].mealtime === 'snack') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"thursday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -661,7 +660,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].thursdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -690,10 +689,10 @@
                 Friday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Friday meal" name="fridaymeal" required />
+                <form action="/meal-plan/createMealPlanItem" method="POST">
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Friday meal" name="item" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg" name="fridaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="mealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -711,11 +710,11 @@
                 <h4 class="font-semibold">Breakfast</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].fridaymealtime == 'breakfast') { %>
-                      <% if (mealPlanStuff[i].fridaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'friday' && mealPlanStuff[i].mealtime === 'breakfast') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"friday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -723,7 +722,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -739,11 +738,11 @@
                 <h4 class="font-semibold">Lunch</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].fridaymealtime == 'lunch') { %>
-                      <% if (mealPlanStuff[i].fridaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'friday' && mealPlanStuff[i].mealtime === 'lunch') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"friday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -751,7 +750,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -767,11 +766,11 @@
                 <h4 class="font-semibold">Dinner</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].fridaymealtime == 'dinner') { %>
-                      <% if (mealPlanStuff[i].fridaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'friday' && mealPlanStuff[i].mealtime === 'dinner') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"friday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -779,7 +778,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -795,11 +794,11 @@
                 <h4 class="font-semibold">Snack</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].fridaymealtime == 'snack') { %>
-                      <% if (mealPlanStuff[i].fridaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'friday' && mealPlanStuff[i].mealtime === 'snack') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"friday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -807,7 +806,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].fridaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -836,10 +835,10 @@
                 Saturday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Saturday meal" name="saturdaymeal" required />
+                <form action="/meal-plan/createMealPlanItem" method="POST">
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Saturday meal" name="item" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg" name="saturdaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="mealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -857,11 +856,11 @@
                 <h4 class="font-semibold">Breakfast</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].saturdaymealtime == 'breakfast') { %>
-                      <% if (mealPlanStuff[i].saturdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'saturday' && mealPlanStuff[i].mealtime === 'breakfast') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"saturday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -869,7 +868,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -885,11 +884,11 @@
                 <h4 class="font-semibold">Lunch</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].saturdaymealtime == 'lunch') { %>
-                      <% if (mealPlanStuff[i].saturdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'saturday' && mealPlanStuff[i].mealtime === 'lunch') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"saturday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -897,7 +896,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -913,11 +912,11 @@
                 <h4 class="font-semibold">Dinner</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].saturdaymealtime == 'dinner') { %>
-                      <% if (mealPlanStuff[i].saturdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'saturday' && mealPlanStuff[i].mealtime === 'dinner') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"saturday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -925,7 +924,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -941,11 +940,11 @@
                 <h4 class="font-semibold">Snack</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].saturdaymealtime == 'snack') { %>
-                      <% if (mealPlanStuff[i].saturdaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'saturday' && mealPlanStuff[i].mealtime === 'snack') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"saturday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -953,7 +952,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].saturdaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -982,10 +981,10 @@
                 Sunday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-form" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Sunday meal" name="sundaymeal" required />
+                <form action="/meal-plan/createMealPlanItem" method="POST">
+                  <input class="bg-gray-200 my-1 rounded-lg" autocomplete="on" type="text" placeholder=" Sunday meal" name="item" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg" name="sundaymealtime" required>
+                  <select class="bg-gray-200 my-1 rounded-lg" name="mealtime" required>
 
                   <!-- <datalist id="mondaymealtimeslist"> -->
                     <option value="breakfast">Breakfast</option>
@@ -1003,11 +1002,11 @@
                 <h4 class="font-semibold">Breakfast</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].sundaymealtime == 'breakfast') { %>
-                      <% if (mealPlanStuff[i].sundaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'sunday' && mealPlanStuff[i].mealtime === 'breakfast') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"sunday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -1015,7 +1014,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -1031,11 +1030,11 @@
                 <h4 class="font-semibold">Lunch</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].sundaymealtime == 'lunch') { %>
-                      <% if (mealPlanStuff[i].sundaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'sunday' && mealPlanStuff[i].mealtime === 'lunch') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"sunday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -1043,7 +1042,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -1059,11 +1058,11 @@
                 <h4 class="font-semibold">Dinner</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].sundaymealtime == 'dinner') { %>
-                      <% if (mealPlanStuff[i].sundaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'sunday' && mealPlanStuff[i].mealtime === 'dinner') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"sunday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -1071,7 +1070,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -1087,11 +1086,11 @@
                 <h4 class="font-semibold">Snack</h4>
                 <ul>
                   <% for (let i = 0; i < mealPlanStuff.length; i++) {%>
-                    <% if (mealPlanStuff[i].sundaymealtime == 'snack') { %>
-                      <% if (mealPlanStuff[i].sundaymeal) {%>
+                    <% if (mealPlanStuff[i].weekday === 'sunday' && mealPlanStuff[i].mealtime === 'snack') { %>
+                      <% if (mealPlanStuff[i].item) {%>
                         <li id="<%= mealPlanStuff[i]._id %>"sunday" class="item ml-3">
                           <% if(mealPlanStuff[i].complete === true) { %>
-                            <span class="item-name complete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
+                            <span class="item-name complete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
@@ -1099,7 +1098,7 @@
                             <button class="save-button button1" type="button">save</button><svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
 
                           <% }else { %>
-                            <span class="item-name incomplete" ><%= mealPlanStuff[i].sundaymeal %></span> &nbsp
+                            <span class="item-name incomplete" ><%= mealPlanStuff[i].item %></span> &nbsp
                             <!-- <button><span class="far fa-edit"></span></button> -->
                             <button><span class="far fa-sticky-note"></span></button>
                             <span class='fa fa-trash meal-plan-trash'></span><br />
