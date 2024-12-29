@@ -11,6 +11,7 @@ router.get('/', mealPlanController.getMealPlan)
 router.post('/createMealPlanItem', mealPlanController.createMealPlanItem)
 // router.post('/createTodo', todosController.createTodo)
 
+router.put('/markCompleteMealPlan', mealPlanController.markComplete)
 // router.put('/markComplete', todosController.markComplete)
 
 // router.put('/markIncomplete', todosController.markIncomplete)
