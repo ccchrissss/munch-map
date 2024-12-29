@@ -79,7 +79,7 @@ async function markCompleteMealPlan(){
 
     let id = this.parentNode.id
 
-    console.log('id: ', id)
+    // console.log('id: ', id)
     // console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
 
     try{
@@ -106,7 +106,7 @@ async function markIncompleteMealPlan(){
     // console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-        const response = await fetch(`markIncompleteMealPlan`, {
+        const response = await fetch(`meal-plan/markIncompleteMealPlan`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

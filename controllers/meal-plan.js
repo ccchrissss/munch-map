@@ -63,18 +63,26 @@ module.exports = {
         console.log(err)
       }
 
+    },
+
+    markIncomplete: async (req, res) => {
+      console.log(req.body)
+      try {
+        // console.log(req.body)
+        await MealPlan.findOneAndUpdate({ _id: req.body.idFromJS}, {
+          complete: false
+        })
+
+        // console.log('Marked Incomplete')
+        res.json('Marked Incomplete')
+
+        res.redirect('/meal-plan')
+      } catch(err) {
+        console.log(err)
+      }
+
     }
-    // markComplete: async (req, res)=>{
-    //     try{
-    //         await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-    //             completed: true
-    //         })
-    //         console.log('Marked Complete')
-    //         res.json('Marked Complete')
-    //     }catch(err){
-    //         console.log(err)
-    //     }
-    // },
+
     // markIncomplete: async (req, res)=>{
     //     try{
     //         await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
