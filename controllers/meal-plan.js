@@ -1,4 +1,3 @@
-const Todo = require('../models/Todo')
 const MealPlan = require('../models/meal-plan')
 
 module.exports = {
