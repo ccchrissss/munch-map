@@ -99,26 +99,57 @@ module.exports = {
 
     },
 
-    // editNoteMealPlan: async (req, res) => {
+    increaseNumItem: async (req, res) => {
 
-    //   try {
+      try {
 
-    //     await MealPlan.updateOne(
-    //       { _id: req.body.idFromJS },
-    //       { $set: { note: req.body.noteFromJS } },
-    //       {
-    //         sort: { _id: -1 },
-    //         upsert: false,
-    //       }
-    //     )
+        await GroceryList.updateOne(
+          { _id: req.body.idFromJS },
+          { $set: { numItem: Number(req.body.numItem) + 1 } }
+        )
 
-    //     console.log('Updated note meal plan');
-    //     res.json('Updated note meal plan');
-        
-    //   } catch(err) {
-    //     console.log(err)
-    //   }
-    // }
+        console.log("Increased Number of Item");
+        res.json("Number of Item Increased");
+
+      } catch(err) {
+        console.log(err)
+      }
+
+    },
+
+    decreaseNumItem: async (req, res) => {
+
+      try {
+
+        await GroceryList.updateOne(
+          { _id: req.body.idFromJS },
+          { $set: { numItem: Number(req.body.numItem) - 1 } }
+        )
+
+        console.log("Decreased Number of Item");
+        res.json("Number of Item Decreased");
+
+      } catch(err) {
+        console.log(err)
+      }
+
+    }
+
+
+    //     //Decrease number of items
+//     app.put("/subNum", (req, res) => {
+//       console.log("Received PUT request:", req.body);
+//       groceryListCollection
+//         .updateOne(
+//           { _id: new ObjectId(req.body.idFromJS) },
+//           { $set: { numItem: Number(req.body.numItem) - 1 } }
+//         )
+//         .then((result) => {
+//           console.log("Decreased Number of Item");
+//           res.json("Number of Item Decreased");
+//         })
+//         .catch((error) => console.error(error));
+//     });
 
 
 }

@@ -250,17 +250,17 @@ Array.from(completeGroceryList).forEach((element)=>{
 // })
 
 Array.from(increase).forEach(element => {
-    element.addEventListener('click', addNumOfItem)
+    element.addEventListener('click', increaseNumOfItem)
 })
 
 Array.from(decrease).forEach(element => {
-    element.addEventListener('click', subNumOfItem)
+    element.addEventListener('click', decreaseNumOfItem)
 })
 
-console.log('increase: ', Array.from(increase))
-console.log('decrease: ', Array.from(decrease))
+// console.log('increase: ', Array.from(increase))
+// console.log('decrease: ', Array.from(decrease))
 
-async function addNumOfItem(){
+async function increaseNumOfItem(){
     // const itemName = this.parentNode.querySelector('.item-name').innerText
     const numItem = this.parentNode.querySelector('.num-of-item').innerText
 
@@ -271,7 +271,7 @@ async function addNumOfItem(){
     // console.log('numItemS:', numItemS)
 
     try{
-        const response = await fetch('addNum', {
+        const response = await fetch('grocery-list/increaseNumItemGroceryList', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -280,7 +280,7 @@ async function addNumOfItem(){
             })
           })
         const data = await response.json()
-        console.log(data)
+        // console.log(data)
 
         location.reload()
 
@@ -289,7 +289,7 @@ async function addNumOfItem(){
     }
 }
 
-async function subNumOfItem(){
+async function decreaseNumOfItem(){
     // const itemName = this.parentNode.querySelector('.item-name').innerText
     const numItem = this.parentNode.querySelector('.num-of-item').innerText
 
@@ -300,7 +300,7 @@ async function subNumOfItem(){
     // console.log('numItemS:', numItemS)
 
     try{
-        const response = await fetch('subNum', {
+        const response = await fetch('grocery-list/decreaseNumItemGroceryList', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -309,7 +309,7 @@ async function subNumOfItem(){
             })
           })
         const data = await response.json()
-        console.log(data)
+        // console.log(data)
 
         location.reload()
 
