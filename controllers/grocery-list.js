@@ -22,29 +22,28 @@ module.exports = {
 
     },
 
-    // createMealPlanItem: async (req, res) => {
+    createGroceryListItem: async (req, res) => {
 
-    //   try{
-    //     // console.log('req.body: ', req.body)
+      try{
+        // console.log('req.body: ', req.body)
 
-    //     await MealPlan.create({
-    //       item: req.body.item,
-    //       mealtime: req.body.mealtime,
-    //       weekday: req.body.weekday, 
-    //       complete: false, 
-    //       note: '',
-    //       userId: '',
-    //       // , userId: req.user.id
-    //     })
+        await GroceryList.create({
+          item: req.body.item,
+          category: req.body.category,
+          numItem: 1, 
+          complete: false,
+          userId: '',
+          // , userId: req.user.id
+        })
 
-    //     // console.log('Meal Plan item has been added!')
+        // console.log('Meal Plan item has been added!')
 
-    //     res.redirect('/meal-plan')
-    //   } catch(err) {
-    //     console.log(err)
-    //   }
+        res.redirect('/grocery-list')
+      } catch(err) {
+        console.log(err)
+      }
 
-    // },
+    },
 
     // markComplete: async (req, res) => {
     //   // console.log(req.body)
