@@ -108,8 +108,8 @@ module.exports = {
           { $set: { numItem: Number(req.body.numItem) + 1 } }
         )
 
-        console.log("Increased Number of Item");
-        res.json("Number of Item Increased");
+        console.log('Increased Number of Item');
+        res.json('Number of Item Increased');
 
       } catch(err) {
         console.log(err)
@@ -126,30 +126,14 @@ module.exports = {
           { $set: { numItem: Number(req.body.numItem) - 1 } }
         )
 
-        console.log("Decreased Number of Item");
-        res.json("Number of Item Decreased");
+        console.log('Decreased Number of Item');
+        res.json('Number of Item Decreased');
 
       } catch(err) {
         console.log(err)
       }
 
     }
-
-
-    //     //Decrease number of items
-//     app.put("/subNum", (req, res) => {
-//       console.log("Received PUT request:", req.body);
-//       groceryListCollection
-//         .updateOne(
-//           { _id: new ObjectId(req.body.idFromJS) },
-//           { $set: { numItem: Number(req.body.numItem) - 1 } }
-//         )
-//         .then((result) => {
-//           console.log("Decreased Number of Item");
-//           res.json("Number of Item Decreased");
-//         })
-//         .catch((error) => console.error(error));
-//     });
 
 
 }
