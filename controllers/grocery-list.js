@@ -83,21 +83,21 @@ module.exports = {
 
     },
 
-    // deleteMealPlanItem: async (req, res) => {
+    deleteItemGroceryList: async (req, res) => {
 
-    //   try {
+      try {
 
-    //     await MealPlan.findOneAndDelete({ _id: req.body.idFromJS })
+        await GroceryList.findOneAndDelete({ _id: req.body.idFromJS })
         
-    //     // console.log('Deleted meal plan item')
-    //     res.json('Deleted meal plan item')
+        // console.log('Deleted meal plan item')
+        res.json('Deleted grocery list item')
 
-    //     res.redirect('meal-plan')
-    //   } catch(err) {
-    //     console.log(err)
-    //   }
+        res.redirect('grocery-list')
+      } catch(err) {
+        console.log(err)
+      }
 
-    // },
+    },
 
     // editNoteMealPlan: async (req, res) => {
 

@@ -17,7 +17,7 @@ router.put('/markCompleteGroceryList', groceryListController.markComplete)
 router.put('/markIncompleteGroceryList', groceryListController.markIncomplete)
 // // router.put('/markIncomplete', todosController.markIncomplete)
 
-// router.delete('/deleteMealPlanItem', mealPlanController.deleteMealPlanItem)
+router.delete('/deleteItemGroceryList', groceryListController.deleteItemGroceryList)
 // // router.delete('/deleteTodo', todosController.deleteTodo)
 
 // router.put('/editNoteMealPlan', mealPlanController.editNoteMealPlan)
