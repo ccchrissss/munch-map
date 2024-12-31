@@ -38,17 +38,19 @@ Array.from(deleteBtn).forEach((element)=>{
 })
 
 async function deleteItem(){
-    const itemText = this.parentNode.childNodes[1].innerText
+    // const itemText = this.parentNode.childNodes[1].innerText
+    let id = this.parentNode.id
+
     try{
-        const response = await fetch('/deleteItem', {
+        const response = await fetch('meal-plan/deleteMealPlanItem', {
             method: 'delete',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              'itemFromJS': itemText
+              'idFromJS': id
             })
         })
       const data = await response.json()
-      console.log(data)
+    //   console.log(data)
       location.reload()
 
   }catch(err){
@@ -79,11 +81,11 @@ async function markCompleteMealPlan(){
 
     let id = this.parentNode.id
 
-    /// console.log('id: ', id)
+    // console.log('id: ', id)
     // console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-        const response = await fetch(`markCompleteMealPlan`, {
+        const response = await fetch(`meal-plan/markCompleteMealPlan`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -106,7 +108,7 @@ async function markIncompleteMealPlan(){
     // console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-        const response = await fetch(`markIncompleteMealPlan`, {
+        const response = await fetch(`meal-plan/markIncompleteMealPlan`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -164,15 +166,15 @@ async function editNote(){
     const checkmark = this.parentNode.childNodes[13]
 
     console.log('id', id)
-    // console.log(this.parentNode.childNodes
+    // console.log(this.parentNode.childNodes)
 
     // id = id.charAt(0).toUpperCase() + id.slice(1)
-    // console.log('editNote id: ', id)
+    console.log('editNote id: ', id)
     // console.log(itemText)
     // console.log(noteText)
 
     try{
-        const response = await fetch(`edit-note`, {
+        const response = await fetch(`meal-plan/editNoteMealPlan`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -248,17 +250,17 @@ Array.from(completeGroceryList).forEach((element)=>{
 // })
 
 Array.from(increase).forEach(element => {
-    element.addEventListener('click', addNumOfItem)
+    element.addEventListener('click', increaseNumOfItem)
 })
 
 Array.from(decrease).forEach(element => {
-    element.addEventListener('click', subNumOfItem)
+    element.addEventListener('click', decreaseNumOfItem)
 })
 
-console.log('increase: ', Array.from(increase))
-console.log('decrease: ', Array.from(decrease))
+// console.log('increase: ', Array.from(increase))
+// console.log('decrease: ', Array.from(decrease))
 
-async function addNumOfItem(){
+async function increaseNumOfItem(){
     // const itemName = this.parentNode.querySelector('.item-name').innerText
     const numItem = this.parentNode.querySelector('.num-of-item').innerText
 
@@ -269,7 +271,7 @@ async function addNumOfItem(){
     // console.log('numItemS:', numItemS)
 
     try{
-        const response = await fetch('addNum', {
+        const response = await fetch('grocery-list/increaseNumItemGroceryList', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -278,7 +280,7 @@ async function addNumOfItem(){
             })
           })
         const data = await response.json()
-        console.log(data)
+        // console.log(data)
 
         location.reload()
 
@@ -287,7 +289,7 @@ async function addNumOfItem(){
     }
 }
 
-async function subNumOfItem(){
+async function decreaseNumOfItem(){
     // const itemName = this.parentNode.querySelector('.item-name').innerText
     const numItem = this.parentNode.querySelector('.num-of-item').innerText
 
@@ -298,7 +300,7 @@ async function subNumOfItem(){
     // console.log('numItemS:', numItemS)
 
     try{
-        const response = await fetch('subNum', {
+        const response = await fetch('grocery-list/decreaseNumItemGroceryList', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -307,7 +309,7 @@ async function subNumOfItem(){
             })
           })
         const data = await response.json()
-        console.log(data)
+        // console.log(data)
 
         location.reload()
 
@@ -325,7 +327,7 @@ async function markCompleteGroceryList(){
     // console.log('markComplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-        const response = await fetch(`markCompleteGroceryList`, {
+        const response = await fetch(`grocery-list/markCompleteGroceryList`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -348,7 +350,7 @@ async function markIncompleteGroceryList(){
     // console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-        const response = await fetch(`markIncompleteGroceryList`, {
+        const response = await fetch(`grocery-list/markIncompleteGroceryList`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -384,7 +386,7 @@ async function deleteItemGroceryList(){
     console.log(id)
 
     try{
-        const response = await fetch('/deleteItemGroceryList', {
+        const response = await fetch('grocery-list/deleteItemGroceryList', {
             method: 'delete',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

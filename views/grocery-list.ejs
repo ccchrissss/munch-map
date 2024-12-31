@@ -20,7 +20,7 @@
         <header class="absolute inset-x-0 top-0 z-50">
           <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
-              <a href="index.html" class="-m-1.5 p-1.5">
+              <a href="/" class="-m-1.5 p-1.5">
                 <span class="sr-only">Meal Plan Grocery List</span>
                 <!-- we use the below path for the image because of our app.use(express.static('public')) in server.js -->
                 <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart">
@@ -83,8 +83,8 @@
                     Fruits / Vegetables
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
-                    <form action="/addGrocery" method="POST">
-                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemNameProduce">
+                    <form action="/grocery-list/createGroceryListItem" method="POST">
+                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="item">
                         <input type="hidden" name="category" value="produce">
                         <input type="hidden" name="numItem" value="1">
                         <input type="hidden" name="complete" value="false">
@@ -98,10 +98,10 @@
                           <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].itemNameProduce %></span>
+                              <span class="item-name complete"><%= groceryListItems[i].item %></span>
 
                             <% } else { %>
-                              <span class="item-name incomplete"><%= groceryListItems[i].itemNameProduce %></span>
+                              <span class="item-name incomplete"><%= groceryListItems[i].item %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -138,8 +138,8 @@
                     Proteins
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
-                    <form action="/addGrocery" method="POST">
-                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemNameProteins">
+                    <form action="/grocery-list/createGroceryListItem" method="POST">
+                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="item">
                         <input type="hidden" name="category" value="proteins">
                         <input type="hidden" name="numItem" value="1">
                         <button type="submit">Add</button>
@@ -152,10 +152,10 @@
                           <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].itemNameProteins %></span>
+                              <span class="item-name complete"><%= groceryListItems[i].item %></span>
 
                             <% } else { %>
-                              <span class="item-name incomplete"><%= groceryListItems[i].itemNameProteins %></span>
+                              <span class="item-name incomplete"><%= groceryListItems[i].item %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -192,8 +192,8 @@
                     Grains / Legumes / Nuts / Seeds
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
-                    <form action="/addGrocery" method="POST">
-                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemNamePantry">
+                    <form action="/grocery-list/createGroceryListItem" method="POST">
+                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="item">
                         <input type="hidden" name="category" value="pantry">
                         <input type="hidden" name="numItem" value="1">
                         <button type="submit">Add</button>
@@ -206,10 +206,10 @@
                           <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].itemNamePantry %></span>
+                              <span class="item-name complete"><%= groceryListItems[i].item %></span>
 
                             <% } else { %>
-                              <span class="item-name incomplete"><%= groceryListItems[i].itemNamePantry %></span>
+                              <span class="item-name incomplete"><%= groceryListItems[i].item %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -246,8 +246,8 @@
                     Fats / Spices / Condiments
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
-                    <form action="/addGrocery" method="POST">
-                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemNameCondiments">
+                    <form action="/grocery-list/createGroceryListItem" method="POST">
+                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="item">
                         <input type="hidden" name="category" value="condiments">
                         <input type="hidden" name="numItem" value="1">
                         <button type="submit">Add</button>
@@ -260,10 +260,10 @@
                           <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].itemNameCondiments %></span>
+                              <span class="item-name complete"><%= groceryListItems[i].item %></span>
 
                             <% } else { %>
-                              <span class="item-name incomplete"><%= groceryListItems[i].itemNameCondiments %></span>
+                              <span class="item-name incomplete"><%= groceryListItems[i].item %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -300,8 +300,8 @@
                     Other
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
-                    <form action="/addGrocery" method="POST">
-                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="itemNameOther">
+                    <form action="/grocery-list/createGroceryListItem" method="POST">
+                        <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="item">
                         <input type="hidden" name="category" value="other">
                         <input type="hidden" name="numItem" value="1">
                         <button type="submit">Add</button>
@@ -314,10 +314,10 @@
                           <li id="<%= groceryListItems[i]._id %>" class="item">
 
                             <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].itemNameOther %></span>
+                              <span class="item-name complete"><%= groceryListItems[i].item %></span>
 
                             <% } else { %>
-                              <span class="item-name incomplete"><%= groceryListItems[i].itemNameOther %></span>
+                              <span class="item-name incomplete"><%= groceryListItems[i].item %></span>
                             <% } %>
 
                             <% if(groceryListItems[i].numItem >= 2) { %>
@@ -369,7 +369,7 @@
           </nav> 
           <nav>
             <div class="grid grid-flow-col gap-4">
-              <a href="index.html" class="-m-1.5 p-1.5">
+              <a href="/" class="-m-1.5 p-1.5">
                   <span class="sr-only">Your Company</span>
                   <!-- we use the below path for the image because of our app.use(express.static('public')) in server.js -->
                   <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart">
