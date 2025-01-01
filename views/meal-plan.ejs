@@ -37,18 +37,20 @@
         <div class="gap-x-4 sm:gap-x-6 flex lg:gap-x-12">
           <a href="meal-plan" class="text-lg font-semibold leading-6 text-gray-900">Meal Plan</a>
           <a href="grocery-list" class="text-lg font-semibold leading-6 text-gray-900">Grocery List</a>
-          <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a> -->
+          <!-- <a href="/logout" class="text-lg font-semibold leading-6 text-gray-900">Logout</a> -->
         </div>
+        
 
         <!-- leave this div so the Meal Plan and Grocery List nav links stay centered -->
         <!-- <div class="sm:flex sm:flex-1 sm:justify-end">
         </div> -->
-        <div class="opacity-0 flex lg:flex-1">
+        <div class="flex justify-end lg:flex-1">
           <a class="-m-1.5 p-1.5">
-            <span class="sr-only">Meal Plan Grocery List</span>
+            <span class="">
+              <a href="/logout" class="text-md italic leading-6 text-gray-400">Logout</a>
+            </span>
             <!-- we use the below path for the image because of our app.use(express.static('public')) in server.js -->
-            <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart">
+            <!-- <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart"> -->
           </a>
         </div>
       </nav>

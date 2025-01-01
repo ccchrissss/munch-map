@@ -1,139 +1,139 @@
-const GroceryList = require('../models/grocery-list')
+// const GroceryList = require('../models/grocery-list')
 
-module.exports = {
+// module.exports = {
 
-    getGroceryList: async (req, res) => {
+//     getGroceryList: async (req, res) => {
         
-      // console.log('req ', req)
-      // console.log(res)
+//       // console.log('req ', req)
+//       // console.log(res)
       
-      try {
-        const groceryListDocs = await GroceryList.find()
-        // console.log('grocery list count documents: ', groceryListDocs)
+//       try {
+//         const groceryListDocs = await GroceryList.find()
+//         // console.log('grocery list count documents: ', groceryListDocs)
 
-        let groceryListArr = Array.from(groceryListDocs)
-        // console.log('grocery list docs type of: ', typeof groceryListDocs)
-        // console.log('grocery list Arr: ', groceryListArr)
+//         let groceryListArr = Array.from(groceryListDocs)
+//         // console.log('grocery list docs type of: ', typeof groceryListDocs)
+//         // console.log('grocery list Arr: ', groceryListArr)
 
-        res.render('grocery-list.ejs', { groceryListItems: groceryListArr})
-      } catch(err) {
-        console.log(err)
-      }
+//         res.render('grocery-list.ejs', { groceryListItems: groceryListArr})
+//       } catch(err) {
+//         console.log(err)
+//       }
 
-    },
+//     },
 
-    createGroceryListItem: async (req, res) => {
+//     createGroceryListItem: async (req, res) => {
 
-      try{
-        // console.log('req.body: ', req.body)
+//       try{
+//         // console.log('req.body: ', req.body)
 
-        await GroceryList.create({
-          item: req.body.item,
-          category: req.body.category,
-          numItem: 1, 
-          complete: false,
-          userId: '',
-          // , userId: req.user.id
-        })
+//         await GroceryList.create({
+//           item: req.body.item,
+//           category: req.body.category,
+//           numItem: 1, 
+//           complete: false,
+//           userId: '',
+//           // , userId: req.user.id
+//         })
 
-        // console.log('Meal Plan item has been added!')
+//         // console.log('Meal Plan item has been added!')
 
-        res.redirect('/grocery-list')
-      } catch(err) {
-        console.log(err)
-      }
+//         res.redirect('/grocery-list')
+//       } catch(err) {
+//         console.log(err)
+//       }
 
-    },
+//     },
 
-    markComplete: async (req, res) => {
-      // console.log(req.body)
+//     markComplete: async (req, res) => {
+//       // console.log(req.body)
 
-      try {
-        // console.log(req.body)
-        await GroceryList.findOneAndUpdate({ _id: req.body.idFromJS}, {
-          complete: true
-        })
+//       try {
+//         // console.log(req.body)
+//         await GroceryList.findOneAndUpdate({ _id: req.body.idFromJS}, {
+//           complete: true
+//         })
 
-        // console.log('Marked Complete')
-        res.json('Marked Complete')
+//         // console.log('Marked Complete')
+//         res.json('Marked Complete')
 
-        res.redirect('/grocery-list')
-      } catch(err) {
-        console.log(err)
-      }
+//         res.redirect('/grocery-list')
+//       } catch(err) {
+//         console.log(err)
+//       }
 
-    },
+//     },
 
-    markIncomplete: async (req, res) => {
-      // console.log(req.body)
+//     markIncomplete: async (req, res) => {
+//       // console.log(req.body)
 
-      try {
-        // console.log(req.body)
-        await GroceryList.findOneAndUpdate({ _id: req.body.idFromJS}, {
-          complete: false
-        })
+//       try {
+//         // console.log(req.body)
+//         await GroceryList.findOneAndUpdate({ _id: req.body.idFromJS}, {
+//           complete: false
+//         })
 
-        // console.log('Marked Incomplete')
-        res.json('Marked Incomplete')
+//         // console.log('Marked Incomplete')
+//         res.json('Marked Incomplete')
 
-        res.redirect('/grocery-list')
-      } catch(err) {
-        console.log(err)
-      }
+//         res.redirect('/grocery-list')
+//       } catch(err) {
+//         console.log(err)
+//       }
 
-    },
+//     },
 
-    deleteItemGroceryList: async (req, res) => {
+//     deleteItemGroceryList: async (req, res) => {
 
-      try {
+//       try {
 
-        await GroceryList.findOneAndDelete({ _id: req.body.idFromJS })
+//         await GroceryList.findOneAndDelete({ _id: req.body.idFromJS })
         
-        // console.log('Deleted meal plan item')
-        res.json('Deleted grocery list item')
+//         // console.log('Deleted meal plan item')
+//         res.json('Deleted grocery list item')
 
-        res.redirect('grocery-list')
-      } catch(err) {
-        console.log(err)
-      }
+//         res.redirect('grocery-list')
+//       } catch(err) {
+//         console.log(err)
+//       }
 
-    },
+//     },
 
-    increaseNumItem: async (req, res) => {
+//     increaseNumItem: async (req, res) => {
 
-      try {
+//       try {
 
-        await GroceryList.updateOne(
-          { _id: req.body.idFromJS },
-          { $set: { numItem: Number(req.body.numItem) + 1 } }
-        )
+//         await GroceryList.updateOne(
+//           { _id: req.body.idFromJS },
+//           { $set: { numItem: Number(req.body.numItem) + 1 } }
+//         )
 
-        console.log('Increased Number of Item');
-        res.json('Number of Item Increased');
+//         console.log('Increased Number of Item');
+//         res.json('Number of Item Increased');
 
-      } catch(err) {
-        console.log(err)
-      }
+//       } catch(err) {
+//         console.log(err)
+//       }
 
-    },
+//     },
 
-    decreaseNumItem: async (req, res) => {
+//     decreaseNumItem: async (req, res) => {
 
-      try {
+//       try {
 
-        await GroceryList.updateOne(
-          { _id: req.body.idFromJS },
-          { $set: { numItem: Number(req.body.numItem) - 1 } }
-        )
+//         await GroceryList.updateOne(
+//           { _id: req.body.idFromJS },
+//           { $set: { numItem: Number(req.body.numItem) - 1 } }
+//         )
 
-        console.log('Decreased Number of Item');
-        res.json('Number of Item Decreased');
+//         console.log('Decreased Number of Item');
+//         res.json('Number of Item Decreased');
 
-      } catch(err) {
-        console.log(err)
-      }
+//       } catch(err) {
+//         console.log(err)
+//       }
 
-    }
+//     }
 
 
-}
+// }
