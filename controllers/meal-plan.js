@@ -8,10 +8,6 @@ module.exports = {
       // console.log(res)
       
       try {
-        // const todoItems = await Todo.find({userId:req.user.id})
-        // const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
-        // res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
-        /////////////////////
         
         const mealPlanDocs = await MealPlan.find({ userId: req.user.id })
         // console.log('meal plan count documents: ', mealPlanDocs)
@@ -34,11 +30,6 @@ module.exports = {
     createMealPlanItem: async (req, res) => {
 
       try{
-        // await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id})
-        // console.log('Todo has been added!')
-        // res.redirect('/todos')
-        ///////////////
-
 
         // console.log('req.body: ', req.body)
 
