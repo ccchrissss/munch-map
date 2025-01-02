@@ -17,7 +17,8 @@ module.exports = {
         // console.log('meal plan Arr: ', mealPlanArr)
 
         res.render('meal-plan.ejs',
-          { mealPlanStuff: mealPlanArr,
+          { 
+            mealPlanStuff: mealPlanArr,
             user: req.user
           }
         )
@@ -30,7 +31,6 @@ module.exports = {
     createMealPlanItem: async (req, res) => {
 
       try{
-
         // console.log('req.body: ', req.body)
 
         await MealPlan.create({
@@ -39,8 +39,7 @@ module.exports = {
           weekday: req.body.weekday, 
           complete: false, 
           note: '',
-          userId: req.user.id,
-          // , userId: req.user.id
+          userId: req.user.id
         })
 
         // console.log('Meal Plan item has been added!')
