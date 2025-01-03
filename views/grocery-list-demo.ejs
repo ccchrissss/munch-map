@@ -44,14 +44,11 @@
             <!-- leave this div so the Meal Plan and Grocery List nav links stay centered -->
             <!-- <div class="sm:flex sm:flex-1 sm:justify-end">
             </div> -->
-            <div class="flex justify-end lg:flex-1">
-              <a class="-m-1.5 p-1.5 ">
-                <div class="flex flex-col">
-                  <p class="text-[#4f46e5]"><%= user.userName %></p>
-                  <p><a href="/log-out" class="text-md italic leading-6 text-gray-400">Log Out</a></p>
-                </div>
+            <div class="opacity-0 flex lg:flex-1">
+              <a class="-m-1.5 p-1.5">
+                <span class="sr-only">Meal Plan Grocery List</span>
                 <!-- we use the below path for the image because of our app.use(express.static('public')) in server.js -->
-                <!-- <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart"> -->
+                <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart">
               </a>
             </div>
           </nav>
@@ -380,7 +377,7 @@
             </div>
           </nav> 
           <aside>
-            <p>Copyright © 2023 - All rights reserved. Created by <a href="https://philmach.netlify.app/">Phil Mach II</a> and <a href="https://chrisnelson.netlify.app">Chris Nelson</a></p>
+            <p>Copyright © 2023 - All rights reserved. Created by <a href="https://philmach.netlify.app/">Phil Mach II</a> and <a href="https://chrisnelson.onrender.com">Chris Nelson</a></p>
             <p>
               <a href="https://www.flaticon.com/free-icons/supermarket" title="supermarket icons">Supermarket icons created by Freepik - Flaticon</a>
             <p>

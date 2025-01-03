@@ -2,24 +2,24 @@ const passport = require('passport')
 const validator = require('validator')
 const User = require('../models/User')
 
- exports.getLogin = (req, res) => {
+ exports.getLogIn = (req, res) => {
     if (req.user) {
       console.log('** this user is already logged in - req.user: ', req.user)
       return res.redirect('/meal-plan')
     }
-    res.render('login', {
-      title: 'Login'
+    res.render('log-in', {
+      title: 'Log In'
     })
   }
   
-  exports.postLogin = (req, res, next) => {
+  exports.postLogIn = (req, res, next) => {
     const validationErrors = []
     // if (!validator.isEmail(req.body.email)) validationErrors.push({ msg: 'Please enter a valid email address.' })
     if (validator.isEmpty(req.body.password)) validationErrors.push({ msg: 'Password cannot be blank.' })
   
     if (validationErrors.length) {
       req.flash('errors', validationErrors)
-      return res.redirect('/login')
+      return res.redirect('/log-in')
     }
     // req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
   
@@ -27,7 +27,7 @@ const User = require('../models/User')
       if (err) { return next(err) }
       if (!user) {
         req.flash('errors', info)
-        return res.redirect('/login')
+        return res.redirect('/log-in')
       }
       req.logIn(user, (err) => {
         if (err) { return next(err) }
@@ -37,27 +37,27 @@ const User = require('../models/User')
     })(req, res, next)
   }
   
-  exports.logout = (req, res) => {
-    req.logout(() => {
+  exports.logOut = (req, res) => {
+    req.logOut(() => {
       console.log('User has logged out.')
     })
     req.session.destroy((err) => {
-      if (err) console.log('Error : Failed to destroy the session during logout.', err)
+      if (err) console.log('Error : Failed to destroy the session during log out.', err)
       req.user = null
       res.redirect('/')
     })
   }
   
-  exports.getSignup = (req, res) => {
+  exports.getSignUp = (req, res) => {
     if (req.user) {
       return res.redirect('/meal-plan')
     }
-    res.render('signup', {
+    res.render('sign-up', {
       title: 'Create Account'
     })
   }
   
-  exports.postSignup = (req, res, next) => {
+  exports.postSignUp = (req, res, next) => {
     const validationErrors = []
     if (!validator.isEmail(req.body.email)) validationErrors.push({ msg: 'Please enter a valid email address.' })
     if (!validator.isLength(req.body.password, { min: 8 })) validationErrors.push({ msg: 'Password must be at least 8 characters long' })
@@ -65,7 +65,7 @@ const User = require('../models/User')
   
     if (validationErrors.length) {
       req.flash('errors', validationErrors)
-      return res.redirect('../signup')
+      return res.redirect('../sign-up')
     }
     req.body.email = validator.normalizeEmail(req.body.email, { gmail_remove_dots: false })
   
@@ -82,7 +82,7 @@ const User = require('../models/User')
       if (err) { return next(err) }
       if (existingUser) {
         req.flash('errors', { msg: 'Account with that email address or username already exists.' })
-        return res.redirect('../signup')
+        return res.redirect('../sign-up')
       }
       user.save((err) => {
         if (err) { return next(err) }

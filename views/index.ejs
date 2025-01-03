@@ -38,25 +38,41 @@
             </svg>
           </button>
         </div> -->
-        <div class="gap-x-4 sm:gap-x-6 flex lg:gap-x-12">
-          <a href="meal-plan" class="text-lg font-semibold leading-6 text-gray-900">Meal Plan</a>
-          <a href="grocery-list" class="text-lg font-semibold leading-6 text-gray-900">Grocery List</a>
-          <a href="signup" class="text-lg font-semibold leading-6 text-gray-900">Sign Up</a>
-          <a href="login" class="text-lg font-semibold leading-6 text-gray-900">Login</a>
-          <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a> -->
-        </div>
+        <% if (user) { %>
+          <div class="gap-x-4 sm:gap-x-6 flex lg:gap-x-12">
+            <a href="meal-plan" class="text-lg font-semibold leading-6 text-gray-900">Meal Plan</a>
+            <a href="grocery-list" class="text-lg font-semibold leading-6 text-gray-900">Grocery List</a>
+          </div>
+        <% } else { %>
+          <div class="gap-x-4 sm:gap-x-6 flex lg:gap-x-12">
+            <a href="sign-up" class="text-lg font-semibold leading-6 text-gray-900">Sign Up</a>
+            <a href="log-in" class="text-lg font-semibold leading-6 text-gray-900">Log In</a>
+          </div>
+        <% } %>
 
         <!-- leave this div so the Meal Plan and Grocery List nav links stay centered -->
         <!-- <div class="sm:flex sm:flex-1 sm:justify-end">
         </div> -->
-        <div class="opacity-0 flex lg:flex-1">
-          <a class="-m-1.5 p-1.5">
-            <span class="sr-only">Meal Plan Grocery List</span>
-            <!-- we use the below path for the image because of our app.use(express.static('public')) in server.js -->
-            <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart">
-          </a>
-        </div>
+
+        <% if (user) { %>
+          <div class="flex justify-end lg:flex-1">
+            <a class="-m-1.5 p-1.5 ">
+              <div class="flex flex-col">
+                <p class="text-[#4f46e5]"><%= user.userName %></p>
+                <p><a href="/log-out" class="text-md italic leading-6 text-gray-400">Log Out</a></p>
+              </div>
+              <!-- we use the below path for the image because of our app.use(express.static('public')) in server.js -->
+              <!-- <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart"> -->
+            </a>
+          </div>
+        <% } else { %>
+          <div class="opacity-0 flex lg:flex-1">
+            <a class="-m-1.5 p-1.5">
+              <span class="sr-only">Meal Plan Grocery List</span>
+              <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart">
+            </a>
+          </div>
+        <% } %>
       </nav>
    
     </header>
@@ -75,7 +91,13 @@
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">The Munch Map</h1>
           <p class="mt-6 text-lg leading-8 text-gray-600">An all-in-one resource to plan your weekly meals and grocery shops</p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
-            <a href="meal-plan" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Let's eat!</a>
+            <a href="meal-plan" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <% if (user) { %>
+                <span>Let's eat!</span>
+              <% } else { %>
+                <span>See The Demo</span>
+              <% } %>
+            </a>
             <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a> -->
           </div>
         </div>
@@ -89,8 +111,15 @@
   <!-- added 'relative' class to change position to relative to make anchor tags work in footer -->
   <footer class="footer footer-center p-10 text-base-content rounded relative bg-gray-500/85">
     <nav class="grid grid-flow-col gap-4">
-      <a href="meal-plan" class="link link-hover">Meal Plan</a>
-      <a href="grocery-list" class="link link-hover">Grocery List</a>
+
+      <% if (user) { %>
+        <a href="meal-plan" class="link link-hover">Meal Plan</a>
+        <a href="grocery-list" class="link link-hover">Grocery List</a>
+      <% } else { %>
+        <a href="sign-up" class="link link-hover">Sign Up</a>
+        <a href="log-in" class="link link-hover">Log In</a>
+      <% } %>
+
       <!-- <a class="link link-hover">Jobs</a>
       <a class="link link-hover">Press kit</a> -->
     </nav> 
@@ -104,11 +133,13 @@
       </div>
     </nav> 
     <aside>
-      <p>Copyright © 2023 - All rights reserved. Created by <a href="https://philmach.netlify.app/">Phil Mach II</a> and <a href="https://chrisnelson.onrender.com">Chris Nelson</a></p>
+      <p>Copyright © 2023 - All rights reserved. Created by <a href="https://philmach.netlify.app/">Phil Mach II</a> and <a href="https://chrisnelson.netlify.app/">Chris Nelson</a></p>
       <p>
         <a href="https://www.flaticon.com/free-icons/supermarket" title="supermarket icons">Supermarket icons created by Freepik - Flaticon</a>
       <p>
     </aside>
   </footer>
+
+  <script src="./js/main.js"></script>
 </body>
 </html>

@@ -8,14 +8,19 @@ module.exports = {
       // console.log(res)
       
       try {
-        const groceryListDocs = await GroceryList.find()
+        const groceryListDocs = await GroceryList.find({ userId: req.user.id })
         // console.log('grocery list count documents: ', groceryListDocs)
 
         let groceryListArr = Array.from(groceryListDocs)
         // console.log('grocery list docs type of: ', typeof groceryListDocs)
         // console.log('grocery list Arr: ', groceryListArr)
 
-        res.render('grocery-list.ejs', { groceryListItems: groceryListArr})
+        res.render('grocery-list.ejs',
+          {
+            groceryListItems: groceryListArr,
+            user: req.user
+          }
+        )
       } catch(err) {
         console.log(err)
       }
@@ -32,8 +37,7 @@ module.exports = {
           category: req.body.category,
           numItem: 1, 
           complete: false,
-          userId: '',
-          // , userId: req.user.id
+          userId: req.user.id
         })
 
         // console.log('Meal Plan item has been added!')

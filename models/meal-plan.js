@@ -1,12 +1,5 @@
 const mongoose = require('mongoose')
 
-// item: req.body.item,
-// mealtime: req.body.mealtime,
-// weekday: req.body.weekday, 
-// complete: false, 
-// note: '',
-// userId: '',
-
 const MealPlanSchema = new mongoose.Schema({
   item: {
     type: String,

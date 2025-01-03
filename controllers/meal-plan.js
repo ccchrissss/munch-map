@@ -8,14 +8,20 @@ module.exports = {
       // console.log(res)
       
       try {
-        const mealPlanDocs = await MealPlan.find()
+        
+        const mealPlanDocs = await MealPlan.find({ userId: req.user.id })
         // console.log('meal plan count documents: ', mealPlanDocs)
 
         let mealPlanArr = Array.from(mealPlanDocs)
         // console.log('meal plan docs type of: ', typeof mealPlanDocs)
         // console.log('meal plan Arr: ', mealPlanArr)
 
-        res.render('meal-plan.ejs', { mealPlanStuff: mealPlanArr})
+        res.render('meal-plan.ejs',
+          { 
+            mealPlanStuff: mealPlanArr,
+            user: req.user
+          }
+        )
       } catch(err) {
         console.log(err)
       }
@@ -33,8 +39,7 @@ module.exports = {
           weekday: req.body.weekday, 
           complete: false, 
           note: '',
-          userId: '',
-          // , userId: req.user.id
+          userId: req.user.id
         })
 
         // console.log('Meal Plan item has been added!')
