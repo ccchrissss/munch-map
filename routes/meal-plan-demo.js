@@ -1,14 +1,14 @@
-// const express = require('express')
-// const router = express.Router()
-// const mealPlanController = require('../controllers/meal-plan')
-// // const todosController = require('../controllers/todos') 
+const express = require('express')
+const router = express.Router()
+const mealPlanDemoController = require('../controllers/meal-plan-demo')
+// const todosController = require('../controllers/todos') 
 // const { ensureAuth } = require('../middleware/auth')
 
 
-// router.get('/', mealPlanController.getMealPlan)
+router.get('/', mealPlanDemoController.getMealPlanDemo)
 // // router.get('/', ensureAuth, todosController.getTodos)
 
-// router.post('/createMealPlanItem', mealPlanController.createMealPlanItem)
+router.post('/createMealPlanDemoItem', mealPlanDemoController.createMealPlanDemoItem)
 // // router.post('/createTodo', todosController.createTodo)
 
 // router.put('/markCompleteMealPlan', mealPlanController.markComplete)
@@ -22,4 +22,4 @@
 
 // router.put('/editNoteMealPlan', mealPlanController.editNoteMealPlan)
 
-// module.exports = router
+module.exports = router

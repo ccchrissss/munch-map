@@ -1,50 +1,50 @@
-// const MealPlan = require('../models/meal-plan')
+const MealPlanDemo = require('../models/meal-plan-demo')
 
-// module.exports = {
+module.exports = {
 
-//     getMealPlan: async (req, res) => {
+    getMealPlanDemo: async (req, res) => {
         
-//       // console.log('req ', req)
-//       // console.log(res)
+      // console.log('req ', req)
+      // console.log(res)
       
-//       try {
-//         const mealPlanDocs = await MealPlan.find()
-//         // console.log('meal plan count documents: ', mealPlanDocs)
+      try {
+        const mealPlanDemoDocs = await MealPlanDemo.find()
+        // console.log('meal plan count documents: ', mealPlanDocs)
 
-//         let mealPlanArr = Array.from(mealPlanDocs)
-//         // console.log('meal plan docs type of: ', typeof mealPlanDocs)
-//         // console.log('meal plan Arr: ', mealPlanArr)
+        let mealPlanDemoArr = Array.from(mealPlanDemoDocs)
+        // console.log('meal plan docs type of: ', typeof mealPlanDocs)
+        // console.log('meal plan Arr: ', mealPlanArr)
 
-//         res.render('meal-plan.ejs', { mealPlanStuff: mealPlanArr})
-//       } catch(err) {
-//         console.log(err)
-//       }
+        res.render('meal-plan-demo.ejs', { mealPlanDemoStuff: mealPlanDemoArr})
+      } catch(err) {
+        console.log(err)
+      }
 
-//     },
+    },
 
-//     createMealPlanItem: async (req, res) => {
+    createMealPlanDemoItem: async (req, res) => {
 
-//       try{
-//         // console.log('req.body: ', req.body)
+      try{
+        // console.log('req.body: ', req.body)
 
-//         await MealPlan.create({
-//           item: req.body.item,
-//           mealtime: req.body.mealtime,
-//           weekday: req.body.weekday, 
-//           complete: false, 
-//           note: '',
-//           userId: '',
-//           // , userId: req.user.id
-//         })
+        await MealPlanDemo.create({
+          item: req.body.item,
+          mealtime: req.body.mealtime,
+          weekday: req.body.weekday, 
+          complete: false, 
+          note: '',
+          userId: '',
+          // , userId: req.user.id
+        })
 
-//         // console.log('Meal Plan item has been added!')
+        // console.log('Meal Plan item has been added!')
 
-//         res.redirect('/meal-plan')
-//       } catch(err) {
-//         console.log(err)
-//       }
+        res.redirect('/meal-plan-demo')
+      } catch(err) {
+        console.log(err)
+      }
 
-//     },
+    },
 
 //     markComplete: async (req, res) => {
 //       // console.log(req.body)
@@ -122,4 +122,4 @@
 //     }
 
 
-// }
+}

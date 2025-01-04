@@ -10,6 +10,7 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const mealPlanRoutes = require('./routes/meal-plan')
 const groceryListRoutes = require('./routes/grocery-list')
+const mealPlanDemoRoutes = require('./routes/meal-plan-demo')
 // const todoRoutes = require('./routes/todos')
 
 // const MongoClient = require('mongodb').MongoClient;
@@ -46,6 +47,7 @@ app.use(flash())
 app.use('/', mainRoutes)
 app.use('/meal-plan', mealPlanRoutes)
 app.use('/grocery-list', groceryListRoutes)
+app.use('/meal-plan-demo', mealPlanDemoRoutes)
 // app.use('/todos', todoRoutes)
 
 // Server connect
