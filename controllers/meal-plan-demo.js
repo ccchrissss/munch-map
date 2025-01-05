@@ -46,43 +46,43 @@ module.exports = {
 
     },
 
-//     markComplete: async (req, res) => {
-//       // console.log(req.body)
+    markCompleteDemo: async (req, res) => {
+      // console.log(req.body)
 
-//       try {
-//         // console.log(req.body)
-//         await MealPlan.findOneAndUpdate({ _id: req.body.idFromJS}, {
-//           complete: true
-//         })
+      try {
+        // console.log(req.body)
+        await MealPlanDemo.findOneAndUpdate({ _id: req.body.idFromJS}, {
+          complete: true
+        })
 
-//         // console.log('Marked Complete')
-//         res.json('Marked Complete')
+        // console.log('Marked Complete')
+        res.json('Marked Complete')
 
-//         res.redirect('/meal-plan')
-//       } catch(err) {
-//         console.log(err)
-//       }
+        res.redirect('/meal-plan-demo')
+      } catch(err) {
+        console.log(err)
+      }
 
-//     },
+    },
 
-//     markIncomplete: async (req, res) => {
-//       // console.log(req.body)
+    markIncompleteDemo: async (req, res) => {
+      // console.log(req.body)
 
-//       try {
-//         // console.log(req.body)
-//         await MealPlan.findOneAndUpdate({ _id: req.body.idFromJS}, {
-//           complete: false
-//         })
+      try {
+        // console.log(req.body)
+        await MealPlanDemo.findOneAndUpdate({ _id: req.body.idFromJS}, {
+          complete: false
+        })
 
-//         // console.log('Marked Incomplete')
-//         res.json('Marked Incomplete')
+        // console.log('Marked Incomplete')
+        res.json('Marked Incomplete')
 
-//         res.redirect('/meal-plan')
-//       } catch(err) {
-//         console.log(err)
-//       }
+        res.redirect('/meal-plan-demo')
+      } catch(err) {
+        console.log(err)
+      }
 
-//     },
+    },
 
 //     deleteMealPlanItem: async (req, res) => {
 
