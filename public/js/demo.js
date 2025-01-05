@@ -42,7 +42,7 @@ async function deleteItem(){
     let id = this.parentNode.id
 
     try{
-        const response = await fetch('meal-plan-demo/deleteMealPlanItem', {
+        const response = await fetch('meal-plan-demo/deleteMealPlanDemoItem', {
             method: 'delete',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -174,7 +174,7 @@ async function editNote(){
     // console.log(noteText)
 
     try{
-        const response = await fetch(`meal-plan-demo/editNoteMealPlan`, {
+        const response = await fetch(`meal-plan-demo/editNoteMealPlanDemo`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

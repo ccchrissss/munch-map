@@ -84,42 +84,42 @@ module.exports = {
 
     },
 
-//     deleteMealPlanItem: async (req, res) => {
+    deleteMealPlanDemoItem: async (req, res) => {
 
-//       try {
+      try {
 
-//         await MealPlan.findOneAndDelete({ _id: req.body.idFromJS })
+        await MealPlanDemo.findOneAndDelete({ _id: req.body.idFromJS })
         
-//         // console.log('Deleted meal plan item')
-//         res.json('Deleted meal plan item')
+        // console.log('Deleted meal plan item')
+        res.json('Deleted meal plan demo item')
 
-//         res.redirect('meal-plan')
-//       } catch(err) {
-//         console.log(err)
-//       }
+        res.redirect('meal-plan-demo')
+      } catch(err) {
+        console.log(err)
+      }
 
-//     },
+    },
 
-//     editNoteMealPlan: async (req, res) => {
+    editNoteMealPlanDemo: async (req, res) => {
 
-//       try {
+      try {
 
-//         await MealPlan.updateOne(
-//           { _id: req.body.idFromJS },
-//           { $set: { note: req.body.noteFromJS } },
-//           {
-//             sort: { _id: -1 },
-//             upsert: false,
-//           }
-//         )
+        await MealPlanDemo.updateOne(
+          { _id: req.body.idFromJS },
+          { $set: { note: req.body.noteFromJS } },
+          {
+            sort: { _id: -1 },
+            upsert: false,
+          }
+        )
 
-//         console.log('Updated note meal plan');
-//         res.json('Updated note meal plan');
+        console.log('Updated note meal plan demo');
+        res.json('Updated note meal plan demo');
         
-//       } catch(err) {
-//         console.log(err)
-//       }
-//     }
+      } catch(err) {
+        console.log(err)
+      }
+    }
 
 
 }

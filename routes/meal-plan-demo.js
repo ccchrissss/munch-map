@@ -17,9 +17,9 @@ router.put('/markCompleteMealPlanDemo', mealPlanDemoController.markCompleteDemo)
 router.put('/markIncompleteMealPlanDemo', mealPlanDemoController.markIncompleteDemo)
 // // router.put('/markIncomplete', todosController.markIncomplete)
 
-// router.delete('/deleteMealPlanItem', mealPlanController.deleteMealPlanItem)
+router.delete('/deleteMealPlanDemoItem', mealPlanDemoController.deleteMealPlanDemoItem)
 // // router.delete('/deleteTodo', todosController.deleteTodo)
 
-// router.put('/editNoteMealPlan', mealPlanController.editNoteMealPlan)
+router.put('/editNoteMealPlanDemo', mealPlanDemoController.editNoteMealPlanDemo)
 
 module.exports = router
