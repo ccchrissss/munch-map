@@ -15,7 +15,7 @@ module.exports = {
         // console.log('meal plan docs type of: ', typeof mealPlanDocs)
         // console.log('meal plan Arr: ', mealPlanArr)
 
-        res.render('meal-plan-demo.ejs', { mealPlanDemoStuff: mealPlanDemoArr})
+        res.render('meal-plan-demo.ejs', { mealPlanDemoStuff: mealPlanDemoArr })
       } catch(err) {
         console.log(err)
       }
