@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const groceryListDemonstrationController = require('../controllers/grocery-list-demonstration')
+const groceryListDemoController = require('../controllers/grocery-list-demo')
 // const todosController = require('../controllers/todos') 
 // const { ensureAuth } = require('../middleware/auth')
 
 
-router.get('/', groceryListDemonstrationController.getGroceryList)
+router.get('/', groceryListDemoController.getGroceryList)
 // // router.get('/', ensureAuth, todosController.getTodos)
 
 // router.post('/createMealPlanDemoItem', mealPlanDemoController.createMealPlanDemoItem)

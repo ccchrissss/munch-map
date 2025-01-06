@@ -1,4 +1,4 @@
-const GroceryListDemonstration = require('../models/grocery-list-demo')
+const GroceryListDemo = require('../models/grocery-list-demo')
 
 module.exports = {
 
@@ -8,17 +8,17 @@ module.exports = {
       // console.log(res)
       
       try {
-        const groceryListDemonstrationDocs = await GroceryListDemonstration.find()
+        const groceryListDemoDocs = await GroceryListDemo.find()
         // ({ userId: req.user.id })
         // console.log('grocery list count documents: ', groceryListDocs)
 
-        let groceryListDemonstrationArr = Array.from(groceryListDemonstrationDocs)
+        let groceryListDemoArr = Array.from(groceryListDemoDocs)
         // console.log('grocery list docs type of: ', typeof groceryListDocs)
         // console.log('grocery list Arr: ', groceryListArr)
 
-        res.render('grocery-list-demonstration.ejs',
+        res.render('grocery-list-demo.ejs',
           {
-            groceryListDemoItems: groceryListDemonstrationArr,
+            groceryListDemoItems: groceryListDemoArr,
             user: req.user
           }
         )
