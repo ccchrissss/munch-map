@@ -17,7 +17,7 @@ router.put('/markCompleteGroceryListDemo', groceryListDemoController.markComplet
 router.put('/markIncompleteGroceryListDemo', groceryListDemoController.markIncomplete)
 // // // router.put('/markIncomplete', todosController.markIncomplete)
 
-// router.delete('/deleteMealPlanDemoItem', mealPlanDemoController.deleteMealPlanDemoItem)
+router.delete('/deleteGroceryListDemoItem', groceryListDemoController.deleteItem)
 // // // router.delete('/deleteTodo', todosController.deleteTodo)
 
 // router.put('/editNoteMealPlanDemo', mealPlanDemoController.editNoteMealPlanDemo)

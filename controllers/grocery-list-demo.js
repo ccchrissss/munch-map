@@ -88,21 +88,21 @@ module.exports = {
 
     },
 
-    // deleteItemGroceryList: async (req, res) => {
+    deleteItem: async (req, res) => {
 
-    //   try {
+      try {
 
-    //     await GroceryList.findOneAndDelete({ _id: req.body.idFromJS })
+        await GroceryListDemo.findOneAndDelete({ _id: req.body.idFromJS })
         
-    //     // console.log('Deleted meal plan item')
-    //     res.json('Deleted grocery list item')
+        // console.log('Deleted meal plan item')
+        res.json('Deleted grocery list item')
 
-    //     res.redirect('grocery-list')
-    //   } catch(err) {
-    //     console.log(err)
-    //   }
+        res.redirect('grocery-list-demo')
+      } catch(err) {
+        console.log(err)
+      }
 
-    // },
+    },
 
     // increaseNumItem: async (req, res) => {
 

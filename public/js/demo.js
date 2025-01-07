@@ -386,7 +386,7 @@ async function deleteItemGroceryList(){
     console.log(id)
 
     try{
-        const response = await fetch('grocery-list-demo/deleteItemGroceryList', {
+        const response = await fetch('grocery-list-demo/deleteGroceryListDemoItem', {
             method: 'delete',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
