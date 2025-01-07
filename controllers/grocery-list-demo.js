@@ -104,41 +104,41 @@ module.exports = {
 
     },
 
-    // increaseNumItem: async (req, res) => {
+    increaseNumItem: async (req, res) => {
 
-    //   try {
+      try {
 
-    //     await GroceryList.updateOne(
-    //       { _id: req.body.idFromJS },
-    //       { $set: { numItem: Number(req.body.numItem) + 1 } }
-    //     )
+        await GroceryListDemo.updateOne(
+          { _id: req.body.idFromJS },
+          { $set: { numItem: Number(req.body.numItem) + 1 } }
+        )
 
-    //     console.log('Increased Number of Item');
-    //     res.json('Number of Item Increased');
+        console.log('Increased Number of Item');
+        res.json('Number of Item Increased');
 
-    //   } catch(err) {
-    //     console.log(err)
-    //   }
+      } catch(err) {
+        console.log(err)
+      }
 
-    // },
+    },
 
-    // decreaseNumItem: async (req, res) => {
+    decreaseNumItem: async (req, res) => {
 
-    //   try {
+      try {
 
-    //     await GroceryList.updateOne(
-    //       { _id: req.body.idFromJS },
-    //       { $set: { numItem: Number(req.body.numItem) - 1 } }
-    //     )
+        await GroceryListDemo.updateOne(
+          { _id: req.body.idFromJS },
+          { $set: { numItem: Number(req.body.numItem) - 1 } }
+        )
 
-    //     console.log('Decreased Number of Item');
-    //     res.json('Number of Item Decreased');
+        console.log('Decreased Number of Item');
+        res.json('Number of Item Decreased');
 
-    //   } catch(err) {
-    //     console.log(err)
-    //   }
+      } catch(err) {
+        console.log(err)
+      }
 
-    // }
+    }
 
 
 }

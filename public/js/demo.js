@@ -271,7 +271,7 @@ async function increaseNumOfItem(){
     // console.log('numItemS:', numItemS)
 
     try{
-        const response = await fetch('grocery-list-demo/increaseNumItemGroceryList', {
+        const response = await fetch('grocery-list-demo/increaseNumItemGroceryListDemo', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -300,7 +300,7 @@ async function decreaseNumOfItem(){
     // console.log('numItemS:', numItemS)
 
     try{
-        const response = await fetch('grocery-list-demo/decreaseNumItemGroceryList', {
+        const response = await fetch('grocery-list-demo/decreaseNumItemGroceryListDemo', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

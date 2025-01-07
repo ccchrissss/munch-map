@@ -20,6 +20,8 @@ router.put('/markIncompleteGroceryListDemo', groceryListDemoController.markIncom
 router.delete('/deleteGroceryListDemoItem', groceryListDemoController.deleteItem)
 // // // router.delete('/deleteTodo', todosController.deleteTodo)
 
-// router.put('/editNoteMealPlanDemo', mealPlanDemoController.editNoteMealPlanDemo)
+router.put('/increaseNumItemGroceryListDemo', groceryListDemoController.increaseNumItem)
+
+router.put('/decreaseNumItemGroceryListDemo', groceryListDemoController.decreaseNumItem)
 
 module.exports = router
