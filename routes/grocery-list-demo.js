@@ -11,10 +11,10 @@ router.get('/', groceryListDemoController.getGroceryList)
 router.post('/createGroceryListDemoItem', groceryListDemoController.createItem)
 // // // router.post('/createTodo', todosController.createTodo)
 
-// router.put('/markCompleteMealPlanDemo', mealPlanDemoController.markCompleteDemo)
+router.put('/markCompleteGroceryListDemo', groceryListDemoController.markComplete)
 // // // router.put('/markComplete', todosController.markComplete)
 
-// router.put('/markIncompleteMealPlanDemo', mealPlanDemoController.markIncompleteDemo)
+router.put('/markIncompleteGroceryListDemo', groceryListDemoController.markIncomplete)
 // // // router.put('/markIncomplete', todosController.markIncomplete)
 
 // router.delete('/deleteMealPlanDemoItem', mealPlanDemoController.deleteMealPlanDemoItem)

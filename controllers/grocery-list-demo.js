@@ -50,43 +50,43 @@ module.exports = {
 
     },
 
-    // markComplete: async (req, res) => {
-    //   // console.log(req.body)
+    markComplete: async (req, res) => {
+      // console.log(req.body)
 
-    //   try {
-    //     // console.log(req.body)
-    //     await GroceryList.findOneAndUpdate({ _id: req.body.idFromJS}, {
-    //       complete: true
-    //     })
+      try {
+        // console.log(req.body)
+        await GroceryListDemo.findOneAndUpdate({ _id: req.body.idFromJS}, {
+          complete: true
+        })
 
-    //     // console.log('Marked Complete')
-    //     res.json('Marked Complete')
+        // console.log('Marked Complete')
+        res.json('Marked Complete')
 
-    //     res.redirect('/grocery-list')
-    //   } catch(err) {
-    //     console.log(err)
-    //   }
+        res.redirect('/grocery-list-demo')
+      } catch(err) {
+        console.log(err)
+      }
 
-    // },
+    },
 
-    // markIncomplete: async (req, res) => {
-    //   // console.log(req.body)
+    markIncomplete: async (req, res) => {
+      // console.log(req.body)
 
-    //   try {
-    //     // console.log(req.body)
-    //     await GroceryList.findOneAndUpdate({ _id: req.body.idFromJS}, {
-    //       complete: false
-    //     })
+      try {
+        // console.log(req.body)
+        await GroceryListDemo.findOneAndUpdate({ _id: req.body.idFromJS}, {
+          complete: false
+        })
 
-    //     // console.log('Marked Incomplete')
-    //     res.json('Marked Incomplete')
+        // console.log('Marked Incomplete')
+        res.json('Marked Incomplete')
 
-    //     res.redirect('/grocery-list')
-    //   } catch(err) {
-    //     console.log(err)
-    //   }
+        res.redirect('/grocery-list-demo')
+      } catch(err) {
+        console.log(err)
+      }
 
-    // },
+    },
 
     // deleteItemGroceryList: async (req, res) => {
 

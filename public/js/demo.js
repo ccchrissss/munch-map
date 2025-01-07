@@ -327,7 +327,7 @@ async function markCompleteGroceryList(){
     // console.log('markComplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-        const response = await fetch(`grocery-list-demo/markCompleteGroceryList`, {
+        const response = await fetch(`grocery-list-demo/markCompleteGroceryListDemo`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -350,7 +350,7 @@ async function markIncompleteGroceryList(){
     // console.log('markIncomplete this.parentNode.id: ', this.parentNode.id)
 
     try{
-        const response = await fetch(`grocery-list-demo/markIncompleteGroceryList`, {
+        const response = await fetch(`grocery-list-demo/markIncompleteGroceryListDemo`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
