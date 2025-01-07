@@ -19,7 +19,7 @@ module.exports = {
         res.render('grocery-list-demo.ejs',
           {
             groceryListDemoItems: groceryListDemoArr,
-            user: req.user
+            // user: req.user
           }
         )
       } catch(err) {
@@ -28,27 +28,27 @@ module.exports = {
 
     },
 
-    // createGroceryListItem: async (req, res) => {
+    createItem: async (req, res) => {
 
-    //   try{
-    //     // console.log('req.body: ', req.body)
+      try{
+        console.log('req.body: ', req.body)
 
-    //     await GroceryList.create({
-    //       item: req.body.item,
-    //       category: req.body.category,
-    //       numItem: 1, 
-    //       complete: false,
-    //       userId: req.user.id
-    //     })
+        await GroceryListDemo.create({
+          item: req.body.item,
+          category: req.body.category,
+          numItem: 1, 
+          complete: false,
+          // userId: req.user.id
+        })
 
-    //     // console.log('Meal Plan item has been added!')
+        console.log('Grocery List item has been added!')
 
-    //     res.redirect('/grocery-list')
-    //   } catch(err) {
-    //     console.log(err)
-    //   }
+        res.redirect('/grocery-list-demo')
+      } catch(err) {
+        console.log(err)
+      }
 
-    // },
+    },
 
     // markComplete: async (req, res) => {
     //   // console.log(req.body)

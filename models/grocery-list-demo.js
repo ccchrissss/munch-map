@@ -17,10 +17,10 @@ const GroceryListDemoSchema = new mongoose.Schema({
     type: Boolean,
     required: false,
   },
-  userId: {
-    type: String,
-    required: false
-  }
+  // userId: {
+  //   type: String,
+  //   required: false
+  // }
 })
 
 

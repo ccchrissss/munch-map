@@ -8,7 +8,7 @@ const groceryListDemoController = require('../controllers/grocery-list-demo')
 router.get('/', groceryListDemoController.getGroceryList)
 // // router.get('/', ensureAuth, todosController.getTodos)
 
-// router.post('/createMealPlanDemoItem', mealPlanDemoController.createMealPlanDemoItem)
+router.post('/createGroceryListDemoItem', groceryListDemoController.createItem)
 // // // router.post('/createTodo', todosController.createTodo)
 
 // router.put('/markCompleteMealPlanDemo', mealPlanDemoController.markCompleteDemo)
