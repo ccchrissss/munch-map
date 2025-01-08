@@ -34,6 +34,7 @@ module.exports = {
           complete: false, 
           note: '',
           userId: '',
+          createdAt: 1,
           // , userId: req.user.id
         })
 
