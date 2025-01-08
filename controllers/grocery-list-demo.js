@@ -39,6 +39,7 @@ module.exports = {
           numItem: 1, 
           complete: false,
           // userId: req.user.id
+          createdAt: 1,
         })
 
         console.log('Grocery List item has been added!')

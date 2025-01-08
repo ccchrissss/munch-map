@@ -1,13 +1,14 @@
 const mongoose = require('mongoose')
 
 const GroceryListDemoSchema = new mongoose.Schema({
+
   item: {
     type: String,
     required: true,
   },
   category: {
     type: String,
-    required: true
+    required: true,
   },
   numItem: {
     type: String,
@@ -21,6 +22,12 @@ const GroceryListDemoSchema = new mongoose.Schema({
   //   type: String,
   //   required: false
   // }
+  createdAt: {
+    type: Date,
+    expires: 1800,
+    required: true,
+  }
+
 })
 
 
