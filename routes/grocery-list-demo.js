@@ -1,29 +1,27 @@
-// const express = require('express')
-// const router = express.Router()
-// const groceryListController = require('../controllers/grocery-list')
-// // const todosController = require('../controllers/todos') 
+const express = require('express')
+const router = express.Router()
+const groceryListDemoController = require('../controllers/grocery-list-demo')
+// const todosController = require('../controllers/todos') 
 // const { ensureAuth } = require('../middleware/auth')
 
 
-// router.get('/', groceryListController.getGroceryList)
+router.get('/', groceryListDemoController.getGroceryList)
 // // router.get('/', ensureAuth, todosController.getTodos)
 
-// router.post('/createGroceryListItem', groceryListController.createGroceryListItem)
+router.post('/createGroceryListDemoItem', groceryListDemoController.createItem)
 // // // router.post('/createTodo', todosController.createTodo)
 
-// router.put('/markCompleteGroceryList', groceryListController.markComplete)
+router.put('/markCompleteGroceryListDemo', groceryListDemoController.markComplete)
 // // // router.put('/markComplete', todosController.markComplete)
 
-// router.put('/markIncompleteGroceryList', groceryListController.markIncomplete)
+router.put('/markIncompleteGroceryListDemo', groceryListDemoController.markIncomplete)
 // // // router.put('/markIncomplete', todosController.markIncomplete)
 
-// router.delete('/deleteItemGroceryList', groceryListController.deleteItemGroceryList)
+router.delete('/deleteGroceryListDemoItem', groceryListDemoController.deleteItem)
 // // // router.delete('/deleteTodo', todosController.deleteTodo)
 
-// router.put('/increaseNumItemGroceryList', groceryListController.increaseNumItem)
+router.put('/increaseNumItemGroceryListDemo', groceryListDemoController.increaseNumItem)
 
-// router.put('/decreaseNumItemGroceryList', groceryListController.decreaseNumItem)
+router.put('/decreaseNumItemGroceryListDemo', groceryListDemoController.decreaseNumItem)
 
-
-
-// module.exports = router
+module.exports = router

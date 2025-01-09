@@ -35,8 +35,8 @@
               </button>
             </div> -->
             <div class="gap-x-4 sm:gap-x-6 flex lg:gap-x-12">
-              <a href="meal-plan" class="text-lg font-semibold leading-6 text-gray-900">Meal Plan</a>
-              <a href="grocery-list" class="text-lg font-semibold leading-6 text-gray-900">Grocery List</a>
+              <a href="meal-plan-demo" class="text-lg font-semibold leading-6 text-gray-900">Meal Plan Demo</a>
+              <a href="grocery-list-demo" class="text-lg font-semibold leading-6 text-gray-900">Grocery List Demo</a>
               <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
               <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a> -->
             </div>
@@ -83,7 +83,7 @@
                     Fruits / Vegetables
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
-                    <form action="/grocery-list/createGroceryListItem" method="POST">
+                    <form action="/grocery-list-demo/createGroceryListDemoItem" method="POST">
                         <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="item">
                         <input type="hidden" name="category" value="produce">
                         <input type="hidden" name="numItem" value="1">
@@ -92,26 +92,26 @@
                     </form>
                 
                     <ul class="items">
-                      <% for(let i = 0; i < groceryListItems.length; i++) { %>
+                      <% for(let i = 0; i < groceryListDemoItems.length; i++) { %>
 
-                        <% if(groceryListItems[i].category === 'produce') { %>
-                          <li id="<%= groceryListItems[i]._id %>" class="item">
+                        <% if(groceryListDemoItems[i].category === 'produce') { %>
+                          <li id="<%= groceryListDemoItems[i]._id %>" class="item">
 
-                            <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].item %></span>
+                            <% if(groceryListDemoItems[i].complete === true) { %>
+                              <span class="item-name complete"><%= groceryListDemoItems[i].item %></span>
 
                             <% } else { %>
-                              <span class="item-name incomplete"><%= groceryListItems[i].item %></span>
+                              <span class="item-name incomplete"><%= groceryListDemoItems[i].item %></span>
                             <% } %>
 
-                            <% if(groceryListItems[i].numItem >= 2) { %>
+                            <% if(groceryListDemoItems[i].numItem >= 2) { %>
                               <button id="sub-num-button">-</button>
-                              <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
+                              <span class="num-of-item"><%= groceryListDemoItems[i].numItem %></span>
                               <button id="add-num-button">+</button>
                               
 
                             <% } else { %>
-                              <span class="num-of-item hidden"><%= groceryListItems[i].numItem %></span>
+                              <span class="num-of-item hidden"><%= groceryListDemoItems[i].numItem %></span>
                               <button id="add-num-button">+</button>
                               
                             <% } %>
@@ -138,7 +138,7 @@
                     Proteins
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
-                    <form action="/grocery-list/createGroceryListItem" method="POST">
+                    <form action="/grocery-list-demo/createGroceryListDemoItem" method="POST">
                         <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="item">
                         <input type="hidden" name="category" value="proteins">
                         <input type="hidden" name="numItem" value="1">
@@ -146,26 +146,26 @@
                     </form>
 
                     <ul class="items">
-                      <% for(let i = 0; i < groceryListItems.length; i++) { %>
+                      <% for(let i = 0; i < groceryListDemoItems.length; i++) { %>
 
-                        <% if(groceryListItems[i].category === 'proteins') { %>
-                          <li id="<%= groceryListItems[i]._id %>" class="item">
+                        <% if(groceryListDemoItems[i].category === 'proteins') { %>
+                          <li id="<%= groceryListDemoItems[i]._id %>" class="item">
 
-                            <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].item %></span>
+                            <% if(groceryListDemoItems[i].complete === true) { %>
+                              <span class="item-name complete"><%= groceryListDemoItems[i].item %></span>
 
                             <% } else { %>
-                              <span class="item-name incomplete"><%= groceryListItems[i].item %></span>
+                              <span class="item-name incomplete"><%= groceryListDemoItems[i].item %></span>
                             <% } %>
 
-                            <% if(groceryListItems[i].numItem >= 2) { %>
+                            <% if(groceryListDemoItems[i].numItem >= 2) { %>
                               <button id="sub-num-button">-</button>
-                              <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
+                              <span class="num-of-item"><%= groceryListDemoItems[i].numItem %></span>
                               <button id="add-num-button">+</button>
                               
 
                             <% } else { %>
-                              <span class="num-of-item hidden"><%= groceryListItems[i].numItem %></span>
+                              <span class="num-of-item hidden"><%= groceryListDemoItems[i].numItem %></span>
                               <button id="add-num-button">+</button>
                               
                             <% } %>
@@ -192,7 +192,7 @@
                     Grains / Legumes / Nuts / Seeds
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
-                    <form action="/grocery-list/createGroceryListItem" method="POST">
+                    <form action="/grocery-list-demo/createGroceryListDemoItem" method="POST">
                         <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="item">
                         <input type="hidden" name="category" value="pantry">
                         <input type="hidden" name="numItem" value="1">
@@ -200,26 +200,26 @@
                     </form>
                 
                     <ul class="items">
-                      <% for(let i = 0; i < groceryListItems.length; i++) { %>
+                      <% for(let i = 0; i < groceryListDemoItems.length; i++) { %>
 
-                        <% if(groceryListItems[i].category === 'pantry') { %>
-                          <li id="<%= groceryListItems[i]._id %>" class="item">
+                        <% if(groceryListDemoItems[i].category === 'pantry') { %>
+                          <li id="<%= groceryListDemoItems[i]._id %>" class="item">
 
-                            <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].item %></span>
+                            <% if(groceryListDemoItems[i].complete === true) { %>
+                              <span class="item-name complete"><%= groceryListDemoItems[i].item %></span>
 
                             <% } else { %>
-                              <span class="item-name incomplete"><%= groceryListItems[i].item %></span>
+                              <span class="item-name incomplete"><%= groceryListDemoItems[i].item %></span>
                             <% } %>
 
-                            <% if(groceryListItems[i].numItem >= 2) { %>
+                            <% if(groceryListDemoItems[i].numItem >= 2) { %>
                               <button id="sub-num-button">-</button>
-                              <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
+                              <span class="num-of-item"><%= groceryListDemoItems[i].numItem %></span>
                               <button id="add-num-button">+</button>
                               
 
                             <% } else { %>
-                              <span class="num-of-item hidden"><%= groceryListItems[i].numItem %></span>
+                              <span class="num-of-item hidden"><%= groceryListDemoItems[i].numItem %></span>
                               <button id="add-num-button">+</button>
                               
                             <% } %>
@@ -246,7 +246,7 @@
                     Fats / Spices / Condiments
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
-                    <form action="/grocery-list/createGroceryListItem" method="POST">
+                    <form action="/grocery-list-demo/createGroceryListDemoItem" method="POST">
                         <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="item">
                         <input type="hidden" name="category" value="condiments">
                         <input type="hidden" name="numItem" value="1">
@@ -254,26 +254,26 @@
                     </form>
                 
                     <ul class="items">
-                      <% for(let i = 0; i < groceryListItems.length; i++) { %>
+                      <% for(let i = 0; i < groceryListDemoItems.length; i++) { %>
 
-                        <% if(groceryListItems[i].category === 'condiments') { %>
-                          <li id="<%= groceryListItems[i]._id %>" class="item">
+                        <% if(groceryListDemoItems[i].category === 'condiments') { %>
+                          <li id="<%= groceryListDemoItems[i]._id %>" class="item">
 
-                            <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].item %></span>
+                            <% if(groceryListDemoItems[i].complete === true) { %>
+                              <span class="item-name complete"><%= groceryListDemoItems[i].item %></span>
 
                             <% } else { %>
-                              <span class="item-name incomplete"><%= groceryListItems[i].item %></span>
+                              <span class="item-name incomplete"><%= groceryListDemoItems[i].item %></span>
                             <% } %>
 
-                            <% if(groceryListItems[i].numItem >= 2) { %>
+                            <% if(groceryListDemoItems[i].numItem >= 2) { %>
                               <button id="sub-num-button">-</button>
-                              <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
+                              <span class="num-of-item"><%= groceryListDemoItems[i].numItem %></span>
                               <button id="add-num-button">+</button>
                               
 
                             <% } else { %>
-                              <span class="num-of-item hidden"><%= groceryListItems[i].numItem %></span>
+                              <span class="num-of-item hidden"><%= groceryListDemoItems[i].numItem %></span>
                               <button id="add-num-button">+</button>
                               
                             <% } %>
@@ -300,7 +300,7 @@
                     Other
                   </dt>
                   <dd class="mt-2 text-base leading-7 text-gray-600">
-                    <form action="/grocery-list/createGroceryListItem" method="POST">
+                    <form action="/grocery-list-demo/createGroceryListDemoItem" method="POST">
                         <input class="bg-gray-200 rounded-lg" type="text" placeholder=" Add Item" name="item">
                         <input type="hidden" name="category" value="other">
                         <input type="hidden" name="numItem" value="1">
@@ -308,26 +308,26 @@
                     </form>
                 
                     <ul class="items">
-                      <% for(let i = 0; i < groceryListItems.length; i++) { %>
+                      <% for(let i = 0; i < groceryListDemoItems.length; i++) { %>
 
-                        <% if(groceryListItems[i].category === 'other') { %>
-                          <li id="<%= groceryListItems[i]._id %>" class="item">
+                        <% if(groceryListDemoItems[i].category === 'other') { %>
+                          <li id="<%= groceryListDemoItems[i]._id %>" class="item">
 
-                            <% if(groceryListItems[i].complete === true) { %>
-                              <span class="item-name complete"><%= groceryListItems[i].item %></span>
+                            <% if(groceryListDemoItems[i].complete === true) { %>
+                              <span class="item-name complete"><%= groceryListDemoItems[i].item %></span>
 
                             <% } else { %>
-                              <span class="item-name incomplete"><%= groceryListItems[i].item %></span>
+                              <span class="item-name incomplete"><%= groceryListDemoItems[i].item %></span>
                             <% } %>
 
-                            <% if(groceryListItems[i].numItem >= 2) { %>
+                            <% if(groceryListDemoItems[i].numItem >= 2) { %>
                               <button id="sub-num-button">-</button>
-                              <span class="num-of-item"><%= groceryListItems[i].numItem %></span>
+                              <span class="num-of-item"><%= groceryListDemoItems[i].numItem %></span>
                               <button id="add-num-button">+</button>
                               
 
                             <% } else { %>
-                              <span class="num-of-item hidden"><%= groceryListItems[i].numItem %></span>
+                              <span class="num-of-item hidden"><%= groceryListDemoItems[i].numItem %></span>
                               <button id="add-num-button">+</button>
                               
                             <% } %>
@@ -362,8 +362,8 @@
         <!-- added 'relative' class to change position to relative to make anchor tags work in footer -->
         <footer class="footer footer-center p-10 text-base-content rounded relative bg-gray-500/85">
           <nav class="grid grid-flow-col gap-4">
-            <a href="meal-plan" class="link link-hover">Meal Plan</a>
-            <a href="grocery-list" class="link link-hover">Grocery List</a>
+            <a href="meal-plan-demo" class="link link-hover">Meal Plan Demo</a>
+            <a href="grocery-list-demo" class="link link-hover">Grocery List Demo</a>
             <!-- <a class="link link-hover">Jobs</a>
             <a class="link link-hover">Press kit</a> -->
           </nav> 
@@ -391,6 +391,6 @@
 
 
     
-    <script src="./js/main.js"></script>
+    <script src="./js/demo.js"></script>
 </body>
 </html>
