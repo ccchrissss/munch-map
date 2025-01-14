@@ -30,8 +30,8 @@
             </a>
             <div class="flex items-center lg:order-2">
               <% if (user) { %>
-                <p class="hidden sm:block text-lg text-[#4f46e5] px-4 lg:px-5 py-2 lg:py-2.5 mr-2"><%= user.userName %></p>
-                <p class="hidden sm:block"><a href="/log-out" class="text-md italic leading-6 text-lg text-gray-400">Log out</a></p>
+                <p class="hidden lg:block text-lg text-[#4f46e5] px-4 lg:px-5 py-2 lg:py-2.5 mr-2"><%= user.userName %></p>
+                <p class="hidden lg:block"><a href="/log-out" class="text-md italic leading-6 text-lg text-gray-400">Log out</a></p>
               <% } else { %>
                 <a href="log-in" class="hidden sm:inline text-lg text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none ">Log In</a>
                 <a href="sign-up" class="hidden sm:inline text-lg text-gray-800 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2  focus:outline-none">Sign Up</a>
@@ -43,7 +43,7 @@
                 </button>
             </div>
             <% if (user) { %>
-              <div class="columns-2 mt-4 hidden justify-between items-center w-full border-b border-gray-300 lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+              <div class="columns-2 mt-4 hidden justify-between items-center w-full border-b border-gray-300 lg:border-none lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                 <ul class="flex flex-col font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                     <li>
                         <a href="/" class="block py-2 pr-4 pl-3 text-lg text-gray-700 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 hover:text-gray-500" aria-current="page">Home</a>
@@ -58,8 +58,8 @@
                         <span class="block py-2 pr-4 pl-3 text-[#4f46e5] hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"><%= user.userName %></span>
                       </li> -->
                       <li class="py-2">
-                        <span class="block pr-4 pl-3 text-lg text-[#4f46e5] hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"><%= user.userName %></span>
-                        <a href="log-out" class="block pr-4 pl-3 italic text-lg text-gray-400 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Log out</a>
+                        <span class="block lg:hidden pr-4 pl-3 text-lg text-[#4f46e5] hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0"><%= user.userName %></span>
+                        <a href="log-out" class="block lg:hidden pr-4 pl-3 italic text-lg text-gray-400 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Log out</a>
                       </li>
                 </ul>
               </div>
