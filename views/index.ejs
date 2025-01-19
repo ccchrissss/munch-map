@@ -33,8 +33,8 @@
                 <p class="hidden lg:block text-lg text-[#4f46e5] px-4 lg:px-5 py-2 lg:py-2.5 mr-2"><%= user.userName %></p>
                 <p class="hidden lg:block"><a href="/log-out" class="text-md italic leading-6 text-lg text-gray-400 hover:text-gray-500">Log out</a></p>
               <% } else { %>
-                <a href="log-in" class="hidden sm:inline text-lg text-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none hover:text-gray-500">Log In</a>
-                <a href="sign-up" class="hidden sm:inline text-lg text-gray-800 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:text-gray-500">Sign Up</a>
+                <a href="log-in" class="hidden sm:inline text-lg text-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 focus:outline-none hover:text-gray-500">Log In</a>
+                <a href="sign-up" class="hidden sm:inline text-lg text-[#4f46e5] bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:text-gray-500">Sign Up</a>
               <% } %> 
                 <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-lg text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
@@ -64,24 +64,24 @@
                 </ul>
               </div>
             <% } else { %>
-              <div class="columns-2 hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1 border-b border-gray-300 lg:border-none" id="mobile-menu-2">
-                  <ul class="flex flex-col font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                      <li class="mt-4 lg:mt-0">
-                          <a href="/" class="block py-2 pr-4 pl-3 text-gray-700 text-lg rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 hover:text-gray-500" aria-current="page">Home</a>
-                      </li>
-                        <li>
-                          <a href="meal-plan-demo" class="block py-2 pr-4 pl-3 text-lg text-gray-700 lg:border-0 lg:p-0 hover:text-gray-500">Demo</a>
-                        </li>
-                        <li class="mt-4 lg:mt-0">
-                          <a href="log-in" class="block py-2 pr-4 pl-3 text-lg text-gray-700 lg:border-0 lg:p-0 hover:text-gray-500">Log In</a>
-                        </li>
-                        <li>
-                          <a href="sign-up" class="block py-2 pr-4 pl-3 text-lg text-gray-700 lg:border-0 lg:p-0 hover:text-gray-500">Sign Up</a>
-                        </li>
-                        <!-- <li>
-                           <a href="log-in" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-300 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Log In</a>
-                        </li> -->
-                  </ul>
+              <div class="p-2 lg:p-0 gap-x-2 columns-3 hidden bg-gray-100 lg:bg-transparent mt-2 lg:mt-0 rounded-lg shadow lg:shadow-none w-44 justify-between items-center w-full lg:flex lg:w-auto lg:order-1 border border-gray-300 lg:border-none" id="mobile-menu-2">
+                <ul class="flex flex-col font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                  <li class="lg:mt-0">
+                    <a href="/" class="block py-2 pr-4 pl-3 text-gray-700 text-lg leading-5 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 hover:text-gray-500" aria-current="page">Home</a>
+                  </li>
+                  <li class="">
+                    <a href="meal-plan-demo" class="block py-2 pr-4 pl-3 text-lg leading-5 text-gray-700 lg:border-0 lg:p-0 hover:text-gray-500">Meal Plan Demo</a>
+                  </li>
+                  <li class="">
+                    <a href="grocery-list-demo" class="block py-2 pr-4 pl-3 text-lg leading-5 text-gray-700 lg:border-0 lg:p-0 hover:text-gray-500">Grocery List Demo</a>
+                  </li>
+                  <li class="lg:mt-0 sm:hidden">
+                    <a href="log-in" class="block py-2 pr-4 pl-3 text-lg leading-5 text-gray-700 lg:border-0 lg:p-0 hover:text-gray-500">Log In</a>
+                  </li>
+                  <li class="sm:hidden">
+                    <a href="sign-up" class="block py-2 pr-4 pl-3 text-lg leading-5 text-[#4f46e5] lg:border-0 lg:p-0 hover:text-gray-500">Sign Up</a>
+                  </li>
+                </ul>
               </div>
             <% } %> 
         </div>
@@ -180,34 +180,36 @@
     </div>
   </div>
 
-  <!-- added 'relative' class to change position to relative to make anchor tags work in footer -->
-  <footer class="footer footer-center p-10 text-base-content rounded relative bg-gray-500/85">
-    <nav class="grid grid-flow-col gap-4">
-
-      <% if (user) { %>
-        <a href="meal-plan" class="link link-hover">Meal Plan</a>
-        <a href="grocery-list" class="link link-hover">Grocery List</a>
-      <% } else { %>
-        <a href="log-in" class="link link-hover">Log In</a>
-        <a href="sign-up" class="link link-hover">Sign Up</a>
-      <% } %>
-
-      <!-- <a class="link link-hover">Jobs</a>
-      <a class="link link-hover">Press kit</a> -->
-    </nav> 
-    <nav>
-      <div class="grid grid-flow-col gap-4">
-        <a href="/" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <!-- we use the below path for the image because of our app.use(express.static('public')) in server.js -->
-            <img class="h-10 w-auto hover:brightness-[1.03]" src="/assets/grocery-cart-color.png" alt="Munch Map shopping cart logo">
-          </a>
-      </div>
-    </nav> 
+  <footer class="flex flex-col footer-center p-10 text-base-content rounded relative bg-gray-500/85">
+    <!-- <div class=""> -->
+      <ul class="flex flex-col sm:flex-row">
+        <li class="p-1 sm:pl-3">
+          <a href="/" class="link link-hover">Home</a>
+        </li>
+        <li class="p-1 sm:pl-3">
+          <a href="meal-plan-demo" class="link link-hover">Meal Plan Demo</a>
+        </li>
+        <li class="p-1 sm:pl-3">
+          <a href="grocery-list-demo" class="link link-hover">Grocery List Demo</a>
+        </li>
+        <li class="p-1 sm:pl-3">
+          <a href="log-in" class="link link-hover">Log In</a>
+        </li>
+        <li class="p-1 sm:pl-3">
+          <a href="sign-up" class="link link-hover">Sign Up</a>
+        </li>
+      </ul>
+    <!-- </div> -->
+    <div class="">
+      <a href="/" class="-m-1.5 p-1.5">
+          <span class="sr-only">Munch Map</span>
+          <img class="h-10 w-auto hover:brightness-[1.03]" src="/assets/grocery-cart-color.png" alt="Munch Map shopping cart logo">
+        </a>
+    </div>
     <aside>
       <p>Copyright © 2025 - All rights reserved. Created by <a href="https://philmach.netlify.app/" class="link link-hover">Phil Mach II</a> and <a href="https://chrisnelson.netlify.app/" class="link link-hover">Chris Nelson</a>
       </p>
-      <p>
+      <p class="py-3">
         <a href="https://www.flaticon.com/free-icons/supermarket" title="supermarket icons">Supermarket icons created by Freepik - Flaticon</a>
       <p>
     </aside>
