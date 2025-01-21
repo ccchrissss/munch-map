@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 <body>
-<!-- The DaisyUI color theme I selected is called corporate  -->
+<!-- The DaisyUI colr theme I selected is called corporate  -->
 
 
 <div class="bg-white">
@@ -204,8 +204,69 @@
     </div>
   </div>
 
-  <footer class="flex flex-col footer-center p-10 text-base-content rounded relative bg-gray-500/85">
-    <!-- <div class=""> -->
+  <!-- bg-gray-200/85 flex flex-col items-center -->
+  <footer class="flex flex-col items-center text-base-content relative bg-gray-100/85">
+    <div class="max-w-3xl md:min-w-[500px]">
+
+      <div class="px-4 pt-8 pb-2 gap-x-0 columns-2 justify-between items-center w-full">
+
+        <ul class="px-2 flex flex-col font-normal">
+          <li class="px-2 py-1 pl-8 text-gray-700">
+            <a href="/" class="link link-hover">Home</a>
+          </li>
+          <li class="px-2 py-1 pl-8 text-gray-700">
+            <a href="meal-plan-demo" class="link link-hover">Meal Plan Demo</a>
+          </li>
+          <li class="px-2 py-1 pl-8 text-gray-700">
+            <a href="grocery-list-demo" class="link link-hover">Grocery List Demo</a>
+          </li>
+          <% if (user) { %>
+            <li class="px-2 py-1 pl-8 text-gray-700">
+              <a href="meal-plan" class="link link-hover">Meal Plan</a>
+            </li>
+            <li class="px-2 py-1 pl-8 text-gray-700">
+              <a href="grocery-list" class="link link-hover">Grocery List</a>
+            </li>
+            <li class="px-2 py-1 pl-8 text-gray-700">
+              <a href="/" class="link link-hover">Log In</a>
+            </li>
+            <li class="px-2 py-1 pl-8 text-gray-700">
+              <a href="/" class="link link-hover">Sign Up</a>
+            </li>
+          <% } else { %>
+            <li class="px-2 py-1 pl-8 text-gray-700">
+              <a href="log-in" class="link link-hover">Meal Plan</a>
+            </li>
+            <li class="px-2 py-1 pl-8 text-gray-700">
+              <a href="log-in" class="link link-hover">Grocery List</a>
+            </li>
+            <li class="px-2 py-1 pl-8 text-gray-700">
+              <a href="log-in" class="link link-hover">Log In</a>
+            </li>
+            <li class="px-2 py-1 pl-8 text-gray-700">
+              <a href="sign-up" class="link link-hover">Sign Up</a>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+      <div class="p-2 flex flex-col items-center">
+        <a href="/">
+            <img href="/" class="h-10  hover:brightness-[1.03]" src="/assets/grocery-cart-color.png" alt="Munch Map shopping cart logo">
+        </a>
+      </div>
+      <aside class="px-4">
+        <p class="pt-2 pb-8 px-4 text-center text-gray-700">Created by <a href="https://philmach.netlify.app/" class="link link-hover">Phil Mach II</a> and <a href="https://chrisnelson.netlify.app/" class="link link-hover">Chris Nelson</a>
+        </p>
+        <hr class="border-gray-400" />
+        <p class="pt-2 pb-0 px-4 text-center text-gray-500">Copyright © 2025 - All rights reserved.</p>
+        <p class="pb-2 px-4 text-center text-gray-500">
+          <a href="https://www.flaticon.com/free-icons/supermarket" title="supermarket icons">Supermarket icons created by Freepik - Flaticon</a>
+        </p>
+      </aside>
+    </div>
+  </footer>
+
+  <!-- <footer class="flex flex-col footer-center p-10 text-base-content rounded relative bg-gray-500/85">
       <ul class="flex flex-col sm:flex-row">
         <li class="p-1 sm:pl-3">
           <a href="/" class="link link-hover">Home</a>
@@ -244,7 +305,6 @@
           </li>
         <% } %>
       </ul>
-    <!-- </div> -->
     <div class="">
       <a href="/" class="-m-1.5 p-1.5">
           <span class="sr-only">Munch Map</span>
@@ -258,7 +318,7 @@
         <a href="https://www.flaticon.com/free-icons/supermarket" title="supermarket icons">Supermarket icons created by Freepik - Flaticon</a>
       <p>
     </aside>
-  </footer>
+  </footer> -->
 
   <script src="./js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
