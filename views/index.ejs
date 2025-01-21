@@ -216,12 +216,33 @@
         <li class="p-1 sm:pl-3">
           <a href="grocery-list-demo" class="link link-hover">Grocery List Demo</a>
         </li>
-        <li class="p-1 sm:pl-3">
-          <a href="log-in" class="link link-hover">Log In</a>
-        </li>
-        <li class="p-1 sm:pl-3">
-          <a href="sign-up" class="link link-hover">Sign Up</a>
-        </li>
+        <% if (user) { %>
+          <li class="p-1 sm:pl-3">
+            <a href="meal-plan" class="link link-hover">Meal Plan</a>
+          </li>
+          <li class="p-1 sm:pl-3">
+            <a href="grocery-list" class="link link-hover">Grocery List</a>
+          </li>
+          <li class="p-1 sm:pl-3">
+            <a href="/" class="link link-hover">Log In</a>
+          </li>
+          <li class="p-1 sm:pl-3">
+            <a href="/" class="link link-hover">Sign Up</a>
+          </li>
+        <% } else { %>
+          <li class="p-1 sm:pl-3">
+            <a href="log-in" class="link link-hover">Meal Plan</a>
+          </li>
+          <li class="p-1 sm:pl-3">
+            <a href="log-in" class="link link-hover">Grocery List</a>
+          </li>
+          <li class="p-1 sm:pl-3">
+            <a href="log-in" class="link link-hover">Log In</a>
+          </li>
+          <li class="p-1 sm:pl-3">
+            <a href="sign-up" class="link link-hover">Sign Up</a>
+          </li>
+        <% } %>
       </ul>
     <!-- </div> -->
     <div class="">
