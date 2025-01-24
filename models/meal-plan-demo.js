@@ -21,15 +21,11 @@ const MealPlanDemoSchema = new mongoose.Schema({
     type: String,
     required: false
   },
-  userId: {
-    type: String,
-    required: false
-  },
-  createdAt: {
-    type: Date,
-    expires: 1800,
-    required: true
-  }
+  // createdAt: {
+  //   type: Date,
+  //   // expires: 1800,
+  //   required: true
+  // }
 })
 
 

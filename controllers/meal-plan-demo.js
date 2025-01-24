@@ -30,7 +30,7 @@ module.exports = {
     createMealPlanDemoItem: async (req, res) => {
 
       try{
-        // console.log('req.body: ', req.body)
+        console.log('req.body: ', req.body)
 
         await MealPlanDemo.create({
           item: req.body.item,
@@ -38,7 +38,6 @@ module.exports = {
           weekday: req.body.weekday, 
           complete: false, 
           note: '',
-          userId: '',
           createdAt: 1,
           // , userId: req.user.id
         })
