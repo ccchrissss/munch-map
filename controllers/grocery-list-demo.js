@@ -16,10 +16,17 @@ module.exports = {
         // console.log('grocery list docs type of: ', typeof groceryListDocs)
         // console.log('grocery list Arr: ', groceryListArr)
 
+        // Check the indexes of the the GroceryListDemo collection
+        // const gLDemoIndexes = await GroceryListDemo.listIndexes()
+        // console.log(gLDemoIndexes)
+
+        // use this method when updating the TTL index. You have to clean out the indexes before updating them.
+        // GroceryListDemo.cleanIndexes()
+
         res.render('grocery-list-demo.ejs',
           {
             groceryListDemoItems: groceryListDemoArr,
-            // user: req.user
+            user: req.user
           }
         )
       } catch(err) {
@@ -38,9 +45,9 @@ module.exports = {
           category: req.body.category,
           numItem: 1, 
           complete: false,
-          // userId: req.user.id
-          createdAt: 1,
+          createdAt: new Date()
         })
+
 
         console.log('Grocery List item has been added!')
 

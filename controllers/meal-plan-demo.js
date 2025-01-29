@@ -15,6 +15,13 @@ module.exports = {
         // console.log('meal plan docs type of: ', typeof mealPlanDocs)
         // console.log('meal plan Arr: ', mealPlanArr)
 
+        // Check the indexes of the Meal Plan Demo collection
+        // const mPDemoIndexes = await MealPlanDemo.listIndexes()
+        // console.log(mPDemoIndexes)
+
+        // use this method when updating the TTL index. You have to clean out the indexes before updating them.
+        // MealPlanDemo.cleanIndexes()
+
         res.render('meal-plan-demo.ejs',
           {
             mealPlanDemoStuff: mealPlanDemoArr,
@@ -38,8 +45,7 @@ module.exports = {
           weekday: req.body.weekday, 
           complete: false, 
           note: '',
-          createdAt: 1,
-          // , userId: req.user.id
+          createdAt: new Date()
         })
 
         // console.log('Meal Plan item has been added!')

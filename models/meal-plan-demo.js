@@ -21,12 +21,13 @@ const MealPlanDemoSchema = new mongoose.Schema({
     type: String,
     required: false
   },
-  expireAt: {
+  createdAt: {
     type: Date,
     default: Date.now,
-    expires: 1800
+    expires: '15m'
   }
 })
+
 
 
 module.exports = mongoose.model('meal-plan-demo', MealPlanDemoSchema)
