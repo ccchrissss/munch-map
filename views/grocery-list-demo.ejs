@@ -393,43 +393,71 @@
     
     
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    
       </div>
-    
 
-        <!-- Footer Start -->
-        <!-- added 'relative' class to change position to relative to make anchor tags work in footer -->
-        <footer class="footer footer-center p-10 text-base-content rounded relative bg-gray-500/85">
-          <nav class="grid grid-flow-col gap-4">
-            <a href="meal-plan-demo" class="link link-hover">Meal Plan Demo</a>
-            <a href="grocery-list-demo" class="link link-hover">Grocery List Demo</a>
-            <!-- <a class="link link-hover">Jobs</a>
-            <a class="link link-hover">Press kit</a> -->
-          </nav> 
-          <nav>
-            <div class="grid grid-flow-col gap-4">
-              <a href="/" class="-m-1.5 p-1.5">
-                  <span class="sr-only">Your Company</span>
-                  <!-- we use the below path for the image because of our app.use(express.static('public')) in server.js -->
-                  <img class="h-12 w-auto" src="/assets/grocery-cart-color.png" alt="grocery cart">
-                </a>
-            </div>
-          </nav> 
-          <aside>
-            <p>Copyright © 2023 - All rights reserved. Created by <a href="https://philmach.netlify.app/">Phil Mach II</a> and <a href="https://chrisnelson.onrender.com">Chris Nelson</a></p>
-            <p>
+      <footer class="flex flex-col items-center text-base-content relative bg-gray-100/85">
+        <div class="max-w-3xl md:min-w-[500px]">
+    
+          <div class="px-4 pt-8 pb-2 gap-x-0 columns-2 justify-between items-center w-full">
+    
+            <ul class="px-2 flex flex-col">
+              <li class="px-2 py-1 pl-8 text-gray-700">
+                <a href="/" class="link link-hover">Home</a>
+              </li>
+              <li class="px-2 py-1 pl-8 text-gray-700">
+                <a href="meal-plan-demo" class="link link-hover">Meal Plan Demo</a>
+              </li>
+              <li class="px-2 py-1 pl-8 text-gray-700">
+                <a href="grocery-list-demo" class="link link-hover">Grocery List Demo</a>
+              </li>
+              <% if (user) { %>
+                <li class="px-2 py-1 pl-8 text-gray-700">
+                  <a href="meal-plan" class="link link-hover">Meal Plan</a>
+                </li>
+                <li class="px-2 py-1 pl-8 text-gray-700">
+                  <a href="grocery-list" class="link link-hover">Grocery List</a>
+                </li>
+                <li class="px-2 py-1 pl-8 text-gray-700">
+                  <a href="/" class="link link-hover">Log In</a>
+                </li>
+                <li class="px-2 py-1 pl-8 text-gray-700">
+                  <a href="/" class="link link-hover">Sign Up</a>
+                </li>
+              <% } else { %>
+                <li class="px-2 py-1 pl-8 text-gray-700">
+                  <a href="log-in" class="link link-hover">Meal Plan</a>
+                </li>
+                <li class="px-2 py-1 pl-8 text-gray-700">
+                  <a href="log-in" class="link link-hover">Grocery List</a>
+                </li>
+                <li class="px-2 py-1 pl-8 text-gray-700">
+                  <a href="log-in" class="link link-hover">Log In</a>
+                </li>
+                <li class="px-2 py-1 pl-8 text-gray-700">
+                  <a href="sign-up" class="link link-hover">Sign Up</a>
+                </li>
+              <% } %>
+            </ul>
+          </div>
+          <div class="p-2 flex flex-col items-center">
+            <a href="/">
+                <img href="/" class="h-10  hover:brightness-[1.03]" src="/assets/grocery-cart-color.png" alt="Munch Map shopping cart logo">
+            </a>
+          </div>
+          <aside class="px-4">
+            <p class="pt-2 pb-8 px-4 text-center text-gray-700">Created by <a href="https://philmach.netlify.app/" class="link link-hover">Phil Mach II</a> and <a href="https://chrisnelson.netlify.app/" class="link link-hover">Chris Nelson</a>
+            </p>
+            <hr class="border-gray-400" />
+            <p class="pt-2 pb-0 px-4 text-center text-gray-500">Copyright © 2025 - All rights reserved.</p>
+            <p class="pb-2 px-4 text-center text-gray-500">
               <a href="https://www.flaticon.com/free-icons/supermarket" title="supermarket icons">Supermarket icons created by Freepik - Flaticon</a>
-            <p>
+            </p>
           </aside>
-        </footer>
-        <!-- Footer End -->
-
-
-
-
-
-
+        </div>
+      </footer>
     
+
+      
     <script src="./js/demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
