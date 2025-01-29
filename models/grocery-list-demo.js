@@ -18,17 +18,18 @@ const GroceryListDemoSchema = new mongoose.Schema({
     type: Boolean,
     required: false,
   },
-  // userId: {
-  //   type: String,
-  //   required: false
-  // }
   createdAt: {
     type: Date,
-    expires: 1800,
-    required: true,
+    default: Date.now,
+    expires: '15m'
   }
-
 })
+
+// GroceryListDemoSchema.index(
+//   { createdAt: 1 },
+//   { expireAfterSeconds: 120 }
+// )
+
 
 
 module.exports = mongoose.model('grocery-list-demo', GroceryListDemoSchema)
