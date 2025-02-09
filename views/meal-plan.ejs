@@ -138,7 +138,7 @@
                   <input type="hidden" name="weekday" value="monday" />
                   <input type="hidden" name="complete" value="false" />
                   <input type="hidden" name="note" />
-                  <button class="rounded-md bg-gray-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" type="submit">Add</button>
+                  <button class="rounded-lg bg-gray-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" type="submit">Add</button>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
@@ -295,22 +295,25 @@
                 Tuesday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan/createMealPlanItem" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" autocomplete="on" type="text" placeholder=" Tuesday meal" name="item" required />
+                <form action="/meal-plan/createMealPlanItem" method="POST" class="flex flex-wrap">
+                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" autocomplete="on" type="text" placeholder=" Tuesday meal" name="item" required />
+                  <div class="basis-full h-0"></div>
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
+                  <div class="flex justify-between w-4/5 sm:w-3/4">
+                    <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
 
-                  <!-- <datalist id="mondaymealtimeslist"> -->
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="snack">Snack</option>
-                  <!-- </datalist> -->
-                  </select>
-                  <input type="hidden" name="weekday" value="tuesday" />
-                  <input type="hidden" name="complete" value="false" />
-                  <input type="hidden" name="note" />
-                  <button class="rounded-md bg-gray-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" type="submit">Add</button>
+                    <!-- <datalist id="mondaymealtimeslist"> -->
+                      <option value="breakfast">Breakfast</option>
+                      <option value="lunch">Lunch</option>
+                      <option value="dinner">Dinner</option>
+                      <option value="snack">Snack</option>
+                    <!-- </datalist> -->
+                    </select>
+                    <input type="hidden" name="weekday" value="tuesday" />
+                    <input type="hidden" name="complete" value="false" />
+                    <input type="hidden" name="note" />
+                    <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5" type="submit">Add</button>
+                  </div>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
@@ -444,7 +447,7 @@
                   <div class="basis-full h-0"></div>
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
                   <div class="flex justify-between w-4/5 sm:w-3/4">
-                    <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2leading-7 w-1/2 lg:w-aut truncate" name="mealtime" required>
+                    <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-1/2 lg:w-auto truncate" name="mealtime" required>
 
                     <!-- <datalist id="mondaymealtimeslist"> -->
                       <option value="breakfast">Breakfast</option>
@@ -456,7 +459,7 @@
                     <input type="hidden" name="weekday" value="wednesday" />
                     <input type="hidden" name="complete" value="false" />
                     <input type="hidden" name="note" />
-                    <button class="rounded-md bg-gray-600 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5" type="submit">Add</button>
+                    <button class="rounded-lg bg-gray-600 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5" type="submit">Add</button>
                   </div>
                 </form>
 
@@ -601,7 +604,7 @@
                   <input type="hidden" name="weekday" value="thursday" />
                   <input type="hidden" name="complete" value="false" />
                   <input type="hidden" name="note" />
-                  <button class="rounded-md bg-gray-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" type="submit">Add</button>
+                  <button class="rounded-lg bg-gray-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" type="submit">Add</button>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
@@ -747,7 +750,7 @@
                   <input type="hidden" name="weekday" value="friday" />
                   <input type="hidden" name="complete" value="false" />
                   <input type="hidden" name="note" />
-                  <button class="rounded-md bg-gray-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" type="submit">Add</button>
+                  <button class="rounded-lg bg-gray-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" type="submit">Add</button>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
@@ -893,7 +896,7 @@
                   <input type="hidden" name="weekday" value="saturday" />
                   <input type="hidden" name="complete" value="false" />
                   <input type="hidden" name="note" />
-                  <button class="rounded-md bg-gray-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" type="submit">Add</button>
+                  <button class="rounded-lg bg-gray-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" type="submit">Add</button>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
@@ -1039,7 +1042,7 @@
                   <input type="hidden" name="weekday" value="sunday" />
                   <input type="hidden" name="complete" value="false" />
                   <input type="hidden" name="note" />
-                  <button class="rounded-md bg-gray-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" type="submit">Add</button>
+                  <button class="rounded-lg bg-gray-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" type="submit">Add</button>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
