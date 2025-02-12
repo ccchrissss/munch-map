@@ -105,7 +105,7 @@
       <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
         <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
       </div>
-      <div class="mx-auto max-w-sm sm:max-w-lg lg:max-w-3xl pt-1 pb-36">
+      <div class="mx-auto max-w-sm sm:max-w-lg lg:max-w-4xl pt-1 pb-36">
 
         <div class="text-center">
           <a href="grocery-list-demo" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
@@ -113,8 +113,8 @@
           </a>
         </div>
 
-        <div class="mx-auto mt-16 max-w-2xl lg:max-w-4xl">
-          <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+        <div class="mx-auto mt-16 max-w-2xl lg:max-w-4xl pt-1 pb-36">
+          <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 sm:pl-12 lg:pl-5 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
 
             <!-- Monday Start -->
             <div class="relative pl-16">
@@ -128,22 +128,21 @@
                 Monday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" autocomplete="on" type="text" placeholder="Monday meal" name="item" required />
-                  <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
-
-                  <!-- <datalist id="mondaymealtimeslist"> -->
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="snack">Snack</option>
-                  <!-- </datalist> -->
-                  </select>
-                  <input type="hidden" name="weekday" value="monday" />
-                  <input type="hidden" name="complete" value="false" />
-                  <input type="hidden" name="note" />
-                  <button type="submit">Add</button>
+                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST" class="flex flex-wrap">
+                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" autocomplete="on" type="text" placeholder=" Monday meal" name="item" required />
+                  <div class="basis-full h-0"></div>
+                  <div class="flex justify-between w-4/5 sm:w-3/4">
+                    <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
+                      <option value="breakfast">Breakfast</option>
+                      <option value="lunch">Lunch</option>
+                      <option value="dinner">Dinner</option>
+                      <option value="snack">Snack</option>
+                    </select>
+                    <input type="hidden" name="weekday" value="monday" />
+                    <input type="hidden" name="complete" value="false" />
+                    <input type="hidden" name="note" />
+                    <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5" type="submit">Add</button>
+                  </div>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
@@ -300,22 +299,25 @@
                 Tuesday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" autocomplete="on" type="text" placeholder="Tuesday meal" name="item" required />
+                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST" class="flex flex-wrap">
+                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" autocomplete="on" type="text" placeholder=" Tuesday meal" name="item" required />
+                  <div class="basis-full h-0"></div>
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
+                  <div class="flex justify-between w-4/5 sm:w-3/4">
+                    <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
 
-                  <!-- <datalist id="mondaymealtimeslist"> -->
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="snack">Snack</option>
-                  <!-- </datalist> -->
-                  </select>
-                  <input type="hidden" name="weekday" value="tuesday" />
-                  <input type="hidden" name="complete" value="false" />
-                  <input type="hidden" name="note" />
-                  <button type="submit">Add</button>
+                    <!-- <datalist id="mondaymealtimeslist"> -->
+                      <option value="breakfast">Breakfast</option>
+                      <option value="lunch">Lunch</option>
+                      <option value="dinner">Dinner</option>
+                      <option value="snack">Snack</option>
+                    <!-- </datalist> -->
+                    </select>
+                    <input type="hidden" name="weekday" value="tuesday" />
+                    <input type="hidden" name="complete" value="false" />
+                    <input type="hidden" name="note" />
+                    <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5" type="submit">Add</button>
+                  </div>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
@@ -444,22 +446,25 @@
                 Wednesday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" autocomplete="on" type="text" placeholder="Wednesday meal" name="item" required />
+                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST" class="flex flex-wrap">
+                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" autocomplete="on" type="text" placeholder=" Wednesday meal" name="item" required />
+                  <div class="basis-full h-0"></div>
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
+                  <div class="flex justify-between w-4/5 sm:w-3/4">
+                    <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
 
-                  <!-- <datalist id="mondaymealtimeslist"> -->
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="snack">Snack</option>
-                  <!-- </datalist> -->
-                  </select>
-                  <input type="hidden" name="weekday" value="wednesday" />
-                  <input type="hidden" name="complete" value="false" />
-                  <input type="hidden" name="note" />
-                  <button type="submit">Add</button>
+                    <!-- <datalist id="mondaymealtimeslist"> -->
+                      <option value="breakfast">Breakfast</option>
+                      <option value="lunch">Lunch</option>
+                      <option value="dinner">Dinner</option>
+                      <option value="snack">Snack</option>
+                    <!-- </datalist> -->
+                    </select>
+                    <input type="hidden" name="weekday" value="wednesday" />
+                    <input type="hidden" name="complete" value="false" />
+                    <input type="hidden" name="note" />
+                    <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5" type="submit">Add</button>
+                  </div>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
@@ -588,22 +593,25 @@
                 Thursday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" autocomplete="on" type="text" placeholder="Thursday meal" name="item" required />
+                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST" class="flex flex-wrap">
+                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" autocomplete="on" type="text" placeholder=" Thursday meal" name="item" required />
+                  <div class="basis-full h-0"></div>
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
+                  <div class="flex justify-between w-4/5 sm:w-3/4">
+                    <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
 
-                  <!-- <datalist id="mondaymealtimeslist"> -->
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="snack">Snack</option>
-                  <!-- </datalist> -->
-                  </select>
-                  <input type="hidden" name="weekday" value="thursday" />
-                  <input type="hidden" name="complete" value="false" />
-                  <input type="hidden" name="note" />
-                  <button type="submit">Add</button>
+                    <!-- <datalist id="mondaymealtimeslist"> -->
+                      <option value="breakfast">Breakfast</option>
+                      <option value="lunch">Lunch</option>
+                      <option value="dinner">Dinner</option>
+                      <option value="snack">Snack</option>
+                    <!-- </datalist> -->
+                    </select>
+                    <input type="hidden" name="weekday" value="thursday" />
+                    <input type="hidden" name="complete" value="false" />
+                    <input type="hidden" name="note" />
+                    <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5" type="submit">Add</button>
+                  </div>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
@@ -734,22 +742,25 @@
                 Friday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" autocomplete="on" type="text" placeholder="Friday meal" name="item" required />
+                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST" class="flex flex-wrap">
+                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" autocomplete="on" type="text" placeholder=" Friday meal" name="item" required />
+                  <div class="basis-full h-0"></div>
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
+                  <div class="flex justify-between w-4/5 sm:w-3/4">
+                    <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
 
-                  <!-- <datalist id="mondaymealtimeslist"> -->
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="snack">Snack</option>
-                  <!-- </datalist> -->
-                  </select>
-                  <input type="hidden" name="weekday" value="friday" />
-                  <input type="hidden" name="complete" value="false" />
-                  <input type="hidden" name="note" />
-                  <button type="submit">Add</button>
+                    <!-- <datalist id="mondaymealtimeslist"> -->
+                      <option value="breakfast">Breakfast</option>
+                      <option value="lunch">Lunch</option>
+                      <option value="dinner">Dinner</option>
+                      <option value="snack">Snack</option>
+                    <!-- </datalist> -->
+                    </select>
+                    <input type="hidden" name="weekday" value="friday" />
+                    <input type="hidden" name="complete" value="false" />
+                    <input type="hidden" name="note" />
+                    <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5" type="submit">Add</button>
+                  </div>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
@@ -880,22 +891,25 @@
                 Saturday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" autocomplete="on" type="text" placeholder="Saturday meal" name="item" required />
+                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST" class="flex flex-wrap">
+                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" autocomplete="on" type="text" placeholder=" Saturday meal" name="item" required />
+                  <div class="basis-full h-0"></div>
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
+                  <div class="flex justify-between w-4/5 sm:w-3/4">
+                    <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
 
-                  <!-- <datalist id="mondaymealtimeslist"> -->
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="snack">Snack</option>
-                  <!-- </datalist> -->
-                  </select>
-                  <input type="hidden" name="weekday" value="saturday" />
-                  <input type="hidden" name="complete" value="false" />
-                  <input type="hidden" name="note" />
-                  <button type="submit">Add</button>
+                    <!-- <datalist id="mondaymealtimeslist"> -->
+                      <option value="breakfast">Breakfast</option>
+                      <option value="lunch">Lunch</option>
+                      <option value="dinner">Dinner</option>
+                      <option value="snack">Snack</option>
+                    <!-- </datalist> -->
+                    </select>
+                    <input type="hidden" name="weekday" value="saturday" />
+                    <input type="hidden" name="complete" value="false" />
+                    <input type="hidden" name="note" />
+                    <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5" type="submit">Add</button>
+                  </div>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
@@ -1026,22 +1040,25 @@
                 Sunday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST">
-                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" autocomplete="on" type="text" placeholder="Sunday meal" name="item" required />
+                <form action="/meal-plan-demo/createMealPlanDemoItem" method="POST" class="flex flex-wrap">
+                  <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" autocomplete="on" type="text" placeholder=" Sunday meal" name="item" required />
+                  <div class="basis-full h-0"></div>
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
-                  <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
+                  <div class="flex justify-between w-4/5 sm:w-3/4">
+                    <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
 
-                  <!-- <datalist id="mondaymealtimeslist"> -->
-                    <option value="breakfast">Breakfast</option>
-                    <option value="lunch">Lunch</option>
-                    <option value="dinner">Dinner</option>
-                    <option value="snack">Snack</option>
-                  <!-- </datalist> -->
-                  </select>
-                  <input type="hidden" name="weekday" value="sunday" />
-                  <input type="hidden" name="complete" value="false" />
-                  <input type="hidden" name="note" />
-                  <button type="submit">Add</button>
+                    <!-- <datalist id="mondaymealtimeslist"> -->
+                      <option value="breakfast">Breakfast</option>
+                      <option value="lunch">Lunch</option>
+                      <option value="dinner">Dinner</option>
+                      <option value="snack">Snack</option>
+                    <!-- </datalist> -->
+                    </select>
+                    <input type="hidden" name="weekday" value="sunday" />
+                    <input type="hidden" name="complete" value="false" />
+                    <input type="hidden" name="note" />
+                    <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5" type="submit">Add</button>
+                  </div>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
