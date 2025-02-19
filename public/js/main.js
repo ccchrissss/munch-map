@@ -40,6 +40,7 @@ Array.from(deleteBtn).forEach((element)=>{
 async function deleteItem(){
     // const itemText = this.parentNode.childNodes[1].innerText
     let id = this.parentNode.id
+    // console.log(this.parentNode)
 
     try{
         const response = await fetch('meal-plan/deleteMealPlanItem', {
@@ -383,7 +384,7 @@ async function deleteItemGroceryList(){
     // console.log(itemText)
 
     const id = this.parentNode.id
-    console.log(id)
+    // console.log(id)
 
     try{
         const response = await fetch('grocery-list/deleteItemGroceryList', {
