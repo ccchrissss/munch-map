@@ -147,9 +147,9 @@ function addNoteToItem() {
     // document.querySelector('.item-note-form').style.display = 'block'
 
     // notes.classList.toggle('item-note-display-toggle')
-    this.parentNode.parentNode.childNodes[11].classList.toggle('item-note-display-toggle')
+    this.parentNode.childNodes[11].classList.toggle('item-note-display-toggle')
     // notesSaveBtn.classList.toggle('button-display-toggle')
-    this.parentNode.parentNode.childNodes[13].classList.toggle('button-display-toggle')
+    this.parentNode.childNodes[13].classList.toggle('button-display-toggle')
     // console.log('Note button has been clicked')
 }
 
