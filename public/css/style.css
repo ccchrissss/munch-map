@@ -2,6 +2,9 @@
     color: gray;
     text-decoration: line-through;
 }
+.item-name {
+    cursor: pointer;
+}
 
 .hidden {
     display: none;
