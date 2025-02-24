@@ -219,8 +219,8 @@ async function editNote(){
 // Grocery List Start
 // ~~~~~~~~~
 
-const increase = document.querySelectorAll('#add-num-button')
-const decrease = document.querySelectorAll('#sub-num-button')
+const increase = document.querySelectorAll('.add-num-button')
+const decrease = document.querySelectorAll('.sub-num-button')
 const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.incomplete')
 const completeGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.complete')
 
