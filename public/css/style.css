@@ -2,6 +2,15 @@
     color: gray;
     text-decoration: line-through;
 }
+.item-name {
+    cursor: pointer;
+}
+.item-name.complete:hover {
+    color:#327d3e;
+}
+.item-name.incomplete:hover {
+    color: #7d3232;
+}
 
 .hidden {
     display: none;

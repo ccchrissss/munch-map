@@ -147,9 +147,9 @@ function addNoteToItem() {
     // document.querySelector('.item-note-form').style.display = 'block'
 
     // notes.classList.toggle('item-note-display-toggle')
-    this.parentNode.parentNode.childNodes[11].classList.toggle('item-note-display-toggle')
+    this.parentNode.childNodes[11].classList.toggle('item-note-display-toggle')
     // notesSaveBtn.classList.toggle('button-display-toggle')
-    this.parentNode.parentNode.childNodes[13].classList.toggle('button-display-toggle')
+    this.parentNode.childNodes[13].classList.toggle('button-display-toggle')
     // console.log('Note button has been clicked')
 }
 
@@ -219,8 +219,8 @@ async function editNote(){
 // Grocery List Start
 // ~~~~~~~~~
 
-const increase = document.querySelectorAll('#add-num-button')
-const decrease = document.querySelectorAll('#sub-num-button')
+const increase = document.querySelectorAll('.add-num-button')
+const decrease = document.querySelectorAll('.sub-num-button')
 const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.incomplete')
 const completeGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.complete')
 

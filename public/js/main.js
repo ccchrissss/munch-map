@@ -146,12 +146,13 @@ function addNoteToItem() {
     // console.log('this: ', this)
 
     // console.log('the node list: ', this.parentNode.parentNode.childNodes)
+    // console.log('the node list: ', this.parentNode.childNodes)
     // document.querySelector('.item-note-form').style.display = 'block'
 
     // notes.classList.toggle('item-note-display-toggle')
-    this.parentNode.parentNode.childNodes[11].classList.toggle('item-note-display-toggle')
+    this.parentNode.childNodes[11].classList.toggle('item-note-display-toggle')
     // notesSaveBtn.classList.toggle('button-display-toggle')
-    this.parentNode.parentNode.childNodes[13].classList.toggle('button-display-toggle')
+    this.parentNode.childNodes[13].classList.toggle('button-display-toggle')
     // console.log('Note button has been clicked')
 }
 
@@ -167,11 +168,11 @@ async function editNote(){
     const id = this.parentNode.id
     const checkmark = this.parentNode.childNodes[14]
 
-    console.log('id', id)
+    // console.log('id', id)
     // console.log(this.parentNode.childNodes)
 
     // id = id.charAt(0).toUpperCase() + id.slice(1)
-    console.log('editNote id: ', id)
+    // console.log('editNote id: ', id)
     // console.log(itemText)
     // console.log(noteText)
 
@@ -185,7 +186,7 @@ async function editNote(){
             })
           })
         const data = await response.json()
-        console.log(data)
+        // console.log(data)
 
         checkmark.classList.add('checkmark-display')
         setTimeout( _ => {
@@ -221,8 +222,8 @@ async function editNote(){
 // Grocery List Start
 // ~~~~~~~~~
 
-const increase = document.querySelectorAll('#add-num-button')
-const decrease = document.querySelectorAll('#sub-num-button')
+const increase = document.querySelectorAll('.add-num-button')
+const decrease = document.querySelectorAll('.sub-num-button')
 const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.incomplete')
 const completeGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.complete')
 
