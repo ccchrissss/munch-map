@@ -1,3 +1,6 @@
+#main-content {
+    min-height: 75vh;
+}
 .complete {
     color: gray;
     text-decoration: line-through;
