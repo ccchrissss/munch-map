@@ -28,10 +28,10 @@
             </a>
             <div class="flex items-center lg:order-2">
               <% if (user) { %>
-                <p class="hidden sm:inline lg:block text-lg text-[#4f46e5] font-medium px-4 lg:px-5 py-2 lg:py-2.5 mr-2"><%= user.userName %></p>
+                <p class="hidden sm:inline lg:block text-lg text-[#4f46e5] font-medium pr-4 lg:pr-5 py-2 lg:py-2.5 mr-2"><%= user.userName %></p>
                 <p class="hidden sm:inline lg:block"><a href="/log-out" class="italic text-lg text-gray-400 hover:text-gray-500">Log out</a></p>
               <% } else { %>
-                <a href="log-in" class="hidden sm:inline text-lg text-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 focus:outline-none hover:text-gray-500">Log In</a>
+                <a href="log-in" class="hidden sm:inline text-lg text-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg pr-4 lg:pr-5 py-2 lg:py-2.5 focus:outline-none hover:text-gray-500">Log In</a>
                 <a href="sign-up" class="hidden sm:inline text-lg text-[#4f46e5] bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:text-indigo-500">Sign Up</a>
               <% } %> 
                 <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-lg text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
