@@ -1,6 +1,18 @@
+#main-content {
+    min-height: 75vh;
+}
 .complete {
     color: gray;
     text-decoration: line-through;
+}
+.item-name {
+    cursor: pointer;
+}
+.item-name.complete:hover {
+    color:#327d3e;
+}
+.item-name.incomplete:hover {
+    color: #7d3232;
 }
 
 .hidden {
@@ -9,7 +21,8 @@
 .item-note {
     display: none;
     font-style: italic;
-    text-indent: 10px;
+    padding-left: 10px;
+    /* text-indent: 10px; */
     /* margin-bottom: 0.5rem; */
 }
 /* placeholder code for item note */
@@ -48,14 +61,6 @@
 
 .item-note-display-toggle {
     display: block;
-}
-
-
-.item-note {
-    display: none;
-    font-style: italic;
-    text-indent: 10px;
-    /* margin-bottom: 0.5rem; */
 }
 
 .save-button {
