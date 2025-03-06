@@ -7,6 +7,7 @@ const { ensureAuth } = require('../middleware/auth')
 
 router.get('/', mealPlanController.getMealPlan)
 // router.get('/', ensureAuth, todosController.getTodos)
+// router.get('/')
 
 router.post('/createMealPlanItem', mealPlanController.createMealPlanItem)
 // router.post('/createTodo', todosController.createTodo)

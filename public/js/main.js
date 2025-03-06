@@ -1,3 +1,78 @@
+// ~~~~~~~~~
+// Meal Plan Form Submission Location Reload
+// ~~~~~~~~~
+
+// const postReqReloadFix = (e) => {
+//     e.preventDefault()
+//     window.location.reload()
+//     // setTimeout( e => {
+//     //     // do i need to use prevent default before setTimeout?
+//     //     // console.log('window.location.reload()')
+//     //     window.location.reload()
+//     // }, 1000 )
+// }
+
+const mondaySubmitBtn = document.querySelector('#monday-submit-btn')
+const mondayForm = document.querySelector('#monday-form')
+
+mondaySubmitBtn.addEventListener('click', submitForm)
+
+// mondaySubmitBtn.addEventListener('click', function(event) {
+//     event.preventDefault()
+//     // mondayForm.submit()
+//     location.reload()
+// })
+
+async function submitForm(){
+    // const form = this
+    const id = this.parentNode.id
+    const item = this.parentNode.children[0].value
+    const mealtime = this.parentNode.children[1].value
+    const weekday = this.parentNode.children[2].value
+
+    // console.log('form', form)
+    console.log('parentNode id:', id)
+    console.log('children: ', this.parentNode.children)
+    console.log('item: ', item)
+    // console.log('mealtime: ', this.parentNode.children[1].value)
+    // console.log('weekday: ', this.parentNode.children[2].value)
+    // console.log('complete: ', this.parentNode.children[3].value)
+
+    // console.log(this.parentNode.childNodes)
+
+    // id = id.charAt(0).toUpperCase() + id.slice(1)
+    // console.log('editNote id: ', id)
+    // console.log(itemText)
+    // console.log(noteText)
+
+    try{
+        const response = await fetch(`meal-plan/createMealPlanItem`, {
+            method: 'post',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'idFromJS': id,
+                'itemFromJS': item,
+                'mealTimeFromJS': mealtime,
+                'weekdayFromJS': weekday
+                // 'noteFromJS': noteText
+
+            })
+          })
+        const data = await response.json()
+        console.log(data)
+
+        // checkmark.classList.add('checkmark-display')
+        // setTimeout( _ => {
+        //     checkmark.classList.remove('checkmark-display')
+        // }, 2000)
+        // location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}
+
+
+
 const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
 const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
 const itemsMealPlan = document.querySelectorAll('#meal-plan .item span.item-name')

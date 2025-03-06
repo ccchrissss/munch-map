@@ -28,8 +28,35 @@ module.exports = {
 
     },
 
+    getMealPlanAfterFormSub: async (req, res) => {
+        
+      // console.log('req ', req)
+      // console.log(res)
+      
+      try {
+        
+        const mealPlanDocs = await MealPlan.find({ userId: req.user.id })
+        // console.log('meal plan count documents: ', mealPlanDocs)
+
+        let mealPlanArr = Array.from(mealPlanDocs)
+        // console.log('meal plan docs type of: ', typeof mealPlanDocs)
+        // console.log('meal plan Arr: ', mealPlanArr)
+
+        res.render('meal-plan.ejs',
+          { 
+            mealPlanStuff: mealPlanArr,
+            user: req.user
+          }
+        )
+      } catch(err) {
+        console.log(err)
+      }
+
+    },
+
     createMealPlanItem: async (req, res) => {
 
+      console.log(req.body)
       try{
         // console.log('req.body: ', req.body)
 
@@ -42,9 +69,9 @@ module.exports = {
           userId: req.user.id
         })
 
-        // console.log('Meal Plan item has been added!')
+        console.log('Meal Plan item has been added!')
 
-        res.redirect('/meal-plan')
+        // res.redirect('/meal-plan')
       } catch(err) {
         console.log(err)
       }

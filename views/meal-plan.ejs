@@ -123,7 +123,8 @@
                 Monday
               </dt>
               <dd class="mt-2 text-base leading-7 text-gray-600">
-                <form action="/meal-plan/createMealPlanItem" method="POST">
+                <!-- <form id="monday-form" action="/meal-plan/createMealPlanItem" method="POST"> -->
+                <form id="monday-form">
                   <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" autocomplete="on" type="text" placeholder=" Monday meal" name="item" required />
                   <!-- <input class="bg-gray-200 my-1" autocomplete="on" list="mondaymealtimeslist" placeholder="which meal time?" name="mondaymealtime" required /> -->
                   <select class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7" name="mealtime" required>
@@ -138,7 +139,8 @@
                   <input type="hidden" name="weekday" value="monday" />
                   <input type="hidden" name="complete" value="false" />
                   <input type="hidden" name="note" />
-                  <button type="submit">Add</button>
+                  <!-- <button id="monday-submit-btn" type="submit">Add</button> -->
+                  <button id="monday-submit-btn" type="button">Add</button>
                 </form>
 
                 <h4 class="font-semibold">Breakfast</h4>
