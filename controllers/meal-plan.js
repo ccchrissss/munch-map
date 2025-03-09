@@ -31,7 +31,33 @@ module.exports = {
     createMealPlanItem: async (req, res) => {
 
       try{
+        console.log('req.body: ', req.body)
+
+        await MealPlan.create({
+          item: req.body.item,
+          mealtime: req.body.mealtime,
+          weekday: req.body.weekday, 
+          complete: false, 
+          note: '',
+          userId: req.user.id
+        })
+
+        // console.log('Meal Plan item has been added!')
+
+        res.redirect('/meal-plan')
+      } catch(err) {
+        console.log(err)
+      }
+
+    },
+
+    createMPFetch: async (req, res) => {
+
+      console.log('req.body: ', req.body)
+      try{
         // console.log('req.body: ', req.body)
+
+        console.log('hiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
 
         await MealPlan.create({
           item: req.body.item,
@@ -52,7 +78,7 @@ module.exports = {
     },
 
     markComplete: async (req, res) => {
-      // console.log(req.body)
+      // console.log('req.body: ', req.body)
 
       try {
         // console.log(req.body)

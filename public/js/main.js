@@ -1,3 +1,59 @@
+// ~~~~~~~~~
+// Meal Plan Form Submission Location Reload
+// ~~~~~~~~~
+
+// const postReqReloadFix = (e) => {
+//     e.preventDefault()
+//     window.location.reload()
+//     // setTimeout( e => {
+//     //     // do i need to use prevent default before setTimeout?
+//     //     // console.log('window.location.reload()')
+//     //     window.location.reload()
+//     // }, 1000 )
+// }
+
+const mondaySubmitBtn = document.querySelector('#monday-submit-btn')
+const mondayFormEl = document.querySelector('#monday-form')
+
+// mondayFormEl.addEventListener('submit', event => {
+//     event.preventDefault()
+
+//     const formData = new FormData(mondayFormEl)
+//     const data = new URLSearchParams(formData)
+//     fetch(`meal-plan/createMPFetch`, {
+//         method: 'POST',
+//         body: data
+//     }).then(res => res.json())
+//       .then(data => {
+//         console.log('data: ', data)
+//         location.reload()
+//       })
+//       .catch(error => console.log(error))
+// })
+
+   
+// This one mostly works. the below function is the event handler that goes after 'submit'. The location.reload does not work. Also it throws a JSON.parse SyntaxError
+mondayFormEl.addEventListener('submit', event => {
+
+    event.preventDefault()
+
+
+    const formData = new FormData(mondayFormEl)
+    const data = new URLSearchParams(formData)
+    fetch(`meal-plan/createMPFetch`, {
+        method: 'POST',
+        body: data
+    }).then(res => res.json())
+      .then(data => {
+        console.log('data: ', data)
+        location.reload()
+      })
+      .catch(error => console.log(error))
+    }
+
+)
+
+
 const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
 const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
 const itemsMealPlan = document.querySelectorAll('#meal-plan .item span.item-name')
