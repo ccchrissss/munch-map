@@ -1,8 +1,6 @@
 // ~~~~~~~~~
-// Meal Plan Form Submission Location Reload
+// Meal Plan Form Submission Location Reload Start
 // ~~~~~~~~~
-
-
 const formEl = document.querySelectorAll('.weekday')
 
 Array.from(formEl).forEach( e => e.addEventListener('submit', submitForm) )
@@ -18,7 +16,7 @@ async function submitForm(event) {
     const data = new URLSearchParams(formData)
 
     try {
-        const response = await fetch(`meal-plan/createMPFetch`, {
+        const response = await fetch(`meal-plan/createMealPlanItem`, {
             method: 'POST',
             body: data 
         })
@@ -42,8 +40,9 @@ async function submitForm(event) {
     //   })
     //   .catch(error => console.log(error))
 }
-
-
+// ~~~~~~~~~
+// Meal Plan Form Submission Location Reload End
+// ~~~~~~~~~
 
 
 const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')

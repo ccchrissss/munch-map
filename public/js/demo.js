@@ -1,3 +1,50 @@
+// ~~~~~~~~~
+// Meal Plan Form Submission Location Reload Start
+// ~~~~~~~~~
+const formEl = document.querySelectorAll('.weekday')
+
+Array.from(formEl).forEach( e => e.addEventListener('submit', submitForm) )
+
+    
+async function submitForm(event) {
+
+    event.preventDefault()
+
+    // console.log('this: ', this)
+
+    const formData = new FormData(this)
+    const data = new URLSearchParams(formData)
+
+    try {
+        const response = await fetch(`meal-plan-demo/createMealPlanDemoItem`, {
+            method: 'POST',
+            body: data 
+        })
+        const jsonRes = await response.json()
+        // console.log('jsonRes: ', jsonRes)
+        // console.log(response.json())
+        this.reset()
+        location.reload()
+
+    } catch(error) { 
+        console.log(error)
+    }
+
+    // fetch(`meal-plan/createMPFetch`, {
+    //     method: 'POST',
+    //     body: data
+    // }).then(res => res.json())
+    //   .then(data => {
+    //     console.log('data: ', data)
+    //     location.reload()
+    //   })
+    //   .catch(error => console.log(error))
+}
+// ~~~~~~~~~
+// Meal Plan Form Submission Location Reload End
+// ~~~~~~~~~
+
+
 const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
 const incompleteMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.complete')
 const itemsMealPlan = document.querySelectorAll('#meal-plan .item span.item-name')
