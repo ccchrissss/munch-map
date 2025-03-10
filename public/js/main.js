@@ -269,6 +269,52 @@ async function editNote(){
 // Grocery List Start
 // ~~~~~~~~~
 
+// ~~~~~~~~~
+// Grocery List Form Submission Location Reload Start
+// ~~~~~~~~~
+const groceryListFormEl = document.querySelectorAll('.food-category')
+
+Array.from(groceryListFormEl).forEach( e => e.addEventListener('submit', groceryListSubmitForm) )
+
+    
+async function groceryListSubmitForm(event) {
+
+    event.preventDefault()
+
+    // console.log('this: ', this)
+
+    const formData = new FormData(this)
+    const data = new URLSearchParams(formData)
+
+    try {
+        const response = await fetch(`grocery-list/createGroceryListItem`, {
+            method: 'POST',
+            body: data 
+        })
+        const jsonRes = await response.json()
+        // console.log('jsonRes: ', jsonRes)
+        // console.log(response.json())
+        this.reset()
+        location.reload()
+
+    } catch(error) { 
+        console.log(error)
+    }
+
+    // fetch(`meal-plan/createMPFetch`, {
+    //     method: 'POST',
+    //     body: data
+    // }).then(res => res.json())
+    //   .then(data => {
+    //     console.log('data: ', data)
+    //     location.reload()
+    //   })
+    //   .catch(error => console.log(error))
+}
+// ~~~~~~~~~
+// Grocery Form Submission Location Reload End
+// ~~~~~~~~~
+
 const increase = document.querySelectorAll('.add-num-button')
 const decrease = document.querySelectorAll('.sub-num-button')
 const incompleteGroceryList = document.querySelectorAll('#grocery-list .item span.item-name.incomplete')
