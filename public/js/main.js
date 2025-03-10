@@ -2,54 +2,30 @@
 // Meal Plan Form Submission Location Reload
 // ~~~~~~~~~
 
-// const postReqReloadFix = (e) => {
-//     e.preventDefault()
-//     window.location.reload()
-//     // setTimeout( e => {
-//     //     // do i need to use prevent default before setTimeout?
-//     //     // console.log('window.location.reload()')
-//     //     window.location.reload()
-//     // }, 1000 )
-// }
 
-const mondaySubmitBtn = document.querySelector('#monday-submit-btn')
-const mondayFormEl = document.querySelector('#monday-form')
+const formEl = document.querySelectorAll('.weekday')
 
-// mondayFormEl.addEventListener('submit', event => {
-//     event.preventDefault()
+Array.from(formEl).forEach( e => e.addEventListener('submit', submitForm) )
 
-//     const formData = new FormData(mondayFormEl)
-//     const data = new URLSearchParams(formData)
-//     fetch(`meal-plan/createMPFetch`, {
-//         method: 'POST',
-//         body: data
-//     }).then(res => res.json())
-//       .then(data => {
-//         console.log('data: ', data)
-//         location.reload()
-//       })
-//       .catch(error => console.log(error))
-// })
-
-   
-// This one mostly works. the below function is the event handler that goes after 'submit'. The location.reload does not work. Also it throws a JSON.parse SyntaxError
-mondayFormEl.addEventListener('submit', async event => {
+    
+async function submitForm(event) {
 
     event.preventDefault()
 
+    // console.log('this: ', this)
 
-    const formData = new FormData(mondayFormEl)
+    const formData = new FormData(this)
     const data = new URLSearchParams(formData)
-    
+
     try {
         const response = await fetch(`meal-plan/createMPFetch`, {
             method: 'POST',
             body: data 
         })
         const jsonRes = await response.json()
-        console.log('jsonRes: ', jsonRes)
+        // console.log('jsonRes: ', jsonRes)
         // console.log(response.json())
-        mondayFormEl.reset()
+        this.reset()
         location.reload()
 
     } catch(error) { 
@@ -65,7 +41,7 @@ mondayFormEl.addEventListener('submit', async event => {
     //     location.reload()
     //   })
     //   .catch(error => console.log(error))
-})
+}
 
 
 
