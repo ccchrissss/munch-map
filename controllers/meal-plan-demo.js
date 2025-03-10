@@ -37,7 +37,7 @@ module.exports = {
     createMealPlanDemoItem: async (req, res) => {
 
       try{
-        console.log('req.body: ', req.body)
+        // console.log('req.body: ', req.body)
 
         await MealPlanDemo.create({
           item: req.body.item,
@@ -48,6 +48,7 @@ module.exports = {
           createdAt: new Date()
         })
 
+        res.json('Meal Plan Demo item created')
         // console.log('Meal Plan item has been added!')
 
         res.redirect('/meal-plan-demo')

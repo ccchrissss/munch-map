@@ -40,7 +40,7 @@ module.exports = {
           userId: req.user.id
         })
 
-        // console.log('Meal Plan item has been added!')
+        res.json('Grocery List item created')
 
         res.redirect('/grocery-list')
       } catch(err) {

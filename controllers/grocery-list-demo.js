@@ -48,8 +48,8 @@ module.exports = {
           createdAt: new Date()
         })
 
-
-        console.log('Grocery List item has been added!')
+        res.json('Grocery List Demo item created')
+        // console.log('Grocery List item has been added!')
 
         res.redirect('/grocery-list-demo')
       } catch(err) {

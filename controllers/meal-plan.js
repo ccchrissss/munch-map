@@ -42,6 +42,7 @@ module.exports = {
           userId: req.user.id
         })
 
+        res.json('Meal Plan item created')
         // console.log('Meal Plan item has been added!')
 
         res.redirect('/meal-plan')
@@ -52,7 +53,7 @@ module.exports = {
     },
 
     markComplete: async (req, res) => {
-      // console.log(req.body)
+      // console.log('req.body: ', req.body)
 
       try {
         // console.log(req.body)
