@@ -49,6 +49,7 @@ mondayFormEl.addEventListener('submit', async event => {
         const jsonRes = await response.json()
         console.log('jsonRes: ', jsonRes)
         // console.log(response.json())
+        mondayFormEl.reset()
         location.reload()
 
     } catch(error) { 
