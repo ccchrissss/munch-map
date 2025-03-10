@@ -33,25 +33,40 @@ const mondayFormEl = document.querySelector('#monday-form')
 
    
 // This one mostly works. the below function is the event handler that goes after 'submit'. The location.reload does not work. Also it throws a JSON.parse SyntaxError
-mondayFormEl.addEventListener('submit', event => {
+mondayFormEl.addEventListener('submit', async event => {
 
     event.preventDefault()
 
 
     const formData = new FormData(mondayFormEl)
     const data = new URLSearchParams(formData)
-    fetch(`meal-plan/createMPFetch`, {
-        method: 'POST',
-        body: data
-    }).then(res => res.json())
-      .then(data => {
-        console.log('data: ', data)
+    
+    try {
+        const response = await fetch(`meal-plan/createMPFetch`, {
+            method: 'POST',
+            body: data 
+        })
+        const jsonRes = await response.json()
+        console.log('jsonRes: ', jsonRes)
+        // console.log(response.json())
         location.reload()
-      })
-      .catch(error => console.log(error))
+
+    } catch(error) { 
+        console.log(error)
     }
 
-)
+    // fetch(`meal-plan/createMPFetch`, {
+    //     method: 'POST',
+    //     body: data
+    // }).then(res => res.json())
+    //   .then(data => {
+    //     console.log('data: ', data)
+    //     location.reload()
+    //   })
+    //   .catch(error => console.log(error))
+})
+
+
 
 
 const completeMealPlan = document.querySelectorAll('#meal-plan .item span.item-name.incomplete')
@@ -107,7 +122,7 @@ async function deleteItem(){
             })
         })
       const data = await response.json()
-    //   console.log(data)
+    //   console.log('data: ', data)
       location.reload()
 
   }catch(err){

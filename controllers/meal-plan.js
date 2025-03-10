@@ -42,6 +42,8 @@ module.exports = {
           userId: req.user.id
         })
 
+        res.json('Meal Plan item created')
+
         // console.log('Meal Plan item has been added!')
 
         res.redirect('/meal-plan')
@@ -67,6 +69,8 @@ module.exports = {
           note: '',
           userId: req.user.id
         })
+
+        res.json('Meal Plan Fetch item created')
 
         // console.log('Meal Plan item has been added!')
 
