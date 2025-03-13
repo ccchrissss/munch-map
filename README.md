@@ -1,4 +1,5 @@
-# Munch Map 1.0.0 - A Meal Plan and Grocery List Application
+# Munch Map - A Meal Plan and Grocery List Application
+![Version](https://img.shields.io/badge/version-1.1.0-blue)
 
 Built by: Phil Mach & Chris Nelson ([Phil](https://github.com/philmach2) | [Chris](https://github.com/ccchrissss))
 
