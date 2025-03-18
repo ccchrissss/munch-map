@@ -22,7 +22,9 @@
 
 ---
 
-<img width="720" alt="munch-map-landing-page" src="https://github.com/user-attachments/assets/7517bc34-c61d-4199-bb61-2f1193864793">
+<div align="center">
+ <img width="720" alt="munch-map-landing-page" src="https://github.com/ccchrissss/munch-map/blob/main/public/assets/landing-page-screenshot-1.png?raw=true">
+</div>
 
 ## How It's Made:
 
@@ -62,6 +64,6 @@ Furthermore, we envision facilitating real-time communication between collaborat
 
 
 
-<img width="720" alt="meal-plan-page-video-demo" src="https://github.com/philmach2/mealplan-grocerylist/assets/110493891/110dcbb1-bbb0-4fa1-8a64-b7631a90d0d1"><br />
-
-<img width="720" alt="grocery-list-page-video-demo" src="https://github.com/philmach2/mealplan-grocerylist/assets/110493891/3a2ca73d-9f0c-4ef8-b123-e011e3bfe10d">
+<div align="center">
+ <img width="720" alt="munch-map-landing-page" src="https://github.com/ccchrissss/munch-map/blob/main/public/assets/meal-plan-page-screenshot-1.png?raw=true">
+</div>
