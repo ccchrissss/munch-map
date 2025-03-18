@@ -1,9 +1,26 @@
-# Munch Map - A Meal Plan and Grocery List Application
-![Version](https://img.shields.io/badge/version-1.1.0-blue)
+# <p align="center">Munch Map</p>
 
-Built by: Phil Mach & Chris Nelson ([Phil](https://github.com/philmach2) | [Chris](https://github.com/ccchrissss))
+### <div align="center">A Meal Plan and Grocery List Application</div>
 
-Live Link: https://munch-map.onrender.com/
+<div align="center">
+
+  **Built by:** [Phil Mach](https://github.com/philmach2) & [Chris Nelson](https://github.com/ccchrissss)
+
+</div>
+
+<div align="center">
+
+  [munch-map.onrender.com](https://munch-map.onrender.com)
+
+</div>
+
+<div align="center">
+  
+  ![Version](https://img.shields.io/badge/version-1.1.0-blue)<br />
+
+</div>
+
+---
 
 <img width="720" alt="munch-map-landing-page" src="https://github.com/user-attachments/assets/7517bc34-c61d-4199-bb61-2f1193864793">
 
