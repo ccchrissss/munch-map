@@ -62,6 +62,8 @@ We plan to add more features to the app, including a drag-and-drop feature to re
 
 Furthermore, we envision facilitating real-time communication between collaborators, enabling notifications for users to stay informed about any changes made by others through the integration of the Web Socket API. We believe these optimizations will make Munch Map a truly powerful tool for anyone who wants to improve their diet.
 
+See a breakdown of our most recent updates in our [changelog](https://github.com/ccchrissss/munch-map/blob/main/CHANGELOG.md)
+
 
 
 <div align="center">
