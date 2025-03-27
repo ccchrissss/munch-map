@@ -15,8 +15,8 @@
 </div>
 
 <div align="center">
-  
-  ![Version](https://img.shields.io/badge/version-1.1.0-blue)<br />
+ 
+  <a href="https://github.com/ccchrissss/munch-map/blob/main/CHANGELOG.md"><img src="https://img.shields.io/badge/version-1.1.0-blue" alt="Latest Release"></a>
 
 </div>
 
