@@ -51,7 +51,7 @@ module.exports = {
         res.json('Meal Plan Demo item created')
         // console.log('Meal Plan item has been added!')
 
-        res.redirect('/meal-plan-demo')
+        // res.redirect('/meal-plan-demo')
       } catch(err) {
         console.log(err)
       }
@@ -70,7 +70,7 @@ module.exports = {
         // console.log('Marked Complete')
         res.json('Marked Complete')
 
-        res.redirect('/meal-plan-demo')
+        // res.redirect('/meal-plan-demo')
       } catch(err) {
         console.log(err)
       }
