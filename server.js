@@ -57,6 +57,21 @@ app.listen(process.env.PORT, () => {
   console.log(`Server is running on PORT ${process.env.PORT}, you better catch it!`);
 });
 
+
+// MongoDB Debugging
+// console.log("---- DEBUG MONGO URI ----");
+// console.log(process.env.DB_STRING);
+// console.log("--------------------------");
+
+// const { URL } = require('url');
+
+// try {
+//   const debugParsed = new URL(process.env.DB_STRING);
+//   console.log("Parsed Hostname:", debugParsed.hostname);
+// } catch (e) {
+//   console.log("URL parse error:", e.message);
+// }
+
 // let db,
 //   dbConnectionStr = process.env.DB_STRING,
 //   dbName = 'meal-plan-grocery-list-database';

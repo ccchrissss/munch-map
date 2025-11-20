@@ -7,6 +7,20 @@
     <!-- not workign for some reason: -->
     <!-- <link href="/dist/output.css" rel="stylesheet"> -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bluelagoon: {
+                500: '#85bbff',
+                600: '#749add'
+              }
+            }
+          }
+        }
+      }
+    </script>    
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/x-icon" href="/assets/grocery-cart-color.png">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
@@ -31,11 +45,11 @@
             
             <div class="flex grow basis-[0] justify-end items-center lg:order-3">
               <% if (user) { %>
-                <p class="hidden sm:inline lg:block text-lg text-[#4f46e5] font-medium pr-4 lg:pr-5 py-2 lg:py-2.5 mr-2"><%= user.userName %></p>
+                <p class="hidden sm:inline lg:block text-lg text-bluelagoon-600 font-medium pr-4 lg:pr-5 py-2 lg:py-2.5 mr-2"><%= user.userName %></p>
                 <p class="hidden sm:inline lg:block"><a href="/log-out" class="italic text-lg text-gray-400 hover:text-gray-500">Log out</a></p>
               <% } else { %>
                 <a href="log-in" class="hidden sm:inline text-lg text-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg pr-4 lg:pr-5 py-2 lg:py-2.5 focus:outline-none hover:text-gray-500">Log In</a>
-                <a href="sign-up" class="hidden sm:inline text-lg text-[#4f46e5] bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:text-indigo-500">Sign Up</a>
+                <a href="sign-up" class="hidden sm:inline text-lg text-bluelagoon-600 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:text-bluelagoon-500">Sign Up</a>
               <% } %> 
                 <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-lg text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
@@ -61,7 +75,7 @@
                       <a href="grocery-list" class="block p-2 pl-1 text-lg leading-5 text-gray-700 lg:border-0 lg:p-0 hover:text-gray-500">Grocery List</a>
                     </li>
                     <li class="sm:hidden">
-                      <span class="block p-2 pb-0 text-lg leading-5 text-[#4f46e5] truncate lg:border-0 lg:p-0 lg:hidden"><%= user.userName %></span>
+                      <span class="block p-2 pb-0 text-lg leading-5 text-bluelagoon-600 truncate lg:border-0 lg:p-0 lg:hidden"><%= user.userName %></span>
                       <a href="log-out" class="block px-2 italic font-normal text-lg text-gray-400 lg:border-0 lg:p-0 hover:text-gray-500 lg:hidden">Log out</a>
                     </li>
                   </ul>
@@ -88,7 +102,7 @@
                       <a href="log-in" class="block py-2 pr-4 pl-3 text-lg leading-5 text-gray-700 lg:border-0 lg:p-0 hover:text-gray-500">Log In</a>
                     </li>
                     <li class="sm:hidden">
-                      <a href="sign-up" class="block py-2 pr-4 pl-3 text-lg leading-5 text-[#4f46e5] lg:border-0 lg:p-0 hover:text-indigo-500">Sign Up</a>
+                      <a href="sign-up" class="block py-2 pr-4 pl-3 text-lg leading-5 text-bluelagoon-600 lg:border-0 lg:p-0 hover:text-bluelagoon-500">Sign Up</a>
                     </li>
                   </ul>
                 </div>
@@ -107,7 +121,7 @@
       <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         <!-- <div class="hidden sm:mb-8 sm:flex sm:justify-center">
           <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-            Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+            Announcing our next round of funding. <a href="#" class="font-semibold text-bluelagoon-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
           </div>
         </div> -->
         <div class="text-center">
@@ -115,11 +129,11 @@
           <p class="mt-6 text-lg leading-8 text-gray-600">An all-in-one resource to plan your weekly meals and grocery shops</p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
             <% if (user) { %>
-              <a href="meal-plan" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <a href="meal-plan" class="rounded-md bg-bluelagoon-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-bluelagoon-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bluelagoon-500">
                 <span>Let's eat!</span>
               </a>
             <% } else { %>
-              <a href="meal-plan-demo" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <a href="meal-plan-demo" class="rounded-md bg-bluelagoon-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-bluelagoon-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bluelagoon-500">
                 <span>See The Demo</span>
               </a>
             <% } %>
