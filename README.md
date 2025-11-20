@@ -15,8 +15,8 @@
 </div>
 
 <div align="center">
-  
-  ![Version](https://img.shields.io/badge/version-1.1.0-blue)<br />
+ 
+  <a href="https://github.com/ccchrissss/munch-map/blob/main/CHANGELOG.md"><img src="https://img.shields.io/badge/version-1.1.0-blue" alt="Latest Release"></a>
 
 </div>
 
@@ -61,6 +61,8 @@ Another challenge we faced was our Git branching strategy. We maintained three b
 We plan to add more features to the app, including a drag-and-drop feature to rearrange meals, on the Meal Plan page. It would also be convenient for users to be able to save their commonly-eaten meals into a favorites list for easy access. Another worthwhile improvement we’d like to add is a dashboard with the Canvas API that illustrates the mapped connection between meals and their corresponding grocery items and recipes.
 
 Furthermore, we envision facilitating real-time communication between collaborators, enabling notifications for users to stay informed about any changes made by others through the integration of the Web Socket API. We believe these optimizations will make Munch Map a truly powerful tool for anyone who wants to improve their diet.
+
+See a breakdown of our most recent updates in our [changelog](https://github.com/ccchrissss/munch-map/blob/main/CHANGELOG.md)
 
 
 
