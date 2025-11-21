@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- <link href="/dist/output.css" rel="stylesheet"> -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bluelagoon: {
+                500: '#85bbff',
+                600: '#749add'
+              }
+            }
+          }
+        }
+      }
+    </script>    
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/x-icon" href="/assets/grocery-cart-color.png">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
@@ -31,11 +45,11 @@
               
               <div class="flex grow basis-[0] justify-end items-center lg:order-3">
                 <% if (user) { %>
-                  <p class="hidden sm:inline lg:block text-lg text-[#4f46e5] font-medium pr-4 lg:pr-5 py-2 lg:py-2.5 mr-2"><%= user.userName %></p>
+                  <p class="hidden sm:inline lg:block text-lg text-bluelagoon-600 font-medium pr-4 lg:pr-5 py-2 lg:py-2.5 mr-2"><%= user.userName %></p>
                   <p class="hidden sm:inline lg:block"><a href="/log-out" class="italic text-lg text-gray-400 hover:text-gray-500">Log out</a></p>
                 <% } else { %>
                   <a href="log-in" class="hidden sm:inline text-lg text-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg pr-4 lg:pr-5 py-2 lg:py-2.5 focus:outline-none hover:text-gray-500">Log In</a>
-                  <a href="sign-up" class="hidden sm:inline text-lg text-[#4f46e5] bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:text-indigo-500">Sign Up</a>
+                  <a href="sign-up" class="hidden sm:inline text-lg text-bluelagoon-600 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:text-bluelagoon-500">Sign Up</a>
                 <% } %> 
                   <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-lg text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
                       <span class="sr-only">Open main menu</span>
@@ -61,7 +75,7 @@
                         <a href="grocery-list" class="block p-2 pl-1 text-lg leading-5 text-gray-700 lg:border-0 lg:p-0 hover:text-gray-500">Grocery List</a>
                       </li>
                       <li class="sm:hidden">
-                        <span class="block p-2 pb-0 text-lg leading-5 text-[#4f46e5] truncate lg:border-0 lg:p-0 lg:hidden"><%= user.userName %></span>
+                        <span class="block p-2 pb-0 text-lg leading-5 text-bluelagoon-600 truncate lg:border-0 lg:p-0 lg:hidden"><%= user.userName %></span>
                         <a href="log-out" class="block px-2 italic font-normal text-lg text-gray-400 lg:border-0 lg:p-0 hover:text-gray-500 lg:hidden">Log out</a>
                       </li>
                     </ul>
@@ -88,7 +102,7 @@
                         <a href="log-in" class="block py-2 pr-4 pl-3 text-lg leading-5 text-gray-700 lg:border-0 lg:p-0 hover:text-gray-500">Log In</a>
                       </li>
                       <li class="sm:hidden">
-                        <a href="sign-up" class="block py-2 pr-4 pl-3 text-lg leading-5 text-[#4f46e5] lg:border-0 lg:p-0 hover:text-indigo-500">Sign Up</a>
+                        <a href="sign-up" class="block py-2 pr-4 pl-3 text-lg leading-5 text-bluelagoon-600 lg:border-0 lg:p-0 hover:text-bluelagoon-500">Sign Up</a>
                       </li>
                     </ul>
                   </div>
@@ -113,7 +127,7 @@
           <div class="mx-auto max-w-sm sm:max-w-lg lg:max-w-4xl pt-1 pb-36">
 
             <div class="text-center">
-              <a href="meal-plan-demo" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <a href="meal-plan-demo" class="rounded-md bg-bluelagoon-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-bluelagoon-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bluelagoon-600">
                 <span>Try the Meal Plan</span>
               </a>
             </div>
@@ -124,7 +138,7 @@
                 <!-- Fruits/Vegetables Start -->
                 <div class="relative pl-16">
                   <dt class="text-base font-semibold leading-7 text-gray-900">
-                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-bluelagoon-600">
                       <!-- <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
                       </svg> -->
@@ -138,7 +152,7 @@
                         <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" type="text" placeholder="Add Item" name="item">
                         <input type="hidden" name="category" value="produce">
                         <input type="hidden" name="numItem" value="1">
-                        <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5 lg:w-1/4" type="submit">Add</button>
+                        <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bluelagoon-600 leading-7 justify-self-end h-9 w-2/5 lg:w-1/4" type="submit">Add</button>
                       </div>
                     </form>
                 
@@ -180,7 +194,7 @@
                 <!-- Proteins Start -->
                 <div class="relative pl-16">
                   <dt class="text-base font-semibold leading-7 text-gray-900">
-                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-bluelagoon-600">
                       <!-- <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                       </svg> -->
@@ -194,7 +208,7 @@
                         <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" type="text" placeholder="Add Item" name="item">
                         <input type="hidden" name="category" value="proteins">
                         <input type="hidden" name="numItem" value="1">
-                        <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5 lg:w-1/4" type="submit">Add</button>
+                        <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bluelagoon-600 leading-7 justify-self-end h-9 w-2/5 lg:w-1/4" type="submit">Add</button>
                       </div>
                     </form>
 
@@ -236,7 +250,7 @@
                 <!-- Grains/Legumes/Nuts/Seeds Start -->
                 <div class="relative pl-16">
                   <dt class="text-base font-semibold leading-7 text-gray-900">
-                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-bluelagoon-600">
                       <!-- <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                       </svg> -->
@@ -250,7 +264,7 @@
                         <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" type="text" placeholder="Add Item" name="item">
                         <input type="hidden" name="category" value="pantry">
                         <input type="hidden" name="numItem" value="1">
-                        <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5 lg:w-1/4" type="submit">Add</button>
+                        <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bluelagoon-600 leading-7 justify-self-end h-9 w-2/5 lg:w-1/4" type="submit">Add</button>
                       </div>
                     </form>
                 
@@ -293,7 +307,7 @@
                 <!-- Fats/Spices/Condiments Start -->
                 <div class="relative pl-16">
                   <dt class="text-base font-semibold leading-7 text-gray-900">
-                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-bluelagoon-600">
                       <!-- <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
                       </svg> -->
@@ -307,7 +321,7 @@
                         <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" type="text" placeholder="Add Item" name="item">
                         <input type="hidden" name="category" value="condiments">
                         <input type="hidden" name="numItem" value="1">
-                        <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5 lg:w-1/4" type="submit">Add</button>
+                        <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bluelagoon-600 leading-7 justify-self-end h-9 w-2/5 lg:w-1/4" type="submit">Add</button>
                       </div>
                     </form>
                 
@@ -349,7 +363,7 @@
                 <!-- Other Start -->
                 <div class="relative pl-16">
                   <dt class="text-base font-semibold leading-7 text-gray-900">
-                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-bluelagoon-600">
                       <!-- <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
                       </svg> -->
@@ -363,7 +377,7 @@
                         <input class="bg-gray-200 my-1 rounded-lg border-none p-1 pl-2 leading-7 w-4/5 sm:w-3/4" type="text" placeholder="Add Item" name="item">
                         <input type="hidden" name="category" value="other">
                         <input type="hidden" name="numItem" value="1">
-                        <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 leading-7 justify-self-end h-9 w-2/5 lg:w-1/4" type="submit">Add</button>
+                        <button class="rounded-lg bg-gray-600 ml-2 my-1 px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bluelagoon-600 leading-7 justify-self-end h-9 w-2/5 lg:w-1/4" type="submit">Add</button>
                       </div>
                     </form>
                 

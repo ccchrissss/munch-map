@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="/assets/grocery-cart-color.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bluelagoon: {
+                500: '#85bbff',
+                600: '#749add'
+              }
+            }
+          }
+        }
+      }
+    </script>    
 
 </head>
 <body>
@@ -68,14 +82,14 @@
         <div>
           <label for="username" class="block text-sm/6 font-medium text-gray-900">Username</label>
           <div class="mt-2">
-            <input type="username" name="userName" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            <input type="username" name="userName" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-bluelagoon-600 sm:text-sm/6">
           </div>
         </div>
 
         <div>
             <label for="email" class="block text-sm/6 font-medium text-gray-900">E mail</label>
             <div class="mt-2">
-              <input type="email" name="email" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+              <input type="email" name="email" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-bluelagoon-600 sm:text-sm/6">
             </div>
           </div>
   
@@ -84,7 +98,7 @@
             <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
           </div>
           <div class="mt-2">
-            <input type="password" name="password" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            <input type="password" name="password" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-bluelagoon-600 sm:text-sm/6">
           </div>
 
         </div>
@@ -94,18 +108,18 @@
               <label for="password" class="block text-sm/6 font-medium text-gray-900">Confirm Password</label>
             </div>
             <div class="mt-2">
-              <input type="password" name="confirmPassword" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+              <input type="password" name="confirmPassword" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-bluelagoon-600 sm:text-sm/6">
             </div>
           </div>
   
         <div>
-          <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign up</button>
+          <button type="submit" class="flex w-full justify-center rounded-md bg-bluelagoon-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-bluelagoon-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bluelagoon-600">Sign up</button>
         </div>
       </form>
 
       <p class="mt-10 text-center text-sm/6 text-gray-500">
         Already have an account?
-        <a href="/log-in" class="font-semibold text-indigo-600 hover:text-indigo-500">Log in here</a>
+        <a href="/log-in" class="font-semibold text-bluelagoon-600 hover:text-bluelagoon-500">Log in here</a>
       </p>
     </div>
   </div>
