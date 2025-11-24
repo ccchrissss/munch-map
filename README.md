@@ -16,14 +16,14 @@
 
 <div align="center">
  
-  <a href="https://github.com/ccchrissss/munch-map/blob/main/CHANGELOG.md"><img src="https://img.shields.io/badge/version-1.1.0-blue" alt="Latest Release"></a>
+  <a href="https://github.com/ccchrissss/munch-map/blob/main/CHANGELOG.md"><img src="https://img.shields.io/badge/version-1.1.1-blue" alt="Latest Release"></a>
 
 </div>
 
 ---
 
 <div align="center">
- <img width="720" alt="munch-map-landing-page" src="https://github.com/ccchrissss/munch-map/blob/main/public/assets/landing-page-screenshot-1.png?raw=true">
+ <img width="720" alt="munch-map-landing-page" src="https://github.com/ccchrissss/munch-map/blob/main/public/assets/munch-map-new-landing-page.png">
 </div>
 
 ## How It's Made:
@@ -67,5 +67,5 @@ See a breakdown of our most recent updates in the [changelog](https://github.com
 
 
 <div align="center">
- <img width="720" alt="munch-map-landing-page" src="https://github.com/ccchrissss/munch-map/blob/main/public/assets/meal-plan-page-screenshot-1.png?raw=true">
+ <img width="720" alt="munch-map-landing-page" src="https://github.com/ccchrissss/munch-map/blob/main/public/assets/munch-map-new-meal-plan-page.png">
 </div>
