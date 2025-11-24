@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- Color scheme updated to a pleasant shade of blue
+- Color scheme updated to include a pleasant shade of blue
+- Update mongo URI to ensure correct database is connected
  
 ## [1.1.0] - 2025-03-10
  
